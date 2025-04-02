@@ -28,21 +28,24 @@ const phrases = [
 ];
 
 const Index = () => {
+  // Log to verify the background image path to help with debugging
+  console.log("Background image path:", "/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png");
+  
   return (
-    <div className="min-h-screen flex flex-col relative">
-      {/* Background image as an absolutely positioned element */}
+    <div className="min-h-screen flex flex-col">
+      {/* Background div with image */}
       <div 
-        className="fixed inset-0 z-0"
+        className="fixed top-0 left-0 w-full h-full -z-10"
         style={{
           backgroundImage: "url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      />
       
-      {/* Dark overlay for better text readability */}
-      <div className="fixed inset-0 bg-black/30 z-0"></div>
+      {/* Dark overlay */}
+      <div className="fixed top-0 left-0 w-full h-full bg-black/30 -z-10"></div>
 
       {/* Content Container */}
       <div className="container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8 relative z-10">
