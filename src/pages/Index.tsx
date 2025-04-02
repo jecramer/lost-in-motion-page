@@ -42,7 +42,7 @@ const Index = () => {
       <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
         {/* Main Heading Area */}
         <div className="max-w-5xl">
-          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
             Get Lost
           </h1>
           
