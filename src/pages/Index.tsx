@@ -39,19 +39,19 @@ const Index = () => {
       }}
     >
       {/* Content */}
-      <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
+      <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
         {/* Main Heading Area */}
-        <div className="max-w-5xl text-center">
-          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-center">
+        <div className="max-w-5xl">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
             Get Lost
           </h1>
           
           {/* Email Signup Form - Moved back above the three containers */}
           <div className="mt-8 mb-16">
-            <p className="text-white text-xl md:text-2xl mt-2 mb-8 text-center">
+            <p className="text-white text-xl md:text-2xl mt-2 mb-8">
               Be notified when our site goes live
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
               <Input 
                 type="email" 
                 placeholder="Email address" 
@@ -64,7 +64,7 @@ const Index = () => {
           </div>
           
           {/* Three Containers */}
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             <div>
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
               <p className="text-gray-800">
