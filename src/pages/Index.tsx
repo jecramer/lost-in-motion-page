@@ -29,12 +29,20 @@ const phrases = [
 
 const Index = () => {
   return (
-    <div 
-      className="min-h-screen flex flex-col relative bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/lovable-uploads/75924a9c-d997-4595-97cc-90e6a1e5373e.png')" }}
-    >
+    <div className="min-h-screen flex flex-col relative">
+      {/* Background image as an absolutely positioned element */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: "url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
+      
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="fixed inset-0 bg-black/30 z-0"></div>
 
       {/* Content Container */}
       <div className="container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8 relative z-10">
