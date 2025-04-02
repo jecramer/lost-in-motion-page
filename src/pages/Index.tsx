@@ -19,6 +19,23 @@ const Index = () => {
     img.onload = () => console.log('Image loaded successfully');
     img.onerror = (e) => console.error('Image failed to load', e);
     img.src = '/bg.png';
+    
+    // Re-initialize LaunchList widget if needed
+    if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+      window.LaunchList.initializeWidgets();
+    } else {
+      console.log('Loading LaunchList widget script');
+      const script = document.createElement('script');
+      script.src = 'https://getlaunchlist.com/js/widget.js';
+      script.defer = true;
+      script.onload = () => {
+        console.log('LaunchList widget script loaded');
+        if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+          window.LaunchList.initializeWidgets();
+        }
+      };
+      document.head.appendChild(script);
+    }
   }, []);
 
   return <div className="min-h-screen w-full flex flex-col relative" style={{
@@ -38,7 +55,7 @@ const Index = () => {
           {/* LaunchList Widget - Replacing Email Signup Form */}
           <div className="mt-8 mb-16">
             <p className="text-white text-xl md:text-2xl mt-2 mb-8">Get notified when our site goes live</p>
-            <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+            <div className="launchlist-widget bg-white/10 backdrop-blur-sm p-4 rounded-md" data-key-id="pBBH1O" data-height="180px"></div>
           </div>
           
           {/* Three Containers */}
