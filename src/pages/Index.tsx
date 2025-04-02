@@ -38,15 +38,18 @@ const Index = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      
       {/* Content */}
-      <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
+      <div className="relative z-10 container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
         {/* Main Heading Area */}
         <div className="max-w-5xl">
-          <h1 className="font-newsreader font-semibold text-[10rem] md:text-[14rem] lg:text-[24rem] text-white leading-tight drop-shadow-lg">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
             Get Lost
           </h1>
           
-          {/* Email Signup Form */}
+          {/* Email Signup Form - Moved back above the three containers */}
           <div className="mt-8 mb-16">
             <p className="text-white text-xl md:text-2xl mt-2 mb-8">
               Be notified when our site goes live
