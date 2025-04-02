@@ -28,25 +28,29 @@ const phrases = [
 ];
 
 const Index = () => {
-  console.log("Background image path:", "/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png");
+  const backgroundImage = "/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png";
+  console.log("Background image path:", backgroundImage);
   
   return (
-    <>
-      {/* Background and overlay as direct children of the body */}
+    <div className="relative min-h-screen">
+      {/* Background image */}
       <div 
-        className="fixed inset-0 z-[-2]" 
+        className="fixed inset-0 z-0" 
         style={{
-          backgroundImage: "url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width: '100%',
+          height: '100%',
         }}
       />
-      <div className="fixed inset-0 bg-black/30 z-[-1]" />
+      
+      {/* Overlay */}
+      <div className="fixed inset-0 bg-black/30 z-0" />
 
       {/* Main content */}
-      <div className="min-h-screen flex flex-col">
-        <div className="container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8 z-10">
+      <div className="relative z-10 min-h-screen flex flex-col">
+        <div className="container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8">
           {/* Main Heading Area */}
           <div className="max-w-5xl">
             <h1 className="font-newsreader font-semibold text-5xl md:text-6xl lg:text-[100px] text-white leading-tight drop-shadow-lg">
@@ -95,7 +99,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
