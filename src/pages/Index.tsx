@@ -36,6 +36,23 @@ const Index = () => {
       };
       document.head.appendChild(script);
     }
+
+    // Add custom CSS for LaunchList widget styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .launchlist-widget input[type="email"] {
+        width: 100% !important;
+        font-family: 'Newsreader', serif !important;
+      }
+      .launchlist-widget button {
+        background-color: rgb(224, 214, 172) !important;
+        font-family: 'Newsreader', serif !important;
+      }
+      .launchlist-widget * {
+        font-family: 'Newsreader', serif !important;
+      }
+    `;
+    document.head.appendChild(style);
   }, []);
 
   return <div className="min-h-screen w-full flex flex-col relative" style={{
@@ -52,10 +69,10 @@ const Index = () => {
             Get Lost
           </h1>
           
-          {/* LaunchList Widget - Replacing Email Signup Form */}
+          {/* LaunchList Widget - Removing semi-transparent container */}
           <div className="mt-8 mb-16">
             <p className="text-white text-xl md:text-2xl mt-2 mb-8">Get notified when our site goes live</p>
-            <div className="launchlist-widget bg-white/10 backdrop-blur-sm p-4 rounded-md" data-key-id="pBBH1O" data-height="180px"></div>
+            <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
           </div>
           
           {/* Three Containers */}
