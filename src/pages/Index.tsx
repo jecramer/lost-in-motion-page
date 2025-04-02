@@ -30,13 +30,17 @@ const phrases = [
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-x-hidden">
-      {/* Background Image */}
-      <div
-        className="fixed inset-0 w-full h-full bg-cover bg-center -z-10"
-        style={{
-          backgroundImage: "url('/lovable-uploads/6ba3063d-f471-466b-bef9-2077426f2719.png')"
+      {/* Background Image with absolute URL and proper sizing */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-no-repeat bg-cover bg-center -z-10" 
+        style={{ 
+          backgroundImage: `url('https://47206da4-598f-49b1-8d4c-f60c9f6d264c.lovableproject.com/lovable-uploads/6ba3063d-f471-466b-bef9-2077426f2719.png')`,
+          opacity: 1
         }}
       ></div>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/30 -z-10"></div>
 
       {/* Content Container */}
       <div className="container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8">
