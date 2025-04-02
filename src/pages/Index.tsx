@@ -35,15 +35,10 @@ const Index = () => {
             Get Lost
           </h1>
           
-          {/* Email Signup Form - Moved back above the three containers */}
+          {/* LaunchList Widget - Replacing Email Signup Form */}
           <div className="mt-8 mb-16">
             <p className="text-white text-xl md:text-2xl mt-2 mb-8">Get notified when our site goes live</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-              <Input type="email" placeholder="Email address" className="bg-white/90 text-gray-800 border-none" />
-              <Button className="bg-[#f2f2dd]/90 text-gray-800 hover:bg-[#f2f2dd]">
-                Notify me
-              </Button>
-            </div>
+            <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
           </div>
           
           {/* Three Containers */}
