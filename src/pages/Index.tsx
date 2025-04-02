@@ -32,7 +32,7 @@ const Index = () => {
     <div 
       className="min-h-screen w-full flex flex-col relative"
       style={{
-        backgroundImage: `url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')`,
+        backgroundImage: `url('/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
