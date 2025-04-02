@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -67,21 +67,21 @@ const Index = () => {
           
           {/* Three Containers */}
           <div className="mt-64 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-            <div className="bg-white/90 p-6 rounded-lg shadow-md">
+            <div>
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Readers</h2>
               <p className="text-gray-800">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
               </p>
             </div>
             
-            <div className="bg-white/90 p-6 rounded-lg shadow-md">
+            <div>
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Authors</h2>
               <p className="text-gray-800">
                 Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
               </p>
             </div>
             
-            <div className="bg-white/90 p-6 rounded-lg shadow-md">
+            <div>
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Publishers</h2>
               <p className="text-gray-800">
                 Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
