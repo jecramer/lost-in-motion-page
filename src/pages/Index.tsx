@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,34 +28,21 @@ const phrases = [
 ];
 
 const Index = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  
-  useEffect(() => {
-    // Preload the image
-    const img = new Image();
-    img.src = "/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png";
-    img.onload = () => {
-      console.log("Background image loaded successfully");
-      setImageLoaded(true);
-    };
-    img.onerror = (e) => {
-      console.error("Error loading background image:", e);
-    };
-  }, []);
-  
   return (
-    <div className="relative min-h-screen w-full" 
-         style={{
-           backgroundImage: "url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')",
-           backgroundSize: 'cover',
-           backgroundPosition: 'center',
-           backgroundRepeat: 'no-repeat',
-         }}>
+    <div 
+      className="min-h-screen w-full flex flex-col relative"
+      style={{
+        backgroundImage: `url('/lovable-uploads/9027a18c-5528-40cc-a876-7ce84f00e180.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto min-h-screen pt-16 md:pt-24 px-4 md:px-8">
+      <div className="relative z-10 container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
         {/* Main Heading Area */}
         <div className="max-w-5xl">
           <h1 className="font-newsreader font-semibold text-5xl md:text-6xl lg:text-[100px] text-white leading-tight drop-shadow-lg">
@@ -80,21 +67,21 @@ const Index = () => {
           
           {/* Three Containers */}
           <div className="mt-64 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-            <div>
+            <div className="bg-white/90 p-6 rounded-lg shadow-md">
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Readers</h2>
               <p className="text-gray-800">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
               </p>
             </div>
             
-            <div>
+            <div className="bg-white/90 p-6 rounded-lg shadow-md">
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Authors</h2>
               <p className="text-gray-800">
                 Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
               </p>
             </div>
             
-            <div>
+            <div className="bg-white/90 p-6 rounded-lg shadow-md">
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Publishers</h2>
               <p className="text-gray-800">
                 Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
