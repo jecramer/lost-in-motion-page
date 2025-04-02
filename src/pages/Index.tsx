@@ -1,17 +1,23 @@
+
 import React from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
+// Import the image 
+import backgroundImage from "/public/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png";
+
 const phrases = ["In Wonderland", "In Westeros", "In Pemberley", "In The Multiverse", "In Gothic Horror", "In The Cosmos", "In Mythology", "In Sonnets", "In Magical Realism", "In Dystopia", "In The Library", "In The Footnotes", "In A Whodunit", "In The Hero's Journey", "In The Classics", "In A Fairytale", "In Haikus", "In The Archives", "In A Cozy Mystery", "In The Unwritten Pages"];
+
 const Index = () => {
-  return <div className="min-h-screen w-full flex flex-col relative" style={{
-    backgroundImage: `url('/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png')`,
+  return <div className="min-h-screen w-full flex flex-col relative justify-center" style={{
+    backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
   }}>
       {/* Content */}
-      <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
+      <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col justify-center">
         {/* Main Heading Area */}
         <div className="max-w-5xl">
           <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
@@ -56,4 +62,5 @@ const Index = () => {
       </div>
     </div>;
 };
+
 export default Index;
