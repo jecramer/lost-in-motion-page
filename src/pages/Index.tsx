@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ const phrases = ["In Wonderland", "In Westeros", "In Pemberley", "In The Multive
 
 const Index = () => {
   useEffect(() => {
-    console.log('Background Image Path:', '/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png');
+    console.log('Background Image Path:', '/bg.png');
     
     // Additional diagnostic logging
     console.log('Window location:', window.location.href);
@@ -17,11 +18,11 @@ const Index = () => {
     const img = new Image();
     img.onload = () => console.log('Image loaded successfully');
     img.onerror = (e) => console.error('Image failed to load', e);
-    img.src = '/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png';
+    img.src = '/bg.png';
   }, []);
 
   return <div className="min-h-screen w-full flex flex-col relative" style={{
-    backgroundImage: `url('/20250402_0948_Tranquil Garden Escape_remix_01jqtm426ses4b6n0vjbc17e6g.png')`,
+    backgroundImage: `url('/bg.png')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
