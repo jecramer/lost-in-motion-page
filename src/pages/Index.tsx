@@ -45,47 +45,48 @@ const Index = () => {
       <div className="relative z-10 container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
         {/* Main Heading Area */}
         <div className="max-w-5xl">
-          <h1 className="font-newsreader font-semibold text-5xl md:text-6xl lg:text-[100px] text-white leading-tight drop-shadow-lg">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
             Get Lost
           </h1>
           
-          <p className="text-white text-xl md:text-2xl mt-2 mb-8">
-            Be notified when our site goes live
-          </p>
-          
-          {/* Email Signup Form */}
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mb-16">
-            <Input 
-              type="email" 
-              placeholder="Email address" 
-              className="bg-white/90 text-gray-800 border-none"
-            />
-            <Button className="bg-[#f2f2dd]/90 text-gray-800 hover:bg-[#f2f2dd]">
-              Notify me
-            </Button>
-          </div>
-          
-          {/* Three Containers */}
-          <div className="mt-64 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+          {/* Three Containers - Moved up */}
+          <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             <div>
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Readers</h2>
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
               <p className="text-gray-800">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
               </p>
             </div>
             
             <div>
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Authors</h2>
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
               <p className="text-gray-800">
                 Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
               </p>
             </div>
             
             <div>
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-blue-900 mb-4">Publishers</h2>
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
               <p className="text-gray-800">
                 Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
               </p>
+            </div>
+          </div>
+          
+          {/* Email Signup Form - Moved down below the containers */}
+          <div className="mt-20">
+            <p className="text-white text-xl md:text-2xl mt-2 mb-8">
+              Be notified when our site goes live
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+              <Input 
+                type="email" 
+                placeholder="Email address" 
+                className="bg-white/90 text-gray-800 border-none"
+              />
+              <Button className="bg-[#f2f2dd]/90 text-gray-800 hover:bg-[#f2f2dd]">
+                Notify me
+              </Button>
             </div>
           </div>
         </div>
