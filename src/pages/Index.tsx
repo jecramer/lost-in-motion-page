@@ -49,8 +49,25 @@ const Index = () => {
             Get Lost
           </h1>
           
-          {/* Three Containers - Moved up */}
-          <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+          {/* Email Signup Form - Moved back above the three containers */}
+          <div className="mt-8 mb-16">
+            <p className="text-white text-xl md:text-2xl mt-2 mb-8">
+              Be notified when our site goes live
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
+              <Input 
+                type="email" 
+                placeholder="Email address" 
+                className="bg-white/90 text-gray-800 border-none"
+              />
+              <Button className="bg-[#f2f2dd]/90 text-gray-800 hover:bg-[#f2f2dd]">
+                Notify me
+              </Button>
+            </div>
+          </div>
+          
+          {/* Three Containers */}
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             <div>
               <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
               <p className="text-gray-800">
@@ -70,23 +87,6 @@ const Index = () => {
               <p className="text-gray-800">
                 Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
               </p>
-            </div>
-          </div>
-          
-          {/* Email Signup Form - Moved down below the containers */}
-          <div className="mt-20">
-            <p className="text-white text-xl md:text-2xl mt-2 mb-8">
-              Be notified when our site goes live
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-              <Input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-white/90 text-gray-800 border-none"
-              />
-              <Button className="bg-[#f2f2dd]/90 text-gray-800 hover:bg-[#f2f2dd]">
-                Notify me
-              </Button>
             </div>
           </div>
         </div>
