@@ -1,26 +1,23 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
-
 const phrases = ["In Wonderland", "In Westeros", "In Pemberley", "In The Multiverse", "In Gothic Horror", "In The Cosmos", "In Mythology", "In Sonnets", "In Magical Realism", "In Dystopia", "In The Library", "In The Footnotes", "In A Whodunit", "In The Hero's Journey", "In The Classics", "In A Fairytale", "In Haikus", "In The Archives", "In A Cozy Mystery", "In The Unwritten Pages"];
-
 const Index = () => {
   useEffect(() => {
     console.log('Background Image Path:', '/bg.png');
-    
+
     // Additional diagnostic logging
     console.log('Window location:', window.location.href);
     console.log('Public path:', import.meta.env.PUBLIC_URL);
-    
+
     // Verify image exists
     const img = new Image();
     img.onload = () => console.log('Image loaded successfully');
-    img.onerror = (e) => console.error('Image failed to load', e);
+    img.onerror = e => console.error('Image failed to load', e);
     img.src = '/bg.png';
-    
+
     // Re-initialize LaunchList widget if needed
     if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
       window.LaunchList.initializeWidgets();
@@ -55,16 +52,14 @@ const Index = () => {
     `;
     document.head.appendChild(style);
   }, []);
-
-  return (
-    <>
+  return <>
       <Navbar />
       <div className="min-h-screen w-full flex flex-col relative" style={{
-        backgroundImage: `url('/bg.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
+      backgroundImage: `url('/bg.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
         {/* Content */}
         <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
           {/* Main Heading Area */}
@@ -74,7 +69,7 @@ const Index = () => {
             </h1>
             
             {/* New Tagline */}
-            <p className="font-newsreader text-xl md:text-2xl text-white opacity-80 mb-8">
+            <p className="font-newsreader text-xl text-white opacity-80 mb-8 md:text-5xl">
               Turning distraction into discovery.
             </p>
             
@@ -110,9 +105,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Index;
-
