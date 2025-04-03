@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -86,8 +85,8 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Three Containers - Now positioned in the middle of the page */}
-          <div className="flex-grow flex items-center justify-center w-full my-10">
+          {/* Three Containers - Reduced margin and moved closer */}
+          <div className="flex-grow flex items-center justify-center w-full my-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center max-w-4xl mx-auto">
               <div>
                 <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
@@ -117,4 +116,3 @@ const Index = () => {
 };
 
 export default Index;
-
