@@ -77,8 +77,8 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section - with increased spacing from tagline */}
-            <div className="mt-16 mb-16">
+            {/* Email Signup Section - increased spacing from tagline */}
+            <div className="mt-24 mb-16">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
