@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -64,10 +65,10 @@ const Index = () => {
       backgroundRepeat: 'no-repeat'
     }}>
         {/* Content */}
-        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
+        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
           {/* Main Heading Area */}
-          <div className="max-w-5xl w-full text-center">
-            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
+          <div className="max-w-5xl">
+            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
               Get Lost
             </h1>
             
@@ -76,14 +77,16 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section */}
-            <div className="mt-8 mb-16 w-full max-w-md mx-auto">
-              <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
-              <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+            {/* Email Signup Section - increased spacing from tagline */}
+            <div className="mt-24 mb-16">
+              <div className="max-w-md">
+                <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
+                <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+              </div>
             </div>
             
             {/* Three Containers */}
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-10 text-center max-w-4xl w-full">
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
               <div>
                 <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
                 <p className="text-slate-50">
@@ -112,3 +115,4 @@ const Index = () => {
 };
 
 export default Index;
+
