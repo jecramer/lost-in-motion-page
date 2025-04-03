@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -84,8 +85,8 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Three Containers - centered on page */}
-            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-center mx-auto max-w-4xl">
+            {/* Three Containers */}
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
               <div>
                 <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
                 <p className="text-slate-50">
@@ -114,3 +115,4 @@ const Index = () => {
 };
 
 export default Index;
+
