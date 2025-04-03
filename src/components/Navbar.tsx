@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -23,6 +24,15 @@ const Navbar = () => {
             className="text-white font-newsreader hover:text-slate-200 transition-colors"
           >
             Articles
+          </a>
+          
+          <a 
+            href="https://www.linkedin.com/company/getlosthq/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white hover:text-slate-200 transition-colors flex items-center"
+          >
+            <Linkedin size={20} color="white" />
           </a>
           
           <a 
