@@ -73,6 +73,11 @@ const Index = () => {
               Get Lost
             </h1>
             
+            {/* New Tagline */}
+            <p className="font-newsreader text-xl md:text-2xl text-white opacity-80 mb-8">
+              Turning distraction into discovery.
+            </p>
+            
             {/* LaunchList Widget - Removing semi-transparent container */}
             <div className="mt-8 mb-16">
               <p className="text-white text-xl md:text-2xl mt-2 mb-8">Get notified when our site goes live</p>
@@ -110,3 +115,4 @@ const Index = () => {
 };
 
 export default Index;
+
