@@ -64,10 +64,10 @@ const Index = () => {
       backgroundRepeat: 'no-repeat'
     }}>
         {/* Content */}
-        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col">
+        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
           {/* Main Heading Area */}
-          <div className="max-w-5xl">
-            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
+          <div className="max-w-5xl w-full text-center">
+            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
               Get Lost
             </h1>
             
@@ -76,36 +76,34 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section - increased spacing from tagline */}
-            <div className="mt-24 mb-16">
-              <div className="max-w-md">
-                <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
-                <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+            {/* Email Signup Section */}
+            <div className="mt-8 mb-16 w-full max-w-md mx-auto">
+              <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
+              <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+            </div>
+            
+            {/* Three Containers */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-10 text-center max-w-4xl w-full">
+              <div>
+                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
+                <p className="text-slate-50">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
+                </p>
               </div>
-            </div>
-          </div>
-          
-          {/* Three Containers - now positioned in the middle/lower part of the screen */}
-          <div className="mt-auto mb-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left max-w-5xl">
-            <div className="p-6">
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
-              <p className="text-slate-50">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
-              </p>
-            </div>
-            
-            <div className="p-6">
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
-              <p className="text-slate-50">
-                Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
-              </p>
-            </div>
-            
-            <div className="p-6">
-              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
-              <p className="text-slate-50">
-                Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
-              </p>
+              
+              <div>
+                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
+                <p className="text-slate-50">
+                  Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
+                </p>
+              </div>
+              
+              <div>
+                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
+                <p className="text-slate-50">
+                  Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
+                </p>
+              </div>
             </div>
           </div>
         </div>
