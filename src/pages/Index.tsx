@@ -1,9 +1,12 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
+
 const phrases = ["In Wonderland", "In Westeros", "In Pemberley", "In The Multiverse", "In Gothic Horror", "In The Cosmos", "In Mythology", "In Sonnets", "In Magical Realism", "In Dystopia", "In The Library", "In The Footnotes", "In A Whodunit", "In The Hero's Journey", "In The Classics", "In A Fairytale", "In Haikus", "In The Archives", "In A Cozy Mystery", "In The Unwritten Pages"];
+
 const Index = () => {
   useEffect(() => {
     console.log('Background Image Path:', '/bg.png');
@@ -52,6 +55,7 @@ const Index = () => {
     `;
     document.head.appendChild(style);
   }, []);
+
   return <>
       <Navbar />
       <div className="min-h-screen w-full flex flex-col relative" style={{
@@ -68,15 +72,17 @@ const Index = () => {
               Get Lost
             </h1>
             
-            {/* New Tagline */}
+            {/* Tagline */}
             <p className="font-newsreader text-xl text-white opacity-80 mb-8 md:text-5xl">
               Turning distraction into discovery.
             </p>
             
-            {/* LaunchList Widget - Removing semi-transparent container */}
-            <div className="mt-8 mb-16">
-              <p className="text-white text-xl md:text-2xl mt-2 mb-8">Get notified when our site goes live</p>
-              <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+            {/* Email Signup Section - with increased spacing from tagline */}
+            <div className="mt-16 mb-16">
+              <div className="max-w-md">
+                <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
+                <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+              </div>
             </div>
             
             {/* Three Containers */}
@@ -107,4 +113,5 @@ const Index = () => {
       </div>
     </>;
 };
+
 export default Index;
