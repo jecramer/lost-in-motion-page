@@ -73,7 +73,7 @@ const Index = () => {
             </h1>
             
             {/* Tagline */}
-            <p className="font-newsreader text-xl text-white opacity-80 mb-8 md:text-5xl">
+            <p className="font-newsreader text-xl text-white opacity-80 -mt-4 md:text-5xl">
               Turning distraction into discovery.
             </p>
             
@@ -115,3 +115,4 @@ const Index = () => {
 };
 
 export default Index;
+
