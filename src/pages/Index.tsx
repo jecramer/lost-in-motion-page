@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -65,7 +64,7 @@ const Index = () => {
       backgroundRepeat: 'no-repeat'
     }}>
         {/* Content */}
-        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8">
+        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col">
           {/* Main Heading Area */}
           <div className="max-w-5xl">
             <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
@@ -84,29 +83,29 @@ const Index = () => {
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
               </div>
             </div>
+          </div>
+          
+          {/* Three Containers - now positioned in the middle/lower part of the screen */}
+          <div className="mt-auto mb-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left max-w-5xl">
+            <div className="p-6">
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
+              <p className="text-slate-50">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
+              </p>
+            </div>
             
-            {/* Three Containers */}
-            <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
-                <p className="text-slate-50">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
-                <p className="text-slate-50">
-                  Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
-                <p className="text-slate-50">
-                  Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
-                </p>
-              </div>
+            <div className="p-6">
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
+              <p className="text-slate-50">
+                Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
+              </p>
+            </div>
+            
+            <div className="p-6">
+              <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
+              <p className="text-slate-50">
+                Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
+              </p>
             </div>
           </div>
         </div>
@@ -115,4 +114,3 @@ const Index = () => {
 };
 
 export default Index;
-
