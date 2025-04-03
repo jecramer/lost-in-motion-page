@@ -77,7 +77,7 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section - increased spacing from tagline */}
+            {/* Email Signup Section */}
             <div className="mt-24 mb-16">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
@@ -117,3 +117,4 @@ const Index = () => {
 };
 
 export default Index;
+
