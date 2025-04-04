@@ -84,15 +84,15 @@ const Index = () => {
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
               </div>
             </div>
-          </div>
           
-          {/* New Section with Custom Background Color */}
-          <div className="max-w-4xl mx-auto my-16">
-            <div className="bg-[#d5d197]/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-              <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
-              <p className="text-lg leading-relaxed">
-                Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
-              </p>
+            {/* New Section with Custom Background Color */}
+            <div className="max-w-4xl mx-auto my-4">
+              <div className="bg-[#d5d197]/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+                <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
+                <p className="text-lg leading-relaxed">
+                  Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -101,3 +101,4 @@ const Index = () => {
 };
 
 export default Index;
+
