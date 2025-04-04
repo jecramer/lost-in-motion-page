@@ -17,6 +17,13 @@ const Navbar = () => {
 
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
+          <Link 
+            to="/investors" 
+            className="text-white font-newsreader hover:text-slate-200 transition-colors"
+          >
+            Investors
+          </Link>
+          
           <a 
             href="https://getlosthq.substack.com/" 
             target="_blank" 
