@@ -78,7 +78,7 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section */}
+            {/* Email Signup Section - SINGLE INSTANCE */}
             <div className="mt-8 mb-8">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
@@ -88,8 +88,8 @@ const Index = () => {
 
             {/* Main Text Container - Wider with less opacity */}
             <div className="w-full flex justify-center mb-16">
-              <div className="container px-4 md:px-8">
-                <div className="bg-[#d5d197]/75 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+              <div className="container px-4 md:px-8 max-w-5xl">
+                <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                   <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
                   <p className="text-lg leading-relaxed">
                     Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
