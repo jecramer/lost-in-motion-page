@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -20,11 +19,17 @@ const phrases = [
 
 const Index = () => {
   useEffect(() => {
-    console.log('Video Background Path:', '/bg.mp4');
+    console.log('Background Image Path:', '/bg.png');
 
     // Additional diagnostic logging
     console.log('Window location:', window.location.href);
     console.log('Public path:', import.meta.env.PUBLIC_URL);
+
+    // Verify image exists
+    const img = new Image();
+    img.onload = () => console.log('Image loaded successfully');
+    img.onerror = e => console.error('Image failed to load', e);
+    img.src = '/bg.png';
 
     // Function to clean up existing LaunchList widgets
     const cleanupLaunchListWidgets = () => {
@@ -80,22 +85,13 @@ const Index = () => {
 
   return <>
       <Navbar />
-      <div className="min-h-screen w-full flex flex-col relative">
-        {/* Video background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/bg.mp4" type="video/mp4" />
-          {/* Fallback to image if video fails */}
-          Your browser does not support the video tag.
-        </video>
-        
-        {/* Content overlay */}
-        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center relative z-10">
+      <div className="min-h-screen w-full flex flex-col relative" style={{
+      backgroundImage: `url('/bg.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
           <div className="max-w-5xl w-full">
             <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left opacity-[0.92]">
               Get Lost
