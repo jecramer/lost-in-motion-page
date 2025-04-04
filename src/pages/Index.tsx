@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -102,7 +101,7 @@ const Index = () => {
             
             <div className="flex justify-end w-full">
               <p className="font-newsreader text-xl text-white opacity-[0.72] -mt-4 md:text-5xl">
-                Get Lost <CyclingTagline phrases={phrases} intervalTime={3000} />
+                <CyclingTagline phrases={phrases} intervalTime={3000} />
               </p>
             </div>
             
