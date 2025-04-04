@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -42,7 +43,8 @@ const Index = () => {
     const style = document.createElement('style');
     style.textContent = `
       .launchlist-widget input[type="email"] {
-        width: 100% !important;
+        width: 200% !important;
+        max-width: none !important;
         font-family: 'Newsreader', serif !important;
       }
       .launchlist-widget button {
@@ -78,7 +80,7 @@ const Index = () => {
             </p>
             
             {/* Email Signup Section - SINGLE INSTANCE */}
-            <div className="mt-8 mb-8">
+            <div className="mt-8 mb-8 w-full">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
