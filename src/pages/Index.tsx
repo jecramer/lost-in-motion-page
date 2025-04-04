@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -42,7 +43,8 @@ const Index = () => {
     const style = document.createElement('style');
     style.textContent = `
       .launchlist-widget input[type="email"] {
-        width: 100% !important;
+        width: 200% !important;
+        max-width: none !important;
         font-family: 'Newsreader', serif !important;
       }
       .launchlist-widget button {
