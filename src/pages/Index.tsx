@@ -65,9 +65,9 @@ const Index = () => {
       backgroundRepeat: 'no-repeat'
     }}>
         {/* Content */}
-        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col">
+        <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
           {/* Main Heading Area */}
-          <div className="max-w-5xl">
+          <div className="max-w-5xl w-full">
             <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
               Get Lost
             </h1>
@@ -78,7 +78,7 @@ const Index = () => {
             </p>
             
             {/* Email Signup Section */}
-            <div className="mt-24 mb-16">
+            <div className="mt-24 mb-8">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
@@ -86,8 +86,8 @@ const Index = () => {
             </div>
 
             {/* New Section with Custom Background Color */}
-            <div className="w-full flex justify-center">
-              <div className="max-w-4xl w-full my-4">
+            <div className="w-full flex justify-center mb-16">
+              <div className="max-w-4xl w-full">
                 <div className="bg-[#d5d197]/90 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                   <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
                   <p className="text-lg leading-relaxed">
