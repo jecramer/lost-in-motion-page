@@ -1,10 +1,15 @@
 
 import React from "react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  // Only show investors link if on the /investors route
+  const showInvestorsLink = location.pathname === '/investors';
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-black/30 backdrop-blur-sm z-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
@@ -17,12 +22,14 @@ const Navbar = () => {
 
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
-          <Link 
-            to="/investors" 
-            className="text-white font-newsreader hover:text-slate-200 transition-colors"
-          >
-            Investors
-          </Link>
+          {showInvestorsLink && (
+            <Link 
+              to="/investors" 
+              className="text-white font-newsreader hover:text-slate-200 transition-colors"
+            >
+              Investors
+            </Link>
+          )}
           
           <a 
             href="https://getlosthq.substack.com/" 
