@@ -6,7 +6,19 @@ import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const phrases = ["In Wonderland", "In Westeros", "In Pemberley", "In The Multiverse", "In Gothic Horror", "In The Cosmos", "In Mythology", "In Sonnets", "In Magical Realism", "In Dystopia", "In The Library", "In The Footnotes", "In A Whodunit", "In The Hero's Journey", "In The Classics", "In A Fairytale", "In Haikus", "In The Archives", "In A Cozy Mystery", "In The Unwritten Pages"];
+const phrases = [
+  "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
+  "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", 
+  "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", 
+  "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", 
+  "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", 
+  "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", 
+  "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", 
+  "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", 
+  "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", 
+  "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", 
+  "...In A Cozy Mystery", "...In The Unwritten Pages"
+];
 
 const Index = () => {
   useEffect(() => {
@@ -88,9 +100,11 @@ const Index = () => {
               Get Lost
             </h1>
             
-            <p className="font-newsreader text-xl text-white opacity-[0.72] -mt-4 md:text-5xl">
-              Turning distraction into discovery.
-            </p>
+            <div className="flex justify-end w-full">
+              <p className="font-newsreader text-xl text-white opacity-[0.72] -mt-4 md:text-5xl">
+                Get Lost <CyclingTagline phrases={phrases} intervalTime={3000} />
+              </p>
+            </div>
             
             <div className="mt-8 mb-0 w-full">
               <div className="max-w-md">
