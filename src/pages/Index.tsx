@@ -80,8 +80,8 @@ const Index = () => {
             </p>
             
             {/* Email Signup Section - SINGLE INSTANCE */}
-            <div className="mt-8 mb-8">
-              <div className="max-w-md">
+            <div className="mt-8 mb-8 w-full">
+              <div className="max-w-full">
                 <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
               </div>
@@ -154,3 +154,4 @@ const Index = () => {
 };
 
 export default Index;
+
