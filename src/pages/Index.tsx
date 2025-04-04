@@ -84,32 +84,6 @@ const Index = () => {
               </div>
             </div>
           </div>
-          
-          {/* Three Containers - Reduced margin and moved closer */}
-          <div className="flex-grow flex items-center justify-center w-full my-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center max-w-4xl mx-auto">
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Readers</h2>
-                <p className="text-slate-50">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui-tumsan saribh quismad tincidunt.
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Authors</h2>
-                <p className="text-slate-50">
-                  Lustcie iasem uriis eget, sec élementum libendum purus sels-cipit nul, quai, leleirer ultel sed.
-                </p>
-              </div>
-              
-              <div>
-                <h2 className="font-newsreader font-semibold text-2xl md:text-3xl text-white mb-4">Publishers</h2>
-                <p className="text-slate-50">
-                  Eloment ausque iliquet urat, Nam pulvinar ie ilvinar sec a ultricies seneset luc tus sem.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>;
