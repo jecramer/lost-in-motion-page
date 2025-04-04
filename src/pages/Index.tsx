@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -75,7 +76,7 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            <div className="mt-8 mb-4 w-full">
+            <div className="mt-8 mb-2 w-full">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4 opacity-[0.72]">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
@@ -144,3 +145,4 @@ const Index = () => {
 };
 
 export default Index;
+
