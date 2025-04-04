@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -86,15 +85,13 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Main Text Container - Wider with less opacity */}
-            <div className="w-full flex justify-center mb-16">
-              <div className="container px-4 md:px-8 max-w-5xl">
-                <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-                  <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
-                  <p className="text-lg leading-relaxed">
-                    Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
-                  </p>
-                </div>
+            {/* Main Text Container - Width matching the three containers below */}
+            <div className="w-full mb-16">
+              <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+                <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
+                <p className="text-lg leading-relaxed">
+                  Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
+                </p>
               </div>
             </div>
 
