@@ -22,25 +22,36 @@ const Index = () => {
     img.onerror = e => console.error('Image failed to load', e);
     img.src = '/bg.png';
 
-    // Re-initialize LaunchList widget if needed
-    if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
-      window.LaunchList.initializeWidgets();
-    } else {
-      console.log('Loading LaunchList widget script');
-      const script = document.createElement('script');
-      script.src = 'https://getlaunchlist.com/js/widget.js';
-      script.defer = true;
-      script.onload = () => {
-        console.log('LaunchList widget script loaded');
-        if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
-          window.LaunchList.initializeWidgets();
-        }
-      };
-      document.head.appendChild(script);
-    }
+    // Function to clean up existing LaunchList widgets
+    const cleanupLaunchListWidgets = () => {
+      // Remove any existing LaunchList widget scripts first
+      const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
+      existingScripts.forEach(script => script.remove());
+      
+      // Remove any existing LaunchList styles
+      const existingStyles = document.querySelectorAll('style[data-launchlist]');
+      existingStyles.forEach(style => style.remove());
+    };
+    
+    // Clean up before initializing
+    cleanupLaunchListWidgets();
+
+    // Initialize LaunchList widget
+    console.log('Loading LaunchList widget script');
+    const script = document.createElement('script');
+    script.src = 'https://getlaunchlist.com/js/widget.js';
+    script.defer = true;
+    script.onload = () => {
+      console.log('LaunchList widget script loaded');
+      if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+        window.LaunchList.initializeWidgets();
+      }
+    };
+    document.head.appendChild(script);
 
     // Add custom CSS for LaunchList widget styling
     const style = document.createElement('style');
+    style.setAttribute('data-launchlist', 'true');
     style.textContent = `
       .launchlist-widget input[type="email"] {
         width: 200% !important;
@@ -56,6 +67,11 @@ const Index = () => {
       }
     `;
     document.head.appendChild(style);
+    
+    // Cleanup function for effect
+    return () => {
+      cleanupLaunchListWidgets();
+    };
   }, []);
 
   return <>
@@ -76,7 +92,7 @@ const Index = () => {
               Turning distraction into discovery.
             </p>
             
-            <div className="mt-8 mb-2 w-full">
+            <div className="mt-8 mb-0 w-full">
               <div className="max-w-md">
                 <p className="text-white text-xl md:text-2xl mb-4 opacity-[0.72]">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
@@ -145,4 +161,3 @@ const Index = () => {
 };
 
 export default Index;
-
