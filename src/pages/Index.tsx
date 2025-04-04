@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import { Button } from "@/components/ui/button";
@@ -66,46 +65,39 @@ const Index = () => {
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
-        {/* Content */}
         <div className="container mx-auto flex-1 pt-16 md:pt-24 px-4 md:px-8 flex flex-col items-center">
-          {/* Main Heading Area */}
           <div className="max-w-5xl w-full">
-            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left">
+            <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg text-left opacity-[0.92]">
               Get Lost
             </h1>
             
-            {/* Tagline */}
-            <p className="font-newsreader text-xl text-white opacity-80 -mt-4 md:text-5xl">
+            <p className="font-newsreader text-xl text-white opacity-[0.72] -mt-4 md:text-5xl">
               Turning distraction into discovery.
             </p>
             
-            {/* Email Signup Section - SINGLE INSTANCE */}
-            <div className="mt-8 mb-8 w-full">
+            <div className="mt-8 mb-4 w-full">
               <div className="max-w-md">
-                <p className="text-white text-xl md:text-2xl mb-4">Get notified when our site goes live</p>
+                <p className="text-white text-xl md:text-2xl mb-4 opacity-[0.72]">Get notified when our site goes live</p>
                 <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
               </div>
             </div>
 
-            {/* Main Text Container - Width matching the three containers below */}
             <div className="w-full mb-16">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-                <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center">A New Chapter in Book Discovery</h2>
-                <p className="text-lg leading-relaxed">
+                <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center opacity-[0.92]">A New Chapter in Book Discovery</h2>
+                <p className="text-lg leading-relaxed opacity-[0.84]">
                   Welcome to Get Lost, the only platform built to connect readers, authors, creators, and publishers in one vibrant, evolving literary ecosystem. Whether you're here to track your reading, discover something unforgettable, grow your audience, or market the next bestseller, this is where your story continues.
                 </p>
               </div>
             </div>
 
-            {/* Three Info Containers */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-              {/* Container 1: For Readers */}
               <Card className="bg-[#d5d197]/75 backdrop-blur-sm border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="font-newsreader text-2xl font-semibold text-center">For Readers</CardTitle>
+                  <CardTitle className="font-newsreader text-2xl font-semibold text-center opacity-[0.92]">For Readers</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc pl-6 space-y-2">
+                  <ul className="list-disc pl-6 space-y-2 opacity-[0.84]">
                     <li>Track your progress with elegant, distraction-free tools</li>
                     <li>Find books by mood, theme, or vibe</li>
                     <li>Join Neighbourhoods - micro-communities for niche genres, authors, and fandoms</li>
@@ -115,13 +107,12 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              {/* Container 2: For Authors & Creators */}
               <Card className="bg-[#d5d197]/75 backdrop-blur-sm border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="font-newsreader text-2xl font-semibold text-center">For Authors & Creators</CardTitle>
+                  <CardTitle className="font-newsreader text-2xl font-semibold text-center opacity-[0.92]">For Authors & Creators</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc pl-6 space-y-2">
+                  <ul className="list-disc pl-6 space-y-2 opacity-[0.84]">
                     <li>Curate your own bookstore and get paid for every book sold</li>
                     <li>Match with readers who share your vibe from the moment they sign up</li>
                     <li>Offer exclusive content or subscriptions, Patreon-style</li>
@@ -131,13 +122,12 @@ const Index = () => {
                 </CardContent>
               </Card>
               
-              {/* Container 3: For Publishers */}
               <Card className="bg-[#d5d197]/75 backdrop-blur-sm border-0 shadow-lg">
                 <CardHeader>
-                  <CardTitle className="font-newsreader text-2xl font-semibold text-center">For Publishers</CardTitle>
+                  <CardTitle className="font-newsreader text-2xl font-semibold text-center opacity-[0.92]">For Publishers</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc pl-6 space-y-2">
+                  <ul className="list-disc pl-6 space-y-2 opacity-[0.84]">
                     <li>Psychographic segmentation to identify reader types</li>
                     <li>Real-time sentiment analysis to test hooks, titles, and campaigns</li>
                     <li>First-party data from readers who share what they love</li>
