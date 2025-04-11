@@ -22,7 +22,11 @@ const MarketComparison = () => {
           </p>
           
           <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden mx-auto" style={{ maxWidth: "600px", height: "280px" }}>
-            {/* Placeholder for chart or image */}
+            <img 
+              src="/lovable-uploads/46d12ee8-197c-4ef1-86da-4efaf05731a0.png" 
+              alt="Market Comparison Pie Chart" 
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>
