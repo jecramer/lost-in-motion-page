@@ -113,11 +113,11 @@ const Investors = () => {
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
-                    {[1, 2, 3, 4, 5].map((item) => (
-                      <CarouselItem key={item} className="pl-4 sm:basis-1/2 lg:basis-1/3 md:basis-1/3">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                      <CarouselItem key={index} className="pl-4 sm:basis-1/3 lg:basis-1/4 md:basis-1/3">
                         <Card className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden">
                           <CardContent className="p-0">
-                            <div className="aspect-[2/1] w-full" />
+                            <div className="aspect-[3/2] w-full" />
                           </CardContent>
                         </Card>
                       </CarouselItem>
