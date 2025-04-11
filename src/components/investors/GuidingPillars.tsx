@@ -30,7 +30,14 @@ const GuidingPillars = () => {
                   />
                 </AspectRatio>
               </Card>
-              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
+              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+                <AspectRatio ratio={1/1}>
+                  <img 
+                    src="/lovable-uploads/5046d8a3-9dc0-477c-b8bd-cd1da525ed33.png" 
+                    alt="The Twitch of Books" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </Card>
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
               </Card>
