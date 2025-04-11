@@ -13,7 +13,7 @@ const OdinSection = () => {
           
           <div className="flex justify-center mb-12">
             <img 
-              src="/lovable-uploads/cb0a4a4c-c4ec-40a0-9879-eecfca19e7ae.png" 
+              src="/lovable-uploads/fe0956aa-84d5-4b26-9f27-48dbadcbdf35.png" 
               alt="ODIN Logo" 
               className="h-10"
             />
