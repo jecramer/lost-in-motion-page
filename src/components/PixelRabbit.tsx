@@ -1,13 +1,35 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PixelRabbit: React.FC = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleClick = () => {
     navigate("/investors");
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled to bottom
+      const scrolledToBottom = 
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+      
+      setIsVisible(scrolledToBottom);
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+    
+    // Initial check
+    handleScroll();
+    
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!isVisible) return null;
 
   return (
     <div 
