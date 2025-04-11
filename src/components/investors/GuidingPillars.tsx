@@ -21,7 +21,14 @@ const GuidingPillars = () => {
                   />
                 </AspectRatio>
               </Card>
-              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
+              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+                <AspectRatio ratio={1/1}>
+                  <img 
+                    src="/lovable-uploads/73f6d14d-d760-433b-9df1-c34528dfef26.png" 
+                    alt="Recommendation Engine" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </Card>
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
               </Card>
