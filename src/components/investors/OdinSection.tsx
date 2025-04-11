@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -9,7 +8,7 @@ const OdinSection = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-black">Join the Deal On</h2>
           
           <div className="flex justify-center mb-12">
-            <img alt="ODIN Logo" className="h-24" src="/lovable-uploads/fe0956aa-84d5-4b26-9f27-48dbadcbdf35.png" />
+            <img alt="ODIN Logo" className="h-72" src="/lovable-uploads/fe0956aa-84d5-4b26-9f27-48dbadcbdf35.png" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -45,4 +44,3 @@ const OdinSection = () => {
 };
 
 export default OdinSection;
-
