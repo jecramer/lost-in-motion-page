@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const GuidingPillars = () => {
   return (
@@ -11,7 +12,14 @@ const GuidingPillars = () => {
           
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2 grid grid-cols-2 gap-4">
-              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
+              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+                <AspectRatio ratio={1/1}>
+                  <img 
+                    src="/lovable-uploads/a093a8fa-a562-4898-ab2b-d5f3f139e38d.png" 
+                    alt="Community" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </Card>
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
               </Card>
