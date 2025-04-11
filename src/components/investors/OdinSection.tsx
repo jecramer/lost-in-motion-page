@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const OdinSection = () => {
   return <div className="w-full py-20 bg-white">
@@ -15,15 +14,7 @@ const OdinSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <div className="w-full max-w-sm aspect-[4/5] overflow-hidden rounded-lg">
-                <AspectRatio ratio={4/5} className="w-full h-full">
-                  <img 
-                    src="/lovable-uploads/e9245431-a1a9-4a41-852f-c6de03edb7e7.png" 
-                    alt="Community" 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </AspectRatio>
-              </div>
+              <Card className="w-full max-w-sm aspect-[4/5] bg-gray-200 border-none shadow-none"></Card>
             </div>
             
             <div className="space-y-4">
