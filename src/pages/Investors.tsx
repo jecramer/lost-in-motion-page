@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -16,14 +15,12 @@ const phrases = ["...in a Story", "...in a Dream", "...in a World", "...in Time"
 const Investors = () => {
   const carouselRef = useRef<any>(null);
 
-  // Auto scroll effect for the carousel
   useEffect(() => {
-    // Set up interval for auto scrolling
     const interval = setInterval(() => {
       if (carouselRef.current && carouselRef.current.api) {
         carouselRef.current.api.scrollNext();
       }
-    }, 5000); // Very slow autoscroll - 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -56,29 +53,22 @@ const Investors = () => {
               </div>
             </div>
             
-            {/* Guiding Pillars Section */}
             <div className="w-full mb-16">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                 <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
                 
                 <div className="flex flex-col md:flex-row gap-8">
-                  {/* Left side - 4 equal boxes in a grid */}
                   <div className="md:w-1/2 grid grid-cols-2 gap-4">
                     <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-                      {/* Box 1 content */}
                     </Card>
                     <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-                      {/* Box 2 content */}
                     </Card>
                     <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-                      {/* Box 3 content */}
                     </Card>
                     <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
-                      {/* Box 4 content */}
                     </Card>
                   </div>
                   
-                  {/* Right side - Text block */}
                   <div className="md:w-1/2">
                     <div className="space-y-4">
                       <p className="text-lg leading-relaxed opacity-[0.84] font-normal">
@@ -100,10 +90,15 @@ const Investors = () => {
           </div>
         </div>
         
-        {/* Archetypes Section - Full width with lime green background */}
-        <div className="w-full bg-[#A9BE4C] py-16">
+        <div className="w-full py-16" style={{
+          backgroundImage: `url('/bg.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}>
           <div className="container mx-auto px-4 md:px-8">
-            <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92]">Archetypes</h2>
+            <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Archetypes</h2>
             
             <Carousel
               ref={carouselRef}
@@ -129,7 +124,7 @@ const Investors = () => {
               <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10" />
             </Carousel>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-white">
               <div className="space-y-2">
                 <p className="text-base leading-relaxed opacity-[0.84] font-normal">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
