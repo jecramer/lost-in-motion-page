@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import Roadmap from "@/components/roadmap/Roadmap";
 
 const phrases = [
   "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"
@@ -290,6 +291,25 @@ const Investors = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="w-full py-20" style={{
+        backgroundImage: `url('/bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-newsreader font-semibold text-4xl mb-10 text-white">Product & Company Roadmap</h2>
+            <p className="text-white text-lg mb-8 opacity-[0.84]">
+              Our roadmap outlines key milestones across three funding stages. Each milestone represents strategic objectives we'll achieve with the capital raised. You can edit and add milestones to tailor this presentation to your investor pitch.
+            </p>
+            
+            <Roadmap />
           </div>
         </div>
       </div>
