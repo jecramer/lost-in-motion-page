@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +14,20 @@ import {
 const phrases = ["...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"];
 
 const Investors = () => {
+  const carouselRef = useRef<any>(null);
+
+  // Auto scroll effect for the carousel
+  useEffect(() => {
+    // Set up interval for auto scrolling
+    const interval = setInterval(() => {
+      if (carouselRef.current && carouselRef.current.api) {
+        carouselRef.current.api.scrollNext();
+      }
+    }, 5000); // Very slow autoscroll - 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return <>
       <Navbar />
       <div className="min-h-screen w-full flex flex-col relative" style={{
@@ -86,20 +100,22 @@ const Investors = () => {
             
             {/* New Archetypes Carousel Section */}
             <div className="w-full mb-16">
-              <div className="bg-[#adc356] rounded-lg p-8 shadow-lg">
-                <h2 className="font-newsreader font-semibold text-4xl mb-8 text-black opacity-[0.92]">Archetypes</h2>
+              <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg relative">
+                <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92]">Archetypes</h2>
                 
                 <Carousel
+                  ref={carouselRef}
                   opts={{
                     align: "start",
                     loop: true,
+                    containScroll: false,
                   }}
                   className="w-full"
                 >
                   <CarouselContent className="-ml-4">
                     {[1, 2, 3, 4, 5].map((item) => (
-                      <CarouselItem key={item} className="pl-4 sm:basis-1/2 lg:basis-1/3">
-                        <Card className="bg-gray-300/80 backdrop-blur-sm rounded-lg overflow-hidden">
+                      <CarouselItem key={item} className="pl-4 sm:basis-1/2 lg:basis-1/3 md:basis-1/3">
+                        <Card className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden">
                           <CardContent className="p-0">
                             <div className="aspect-[2/1] w-full" />
                           </CardContent>
@@ -107,10 +123,8 @@ const Investors = () => {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <div className="flex justify-end gap-2 mt-2">
-                    <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-white/20 backdrop-blur-sm hover:bg-white/30" />
-                    <CarouselNext className="relative static left-0 right-0 translate-y-0 bg-white/20 backdrop-blur-sm hover:bg-white/30" />
-                  </div>
+                  <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10" />
+                  <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10" />
                 </Carousel>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
