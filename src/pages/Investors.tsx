@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -12,7 +11,9 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
-const phrases = ["...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"];
+const phrases = [
+  "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"
+];
 
 const Investors = () => {
   const carouselRef = useRef<any>(null);
@@ -147,6 +148,27 @@ const Investors = () => {
               <p className="text-base leading-relaxed opacity-[0.84] font-normal">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="w-full py-20" style={{
+        backgroundColor: "#9EB63B",
+      }}>
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
+              <span className="font-bold">Wattpad</span> and <span className="font-bold">Inkitt</span> have saturated the Romantasy genre
+              and their user growth in Western markets is in decline.
+            </p>
+            <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-12 leading-tight">
+              <span className="font-bold">Get Lost</span> will capture the 1.7bn readers they 
+              have left behind.
+            </p>
+            
+            <div className="bg-gray-200 rounded-lg overflow-hidden mx-auto" style={{ maxWidth: "600px", height: "280px" }}>
+              {/* Placeholder for chart or image */}
             </div>
           </div>
         </div>
