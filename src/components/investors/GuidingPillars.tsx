@@ -39,6 +39,8 @@ const GuidingPillars = () => {
                   />
                 </AspectRatio>
               </Card>
+              <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg p-4 shadow-sm">
+              </Card>
             </div>
             
             <div className="md:w-1/2">
@@ -53,4 +55,3 @@ const GuidingPillars = () => {
 };
 
 export default GuidingPillars;
-
