@@ -2,7 +2,14 @@
 import React from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const phrases = ["...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"];
 
@@ -35,7 +42,7 @@ const Investors = () => {
               </div>
             </div>
             
-            {/* New Guiding Pillars Section */}
+            {/* Guiding Pillars Section */}
             <div className="w-full mb-16">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
                 <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
@@ -72,6 +79,57 @@ const Investors = () => {
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
                       </p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* New Archetypes Carousel Section */}
+            <div className="w-full mb-16">
+              <div className="bg-[#adc356] rounded-lg p-8 shadow-lg">
+                <h2 className="font-newsreader font-semibold text-4xl mb-8 text-black opacity-[0.92]">Archetypes</h2>
+                
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-4">
+                    {[1, 2, 3, 4, 5].map((item) => (
+                      <CarouselItem key={item} className="pl-4 sm:basis-1/2 lg:basis-1/3">
+                        <Card className="bg-gray-300/80 backdrop-blur-sm rounded-lg overflow-hidden">
+                          <CardContent className="p-0">
+                            <div className="aspect-[2/1] w-full" />
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-end gap-2 mt-2">
+                    <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-white/20 backdrop-blur-sm hover:bg-white/30" />
+                    <CarouselNext className="relative static left-0 right-0 translate-y-0 bg-white/20 backdrop-blur-sm hover:bg-white/30" />
+                  </div>
+                </Carousel>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                  <div className="space-y-2">
+                    <p className="text-base leading-relaxed opacity-[0.84] font-normal">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <p className="text-base leading-relaxed opacity-[0.84] font-normal">
+                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <p className="text-base leading-relaxed opacity-[0.84] font-normal">
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                    </p>
                   </div>
                 </div>
               </div>
