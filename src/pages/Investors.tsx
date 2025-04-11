@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -55,7 +56,7 @@ const Investors = () => {
           </div>
           
           <div className="w-full mb-16">
-            <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+            <div>
               <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
               
               <div className="flex flex-col md:flex-row gap-8">
