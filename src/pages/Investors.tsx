@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -9,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
 const phrases = ["...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", "...In A Cozy Mystery", "...In The Unwritten Pages"];
 
@@ -110,8 +112,8 @@ const Investors = () => {
               className="w-full"
             >
               <CarouselContent className="-ml-4">
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
                     <Card className="bg-white/90 rounded-lg overflow-hidden shadow-sm">
                       <CardContent className="p-0">
                         <div className="aspect-[3/2] w-full" />
@@ -120,8 +122,12 @@ const Investors = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10" />
-              <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10" />
+              <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10 flex items-center justify-center">
+                <ArrowBigLeft className="h-6 w-6 text-white" />
+              </CarouselPrevious>
+              <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10 flex items-center justify-center">
+                <ArrowBigRight className="h-6 w-6 text-white" />
+              </CarouselNext>
             </Carousel>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-white">
