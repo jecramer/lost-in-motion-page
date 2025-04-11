@@ -9,20 +9,8 @@ const OdinSection = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-black">Join the Deal On</h2>
           
           <div className="flex justify-center mb-12">
-            <img alt="ODIN Logo" className="h-10" src="/lovable-uploads/9b485bc4-6f74-40b2-b9be-56ffb78fcbd0.png" />
+            <img alt="ODIN Logo" className="h-10" src="/lovable-uploads/fe0956aa-84d5-4b26-9f27-48dbadcbdf35.png" />
           </div>
-          
-          {/* Google Calendar Appointment Scheduling begin */}
-          <div className="mb-8">
-            <iframe 
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ03PtFhPh0nDyZ1w1_i_kcSMejp4SjqgX4ltexJdqbi9V882NqYUIRgY8ioAn8F8TCWxe-SsuyJ?gv=true" 
-              style={{ border: 0 }} 
-              width="100%" 
-              height="600" 
-              frameBorder="0"
-            ></iframe>
-          </div>
-          {/* end Google Calendar Appointment Scheduling */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
@@ -39,9 +27,22 @@ const OdinSection = () => {
               </p>
             </div>
           </div>
+
+          {/* Google Calendar Appointment Scheduling begin */}
+          <div className="mb-8 mt-12">
+            <iframe 
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ03PtFhPh0nDyZ1w1_i_kcSMejp4SjqgX4ltexJdqbi9V882NqYUIRgY8ioAn8F8TCWxe-SsuyJ?gv=true" 
+              style={{ border: 0 }} 
+              width="100%" 
+              height="600" 
+              frameBorder="0"
+            ></iframe>
+          </div>
+          {/* end Google Calendar Appointment Scheduling */}
         </div>
       </div>
     </div>;
 };
 
 export default OdinSection;
+
