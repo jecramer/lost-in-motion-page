@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -310,6 +311,45 @@ const Investors = () => {
             </p>
             
             <Roadmap />
+          </div>
+        </div>
+      </div>
+      
+      {/* New Deal Section */}
+      <div className="w-full py-20" style={{
+        backgroundImage: `url('/bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}>
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-newsreader font-bold text-5xl mb-12 text-center text-white">Join the Deal On...</h2>
+            
+            <div className="flex justify-center mb-12">
+              <img 
+                src="/lovable-uploads/1ac88cfe-a76b-479a-aef6-365d12e4bf33.png" 
+                alt="ODIN" 
+                className="h-12 md:h-16"
+              />
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="w-full md:w-1/3">
+                <div className="bg-gray-300 rounded-lg aspect-[4/5] w-full"></div>
+              </div>
+              
+              <div className="w-full md:w-2/3">
+                <p className="text-white text-base md:text-lg leading-relaxed opacity-[0.84]">
+                  ed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                  ab illo inventore veritatis et quasi ed ut perspiciatis unde omnis iste natus
+                  error sit voluptatem accusantium doloremque laudantium, totam rem
+                  aperiam
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
