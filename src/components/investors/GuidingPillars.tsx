@@ -10,8 +10,8 @@ const GuidingPillars = () => {
         <div className="max-w-5xl mx-auto">
           <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
           
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2 grid grid-cols-2 gap-6">
+          <div className="flex flex-col gap-8">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
@@ -49,11 +49,6 @@ const GuidingPillars = () => {
                 </AspectRatio>
               </Card>
             </div>
-            
-            <div className="md:w-1/2">
-              <div className="space-y-4">
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -62,4 +57,3 @@ const GuidingPillars = () => {
 };
 
 export default GuidingPillars;
-
