@@ -1,8 +1,6 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 // Content for each pillar
 const pillarsContent = [
@@ -84,8 +82,8 @@ const GuidingPillars = () => {
             </div>
             
             {/* Content area - Right side, aligned with top of image */}
-            <div className="flex flex-col space-y-6">
-              <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+            <div className="flex flex-col justify-start h-full">
+              <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg h-full">
                 <h3 className="text-2xl font-medium mb-4">{activeContent.title}</h3>
                 <p className="text-base opacity-90 leading-relaxed">
                   {activeContent.description}
