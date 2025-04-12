@@ -37,6 +37,9 @@ const GuidingPillars = () => {
 
   // Find the active pillar content
   const activeContent = pillarsContent.find(pillar => pillar.id === activePillar) || pillarsContent[0];
+  
+  // Filter out the active pillar to show only non-active pillars as thumbnails
+  const thumbnailPillars = pillarsContent.filter(pillar => pillar.id !== activePillar);
 
   return (
     <div className="w-full mb-16">
@@ -45,7 +48,7 @@ const GuidingPillars = () => {
           <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Main content area */}
+            {/* Main content area - Left side */}
             <div className="flex flex-col space-y-4">
               {/* Main image */}
               <Card className="w-full aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
@@ -58,15 +61,13 @@ const GuidingPillars = () => {
                 </AspectRatio>
               </Card>
               
-              {/* Thumbnail images */}
+              {/* Thumbnail images - only showing non-active pillars */}
               <div className="grid grid-cols-3 gap-4">
-                {pillarsContent.map((pillar) => (
+                {thumbnailPillars.map((pillar) => (
                   <button
                     key={pillar.id}
                     onClick={() => setActivePillar(pillar.id)}
-                    className={`relative p-0 border-0 focus:outline-none ${
-                      pillar.id === activePillar ? "ring-2 ring-white/50" : ""
-                    }`}
+                    className="relative p-0 border-0 focus:outline-none hover:ring-2 hover:ring-white/50"
                   >
                     <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                       <AspectRatio ratio={1/1}>
@@ -82,8 +83,8 @@ const GuidingPillars = () => {
               </div>
             </div>
             
-            {/* Content area */}
-            <div className="flex flex-col space-y-6 justify-center">
+            {/* Content area - Right side, vertically centered */}
+            <div className="flex flex-col justify-center space-y-6">
               <h3 className="text-2xl font-medium">{activeContent.title}</h3>
               <p className="text-base opacity-90 leading-relaxed">
                 {activeContent.description}
