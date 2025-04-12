@@ -85,10 +85,12 @@ const GuidingPillars = () => {
             
             {/* Content area - Right side, aligned with top of image */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-2xl font-medium">{activeContent.title}</h3>
-              <p className="text-base opacity-90 leading-relaxed">
-                {activeContent.description}
-              </p>
+              <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+                <h3 className="text-2xl font-medium mb-4">{activeContent.title}</h3>
+                <p className="text-base opacity-90 leading-relaxed">
+                  {activeContent.description}
+                </p>
+              </div>
             </div>
           </div>
         </div>
