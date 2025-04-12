@@ -15,7 +15,7 @@ const GuidingPillars = () => {
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
-                    src="/lovable-uploads/a093a8fa-a562-4898-ab2b-d5f3f139e38d.png" 
+                    src="/lovable-uploads/662d8b7a-6cb6-416b-a590-94b64b898796.png" 
                     alt="Community" 
                     className="w-full h-full object-cover"
                   />
