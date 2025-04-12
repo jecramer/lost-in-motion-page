@@ -48,7 +48,13 @@ const ArchetypesCarousel = () => {
               <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
                 <Card className="bg-white/90 rounded-lg overflow-hidden shadow-sm">
                   <CardContent className="p-0">
-                    <div className="aspect-[3/2] w-full" />
+                    <div className="aspect-[3/2] w-full">
+                      <img 
+                        src="/lovable-uploads/dd37e1a9-e973-44cb-ad31-25894f1bd9f8.png" 
+                        alt="Erica Terranova, Head of Growth @ Moomin Characters" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </CarouselItem>
