@@ -42,7 +42,7 @@ const GuidingPillars = () => {
               <Card className="aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
-                    src="/lovable-uploads/16fa3cf1-527e-410f-82d9-98011c660636.png" 
+                    src="/lovable-uploads/bfdf6284-07b9-47e0-9e48-bf6a47ab379e.png" 
                     alt="C25K for Books" 
                     className="w-full h-full object-cover"
                   />
