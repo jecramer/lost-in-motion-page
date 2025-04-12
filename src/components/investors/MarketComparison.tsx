@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const MarketComparison = () => {
@@ -21,7 +20,7 @@ const MarketComparison = () => {
             have left behind.
           </p>
           
-          <div className="mx-auto" style={{ maxWidth: "900px" }}>
+          <div className="mx-auto" style={{ maxWidth: "1125px" }}>
             <img 
               src="/lovable-uploads/46d12ee8-197c-4ef1-86da-4efaf05731a0.png" 
               alt="Market Comparison Pie Chart" 
