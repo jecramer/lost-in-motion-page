@@ -21,7 +21,7 @@ const MarketComparison = () => {
             have left behind.
           </p>
           
-          <div className="mx-auto" style={{ maxWidth: "1125px" }}>
+          <div className="mx-auto" style={{ maxWidth: "843px" }}>
             <img 
               src="/lovable-uploads/f0703492-ee56-410f-ae81-2515cf0c3330.png" 
               alt="Market Comparison Pie Chart" 
@@ -35,3 +35,4 @@ const MarketComparison = () => {
 };
 
 export default MarketComparison;
+
