@@ -2,6 +2,29 @@
 import React from "react";
 
 const TeamSection = () => {
+  const teamImages = [
+    {
+      src: "/lovable-uploads/fe0956aa-84d5-4b26-9f27-48dbadcbdf35.png",
+      alt: "Team Member 1"
+    },
+    {
+      src: "/lovable-uploads/cb94ddf7-29a4-46a4-b3d7-888ef998bd8a.png", 
+      alt: "Team Member 2"
+    },
+    {
+      src: "/lovable-uploads/73f6d14d-d760-433b-9df1-c34528dfef26.png",
+      alt: "Team Member 3"
+    },
+    {
+      src: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
+      alt: "Team Member 4"
+    },
+    {
+      src: "/lovable-uploads/ce39e4e3-80ae-4f5b-ab26-c8949868315d.png",
+      alt: "Team Member 5"
+    },
+  ];
+
   return (
     <div className="w-full py-20" style={{
       backgroundImage: `url('/bg.png')`,
@@ -15,9 +38,13 @@ const TeamSection = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-white">The Get Lost Team</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index} className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
-                <div className="aspect-[3/4] w-full"></div>
+            {teamImages.map((image, index) => (
+              <div key={index} className="rounded-lg overflow-hidden shadow-[0_4px_8px_#0006]">
+                <img 
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto"
+                />
               </div>
             ))}
           </div>

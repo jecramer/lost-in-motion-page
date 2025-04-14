@@ -33,11 +33,11 @@ const AdvisorsSection = () => {
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {advisorImages.map((image, index) => (
-                <div key={index} className="rounded-lg shadow-lg overflow-hidden">
+                <div key={index} className="rounded-lg overflow-hidden shadow-[0_4px_8px_#0006]">
                   <img 
                     src={image.src}
                     alt={image.alt}
-                    className="w-full"
+                    className="w-full h-auto"
                   />
                 </div>
               ))}
