@@ -13,12 +13,13 @@ const MarketComparison = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight text-white">
-            <span className="font-bold">Wattpad</span> and <span className="font-bold">Inkitt</span> have saturated the Romantasy genre
-            and their user growth in Western markets is in decline.
+            <span className="font-bold">The Vertical Is Saturated. The Market Isn't.</span>
           </p>
-          <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-12 leading-tight text-white">
-            <span className="font-bold">Get Lost</span> will capture the 1.7bn readers they 
-            have left behind.
+          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-6 leading-tight text-white">
+            Wattpad and Inkitt have peaked in Tier 1 markets, with growth now limited to harder-to-monetise regions and a single, overplayed genre.
+          </p>
+          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-12 leading-tight text-white">
+            <span className="font-bold">Get Lost</span> is building the next chapter - a genre-agnostic, creator-first platform playing for the 1.7 billion readers still unclaimed.
           </p>
           
           <div className="mx-auto" style={{ maxWidth: "843px" }}>
@@ -35,4 +36,3 @@ const MarketComparison = () => {
 };
 
 export default MarketComparison;
-
