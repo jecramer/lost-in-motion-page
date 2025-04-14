@@ -1,7 +1,24 @@
 
 import React from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { cn } from "@/lib/utils";
 
 const AdvisorsSection = () => {
+  const advisorImages = [
+    {
+      src: "/lovable-uploads/e64a7f15-d198-4f7d-b46a-9a7ed4406a65.png",
+      alt: "Advisor 1"
+    },
+    {
+      src: "/lovable-uploads/1c1fc435-d40d-435b-9f81-cd9d29212bd2.png",
+      alt: "Advisor 2"
+    },
+    {
+      src: "/lovable-uploads/0bd4948e-41be-4031-a9c7-5d05b5d73949.png",
+      alt: "Advisor 3"
+    }
+  ];
+
   return (
     <div className="w-full py-20" style={{
       backgroundImage: `url('/bg.png')`,
@@ -16,21 +33,19 @@ const AdvisorsSection = () => {
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <img 
-                src="/lovable-uploads/e64a7f15-d198-4f7d-b46a-9a7ed4406a65.png" 
-                alt="Advisor 1" 
-                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
-              />
-              <img 
-                src="/lovable-uploads/1c1fc435-d40d-435b-9f81-cd9d29212bd2.png" 
-                alt="Advisor 2" 
-                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
-              />
-              <img 
-                src="/lovable-uploads/0bd4948e-41be-4031-a9c7-5d05b5d73949.png" 
-                alt="Advisor 3" 
-                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
-              />
+              {advisorImages.map((image, index) => (
+                <div key={index} className="w-full overflow-hidden rounded-lg shadow-lg">
+                  <AspectRatio ratio={3/4} className="bg-white/10">
+                    <img 
+                      src={image.src}
+                      alt={image.alt}
+                      className={cn(
+                        "w-full h-full object-cover",
+                      )}
+                    />
+                  </AspectRatio>
+                </div>
+              ))}
             </div>
             
             <div className="md:w-1/2">
