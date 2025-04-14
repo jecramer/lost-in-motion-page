@@ -45,7 +45,15 @@ const RevenueSection = () => {
         <div 
           className="max-w-5xl mx-auto bg-white/30 backdrop-blur-sm p-10 rounded-lg shadow-lg" 
         >
-          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-black">Revenue Potential - 5 Year Horizon</h2>
+          <h2 className="font-newsreader font-semibold text-4xl mb-6 text-center text-black">Revenue Potential - 5 Year Horizon</h2>
+          
+          <div className="max-w-4xl mx-auto mb-12 text-center text-black">
+            <p className="text-lg">
+              Our financial projections show substantial growth potential over the next five years.
+              We've carefully modeled our user acquisition costs against projected revenue streams
+              to demonstrate the path to profitability and scale.
+            </p>
+          </div>
           
           <div className="mx-auto" style={{ maxWidth: "900px", height: "500px" }}>
             <ChartContainer config={chartConfig} className="h-full">
@@ -117,4 +125,3 @@ const RevenueSection = () => {
 };
 
 export default RevenueSection;
-
