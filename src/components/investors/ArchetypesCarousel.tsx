@@ -69,20 +69,29 @@ const archetypes: ArchetypeData[] = [
 const ArchetypesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = archetypes.length;
-  const itemsToShow = () => {
-    if (window.innerWidth <= 480) return 1;
-    if (window.innerWidth <= 768) return 2;
-    if (window.innerWidth <= 1024) return 3;
-    return 4;
-  };
+  const [itemsToShow, setItemsToShow] = useState(4);
+  
+  // Update items to show based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) setItemsToShow(1);
+      else if (window.innerWidth <= 768) setItemsToShow(2);
+      else if (window.innerWidth <= 1024) setItemsToShow(3);
+      else setItemsToShow(4);
+    };
 
-  // Clone the first few items to create a seamless loop
-  const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow())];
+    handleResize(); // Initialize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Clone items to create a seamless loop
+  const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => {
-        // When we reach the end, quickly reset to 0 without animation
+        // Loop back to start when we reach the end
         if (prevIndex >= totalItems - 1) {
           return 0;
         }
@@ -108,7 +117,7 @@ const ArchetypesCarousel = () => {
           <div 
             className="carousel-track" 
             style={{ 
-              transform: `translateX(-${currentIndex * (100 / itemsToShow())}%)` 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` 
             }}
           >
             {allItems.map((archetype, index) => (
