@@ -47,8 +47,8 @@ const ArchetypesCarousel = () => {
               <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
                 <div className="aspect-[3/2] w-full">
                   <img 
-                    src="/lovable-uploads/dd37e1a9-e973-44cb-ad31-25894f1bd9f8.png" 
-                    alt="Erica Terranova, Head of Growth @ Moomin Characters" 
+                    src="/lovable-uploads/3b0f1ea6-361c-40b5-b399-00453830c84e.png" 
+                    alt="Joakim Achrén, General Partner @ F4 Fund" 
                     className="w-full h-full object-cover"
                   />
                 </div>
