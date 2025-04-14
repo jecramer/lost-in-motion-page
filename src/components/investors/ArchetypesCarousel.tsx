@@ -70,6 +70,7 @@ const ArchetypesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = archetypes.length;
   const [itemsToShow, setItemsToShow] = useState(4);
+  const [isResetting, setIsResetting] = useState(false);
   
   // Update items to show based on screen size
   useEffect(() => {
@@ -85,22 +86,33 @@ const ArchetypesCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Clone items to create a seamless loop
+  // Clone items to create a seamless loop effect
   const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        // Loop back to start when we reach the end
-        if (prevIndex >= totalItems - 1) {
-          return 0;
-        }
-        return prevIndex + 1;
-      });
-    }, 1200); // Move one item every 1.2 seconds
+      if (currentIndex >= totalItems - 1) {
+        // When we reach the end, we want to smoothly transition to the beginning
+        // First move to the cloned items (to maintain visual continuity)
+        setCurrentIndex(currentIndex + 1);
+        
+        // Then quickly reset to the first original item after the transition completes
+        setTimeout(() => {
+          setIsResetting(true);
+          setCurrentIndex(0);
+          
+          // Allow transitions again after reset
+          setTimeout(() => {
+            setIsResetting(false);
+          }, 50);
+        }, 500);
+      } else {
+        setCurrentIndex(currentIndex + 1);
+      }
+    }, 3000); // Increased to 3 seconds (3000ms)
 
     return () => clearInterval(interval);
-  }, [totalItems]);
+  }, [currentIndex, totalItems]);
 
   return (
     <div className="w-full py-16" style={{
@@ -117,7 +129,8 @@ const ArchetypesCarousel = () => {
           <div 
             className="carousel-track" 
             style={{ 
-              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+              transition: isResetting ? 'none' : 'transform 0.5s ease'
             }}
           >
             {allItems.map((archetype, index) => (
@@ -128,6 +141,10 @@ const ArchetypesCarousel = () => {
                     alt={`${archetype.name} - ${archetype.title}`} 
                     className="carousel-image"
                   />
+                  <div className="carousel-caption">
+                    <h3>{archetype.name}</h3>
+                    {archetype.title && <p>{archetype.title}</p>}
+                  </div>
                 </div>
               </div>
             ))}
