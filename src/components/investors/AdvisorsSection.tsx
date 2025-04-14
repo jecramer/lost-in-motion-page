@@ -16,27 +16,21 @@ const AdvisorsSection = () => {
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/e64a7f15-d198-4f7d-b46a-9a7ed4406a65.png" 
-                  alt="Advisor 1" 
-                  className="w-full h-full object-cover aspect-[3/4]"
-                />
-              </div>
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/1c1fc435-d40d-435b-9f81-cd9d29212bd2.png" 
-                  alt="Advisor 2" 
-                  className="w-full h-full object-cover aspect-[3/4]"
-                />
-              </div>
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/0bd4948e-41be-4031-a9c7-5d05b5d73949.png" 
-                  alt="Advisor 3" 
-                  className="w-full h-full object-cover aspect-[3/4]"
-                />
-              </div>
+              <img 
+                src="/lovable-uploads/e64a7f15-d198-4f7d-b46a-9a7ed4406a65.png" 
+                alt="Advisor 1" 
+                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
+              />
+              <img 
+                src="/lovable-uploads/1c1fc435-d40d-435b-9f81-cd9d29212bd2.png" 
+                alt="Advisor 2" 
+                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
+              />
+              <img 
+                src="/lovable-uploads/0bd4948e-41be-4031-a9c7-5d05b5d73949.png" 
+                alt="Advisor 3" 
+                className="object-cover aspect-[3/4] rounded-lg shadow-lg"
+              />
             </div>
             
             <div className="md:w-1/2">
