@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
@@ -105,7 +104,7 @@ const ArchetypesCarousel = () => {
       backgroundAttachment: 'fixed'
     }}>
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Archetypes</h2>
+        <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Featured Profiles</h2>
         
         <div className="carousel-container">
           <div 
