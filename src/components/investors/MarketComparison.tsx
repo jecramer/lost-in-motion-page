@@ -12,7 +12,7 @@ const MarketComparison = () => {
     }}>
       <div className="container mx-auto px-4 md:px-8">
         <div 
-          className="max-w-5xl mx-auto text-center bg-white/10 p-10 rounded-lg" 
+          className="max-w-5xl mx-auto bg-white/10 backdrop-blur-sm p-10 rounded-lg shadow-lg" 
         >
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-black">
             <span className="font-bold">The Vertical Is Saturated. The Market Isn't.</span>
