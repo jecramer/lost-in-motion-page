@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   LineChart,
@@ -55,24 +56,39 @@ const RevenueSection = () => {
                 />
                 <XAxis 
                   dataKey="year" 
-                  label={{ value: 'Year', position: 'insideBottom', offset: -15 }}
-                  axisLine={{ stroke: "#333333" }}  // Darkened x-axis line
-                  tickLine={{ stroke: "#333333" }}  // Darkened x-axis tick lines
+                  label={{ 
+                    value: 'Year', 
+                    position: 'insideBottom', 
+                    offset: -15,
+                    style: { fill: '#000000e6', fontWeight: 'bold' }
+                  }}
+                  axisLine={{ stroke: "#333333" }}
+                  tickLine={{ stroke: "#333333" }}
+                  tick={{ fill: '#000000e6', fontSize: 12 }}
                 />
                 <YAxis 
                   label={{ 
                     value: '€ Millions', 
                     angle: -90, 
                     position: 'insideLeft',
-                    style: { textAnchor: 'middle' }
+                    style: { 
+                      textAnchor: 'middle', 
+                      fill: '#000000e6', 
+                      fontWeight: 'bold' 
+                    }
                   }}
-                  axisLine={{ stroke: "#333333" }}  // Darkened y-axis line
-                  tickLine={{ stroke: "#333333" }}  // Darkened y-axis tick lines
+                  axisLine={{ stroke: "#333333" }}
+                  tickLine={{ stroke: "#333333" }}
+                  tick={{ fill: '#000000e6', fontSize: 12 }}
                 />
                 <ChartTooltip
                   content={<ChartTooltipContent />}
                 />
-                <Legend />
+                <Legend 
+                  verticalAlign="top" 
+                  height={36}
+                  wrapperStyle={{ paddingBottom: '10px' }}
+                />
                 <Line
                   type="monotone"
                   dataKey="totalRevenue"
@@ -101,3 +117,4 @@ const RevenueSection = () => {
 };
 
 export default RevenueSection;
+
