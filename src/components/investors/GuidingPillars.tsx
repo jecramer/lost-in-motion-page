@@ -86,7 +86,7 @@ const GuidingPillars = () => {
             <div className="flex flex-col justify-start h-full">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg h-full">
                 <h3 className="font-newsreader text-2xl font-medium mb-4">{activeContent.title}</h3>
-                <p className="text-base opacity-90 leading-relaxed">
+                <p className="text-base mb-6 opacity-[0.84] font-normal">
                   {activeContent.description}
                 </p>
               </div>

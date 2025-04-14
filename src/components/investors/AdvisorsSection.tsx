@@ -29,7 +29,7 @@ const AdvisorsSection = () => {
             
             <div className="md:w-1/2">
               <div className="text-white">
-                <p className="text-base leading-relaxed opacity-[0.84] font-normal">
+                <p className="text-base mb-6 opacity-[0.84] font-normal">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
                 </p>
               </div>
