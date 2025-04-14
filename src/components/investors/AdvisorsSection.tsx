@@ -33,14 +33,14 @@ const AdvisorsSection = () => {
           
           <div className="flex flex-col items-center md:flex-row md:items-start gap-8 mb-12">
             <Card className="bg-transparent border-0 shadow-none w-full">
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                 {advisorImages.map((image, index) => (
                   <div 
                     key={index} 
                     className="rounded-lg overflow-hidden shadow-lg" 
                     style={{ 
-                      width: '260px', 
-                      height: '320px',
+                      width: '195px', 
+                      height: '195px',
                       boxShadow: '0 4px 10px rgba(0,0,0,0.2)' 
                     }}
                   >
