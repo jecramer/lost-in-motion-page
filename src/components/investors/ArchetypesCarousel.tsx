@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
+
 interface ArchetypeData {
   id: number;
   imgSrc: string;
   name: string;
   title: string;
 }
+
 const archetypes: ArchetypeData[] = [{
   id: 1,
   imgSrc: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
@@ -28,7 +30,7 @@ const archetypes: ArchetypeData[] = [{
   title: "Founder @ 20VC"
 }, {
   id: 5,
-  imgSrc: "/lovable-uploads/86944ce9-1a20-4476-9b69-1098d0734dda.png",
+  imgSrc: "/lovable-uploads/98702e58-a3f6-4d47-8749-ae6e1dc8757c.png",
   name: "Steven Bartlett",
   title: "Founder @ FLIGHTSTORY"
 }, {
@@ -42,11 +44,13 @@ const archetypes: ArchetypeData[] = [{
   name: "MY LIST",
   title: ""
 }];
+
 const ArchetypesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = archetypes.length;
   const [itemsToShow, setItemsToShow] = useState(4);
   const [isResetting, setIsResetting] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 480) setItemsToShow(1);else if (window.innerWidth <= 768) setItemsToShow(2);else if (window.innerWidth <= 1024) setItemsToShow(3);else setItemsToShow(4);
@@ -55,7 +59,9 @@ const ArchetypesCarousel = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
   const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (currentIndex >= totalItems - 1) {
@@ -73,6 +79,7 @@ const ArchetypesCarousel = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [currentIndex, totalItems]);
+
   return <div className="w-full py-16" style={{
     backgroundImage: `url('/bg.png')`,
     backgroundSize: 'cover',
@@ -122,4 +129,5 @@ const ArchetypesCarousel = () => {
       </div>
     </div>;
 };
+
 export default ArchetypesCarousel;
