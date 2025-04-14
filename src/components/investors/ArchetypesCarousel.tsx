@@ -88,7 +88,7 @@ const ArchetypesCarousel = () => {
 
   return (
     <div className="w-full py-16" style={{
-      background: "linear-gradient(135deg, rgba(229, 222, 255, 0.5) 0%, rgba(253, 225, 211, 0.5) 50%, rgba(242, 252, 226, 0.5) 100%)",
+      background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
       backdropFilter: 'blur(10px)'
     }}>
       <div className="container mx-auto px-4 md:px-8">
