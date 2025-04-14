@@ -11,14 +11,16 @@ const MarketComparison = () => {
       backgroundAttachment: 'fixed'
     }}>
       <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight text-white">
+        <div 
+          className="max-w-5xl mx-auto text-center bg-white/10 p-10 rounded-lg" 
+        >
+          <p className="font-newsreader text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight text-black">
             <span className="font-bold">The Vertical Is Saturated. The Market Isn't.</span>
           </p>
-          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-6 leading-tight text-white">
+          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-6 leading-tight text-black">
             Wattpad and Inkitt have peaked in Tier 1 markets, with growth now limited to harder-to-monetise regions and a single, overplayed genre.
           </p>
-          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-12 leading-tight text-white">
+          <p className="font-newsreader text-xl md:text-2xl lg:text-3xl mb-12 leading-tight text-black">
             <span className="font-bold">Get Lost</span> is building the next chapter - a genre-agnostic, creator-first platform playing for the 1.7 billion readers still unclaimed.
           </p>
           
