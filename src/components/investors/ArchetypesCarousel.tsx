@@ -1,68 +1,88 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
+
 interface ArchetypeData {
   id: number;
   imgSrc: string;
   name: string;
   title: string;
 }
-const archetypes: ArchetypeData[] = [{
-  id: 1,
-  imgSrc: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
-  name: "James Vowles",
-  title: "Team Principal @ Williams Racing"
-}, {
-  id: 2,
-  imgSrc: "/lovable-uploads/d145f66f-ca4c-4765-ba19-503e508bd56a.png",
-  name: "Katty Kay",
-  title: "Journalist @ BBC US"
-}, {
-  id: 3,
-  imgSrc: "/lovable-uploads/cb94ddf7-29a4-46a4-b3d7-888ef998bd8a.png",
-  name: "Jake Humphrey",
-  title: "Creator @ highperformance"
-}, {
-  id: 4,
-  imgSrc: "/lovable-uploads/c0ba7fa2-66a0-4076-981c-a8f7aea8ec7f.png",
-  name: "Harry Stebbings",
-  title: "Founder @ 20VC"
-}, {
-  id: 5,
-  imgSrc: "/lovable-uploads/86944ce9-1a20-4476-9b69-1098d0734dda.png",
-  name: "Steven Bartlett",
-  title: "Founder @ FLIGHTSTORY"
-}, {
-  id: 6,
-  imgSrc: "/lovable-uploads/3870710e-fff7-4237-89a0-9d0d01e91158.png",
-  name: "Harry Stebbings",
-  title: "Founder @ 20VC"
-}, {
-  id: 7,
-  imgSrc: "/lovable-uploads/e222bfc7-1fe6-41fb-9e81-d004b180a551.png",
-  name: "MY LIST",
-  title: ""
-}];
+
+const archetypes: ArchetypeData[] = [
+  {
+    id: 1,
+    imgSrc: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
+    name: "James Vowles",
+    title: "Team Principal @ Williams Racing",
+  },
+  {
+    id: 2,
+    imgSrc: "/lovable-uploads/d145f66f-ca4c-4765-ba19-503e508bd56a.png",
+    name: "Katty Kay",
+    title: "Journalist @ BBC US",
+  },
+  {
+    id: 3,
+    imgSrc: "/lovable-uploads/cb94ddf7-29a4-46a4-b3d7-888ef998bd8a.png",
+    name: "Jake Humphrey",
+    title: "Creator @ highperformance",
+  },
+  {
+    id: 4,
+    imgSrc: "/lovable-uploads/c0ba7fa2-66a0-4076-981c-a8f7aea8ec7f.png",
+    name: "Harry Stebbings",
+    title: "Founder @ 20VC",
+  },
+  {
+    id: 5,
+    imgSrc: "/lovable-uploads/86944ce9-1a20-4476-9b69-1098d0734dda.png",
+    name: "Steven Bartlett",
+    title: "Founder @ FLIGHTSTORY",
+  },
+  {
+    id: 6,
+    imgSrc: "/lovable-uploads/3870710e-fff7-4237-89a0-9d0d01e91158.png",
+    name: "Harry Stebbings",
+    title: "Founder @ 20VC",
+  },
+  {
+    id: 7,
+    imgSrc: "/lovable-uploads/e222bfc7-1fe6-41fb-9e81-d004b180a551.png",
+    name: "MY LIST",
+    title: "",
+  },
+];
+
 const ArchetypesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalItems = archetypes.length;
   const [itemsToShow, setItemsToShow] = useState(4);
   const [isResetting, setIsResetting] = useState(false);
+  
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 480) setItemsToShow(1);else if (window.innerWidth <= 768) setItemsToShow(2);else if (window.innerWidth <= 1024) setItemsToShow(3);else setItemsToShow(4);
+      if (window.innerWidth <= 480) setItemsToShow(1);
+      else if (window.innerWidth <= 768) setItemsToShow(2);
+      else if (window.innerWidth <= 1024) setItemsToShow(3);
+      else setItemsToShow(4);
     };
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
   const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (currentIndex >= totalItems - 1) {
         setCurrentIndex(currentIndex + 1);
+        
         setTimeout(() => {
           setIsResetting(true);
           setCurrentIndex(0);
+          
           setTimeout(() => {
             setIsResetting(false);
           }, 50);
@@ -71,32 +91,44 @@ const ArchetypesCarousel = () => {
         setCurrentIndex(currentIndex + 1);
       }
     }, 3000);
+
     return () => clearInterval(interval);
   }, [currentIndex, totalItems]);
-  return <div className="w-full py-16" style={{
-    backgroundImage: `url('/bg.png')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed'
-  }}>
+
+  return (
+    <div className="w-full py-16" style={{
+      backgroundImage: `url('/bg.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Book Recommendations From Brilliant Minds</h2>
+        <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Featured Profiles</h2>
         
         <div className="carousel-container">
-          <div className="carousel-track" style={{
-          transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
-          transition: isResetting ? 'none' : 'transform 0.5s ease'
-        }}>
-            {allItems.map((archetype, index) => <div key={`${archetype.id}-${index}`} className="carousel-item">
+          <div 
+            className="carousel-track" 
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+              transition: isResetting ? 'none' : 'transform 0.5s ease'
+            }}
+          >
+            {allItems.map((archetype, index) => (
+              <div key={`${archetype.id}-${index}`} className="carousel-item">
                 <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
-                  <img src={archetype.imgSrc} alt={`${archetype.name} - ${archetype.title}`} className="carousel-image" />
+                  <img 
+                    src={archetype.imgSrc} 
+                    alt={`${archetype.name} - ${archetype.title}`} 
+                    className="carousel-image"
+                  />
                   <div className="carousel-caption">
                     <h3>{archetype.name}</h3>
                     {archetype.title && <p>{archetype.title}</p>}
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
         
@@ -120,6 +152,8 @@ const ArchetypesCarousel = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default ArchetypesCarousel;
