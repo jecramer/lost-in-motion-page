@@ -31,13 +31,13 @@ const AdvisorsSection = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-white">Our Advisors</h2>
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
-            <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-3 gap-6">
               {advisorImages.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden shadow-[0_4px_8px_#0006]">
+                <div key={index} className="rounded-lg overflow-hidden shadow-[0_4px_8px_rgba(0,0,0,0.3)]" style={{ width: '280px', height: '280px' }}>
                   <img 
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
