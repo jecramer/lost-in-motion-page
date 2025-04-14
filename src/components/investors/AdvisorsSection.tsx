@@ -42,7 +42,7 @@ const AdvisorsSection = () => {
                     <img 
                       src={image.src}
                       alt={image.alt}
-                      className="w-auto h-auto"
+                      className="w-auto h-auto drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]"
                     />
                   </div>
                 ))}
