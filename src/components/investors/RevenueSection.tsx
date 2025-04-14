@@ -1,4 +1,36 @@
+
 import React from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer
+} from "recharts";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+
+// Revenue forecast data
+const revenueData = [
+  { year: "2025", totalRevenue: 10, userAcquisitionCost: 5 },
+  { year: "2026", totalRevenue: 30, userAcquisitionCost: 15 },
+  { year: "2027", totalRevenue: 120, userAcquisitionCost: 50 },
+  { year: "2028", totalRevenue: 320, userAcquisitionCost: 160 },
+  { year: "2029", totalRevenue: 1260, userAcquisitionCost: 1000 },
+];
+
+const chartConfig = {
+  totalRevenue: {
+    label: "Total Revenue (Revised)",
+    color: "#22c55e" // green
+  },
+  userAcquisitionCost: {
+    label: "User Acquisition Cost (Revised)",
+    color: "#3b82f6" // blue
+  }
+};
 
 const RevenueSection = () => {
   return (
@@ -21,8 +53,49 @@ const RevenueSection = () => {
             </p>
           </div>
           
-          <div className="mx-auto" style={{ maxWidth: "700px", height: "350px" }}>
-            {/* Placeholder for revenue chart */}
+          <div className="mx-auto" style={{ maxWidth: "900px", height: "500px" }}>
+            <ChartContainer config={chartConfig} className="h-full">
+              <LineChart data={revenueData} margin={{ top: 20, right: 30, left: 50, bottom: 20 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis 
+                  dataKey="year" 
+                  label={{ value: 'Year', position: 'insideBottom', offset: -15 }}
+                />
+                <YAxis 
+                  label={{ 
+                    value: '€ Millions', 
+                    angle: -90, 
+                    position: 'insideLeft',
+                    style: { textAnchor: 'middle' }
+                  }}
+                />
+                <ChartTooltip
+                  content={<ChartTooltipContent />}
+                />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="totalRevenue"
+                  name="Total Revenue (Revised)"
+                  stroke="var(--color-totalRevenue)"
+                  strokeWidth={3}
+                  activeDot={{ r: 8 }}
+                  dot={{ r: 4 }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="userAcquisitionCost"
+                  name="User Acquisition Cost (Revised)"
+                  stroke="var(--color-userAcquisitionCost)"
+                  strokeWidth={3}
+                  strokeDasharray="5 5"
+                  dot={{ r: 4 }}
+                />
+              </LineChart>
+            </ChartContainer>
+            <div className="text-center mt-4 text-sm text-black/70">
+              Get Lost - 5 Year Forecast (25% Lower Revenue Scenario)
+            </div>
           </div>
         </div>
       </div>
