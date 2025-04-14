@@ -91,7 +91,7 @@ const ArchetypesCarousel = () => {
       background: "linear-gradient(135deg, #E5DEFF 0%, #FDE1D3 50%, #F2FCE2 100%)",
     }}>
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="font-newsreader font-semibold text-4xl mb-8 text-white">Book Recommendations From Brilliant Minds</h2>
+        <h2 className="font-newsreader font-semibold text-4xl mb-8 text-black">Book Recommendations From Brilliant Minds</h2>
         
         <div className="carousel-container">
           <div className="carousel-track" style={{
@@ -103,8 +103,8 @@ const ArchetypesCarousel = () => {
                 <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
                   <img src={archetype.imgSrc} alt={`${archetype.name} - ${archetype.title}`} className="carousel-image" />
                   <div className="carousel-caption">
-                    <h3 className="font-newsreader">{archetype.name}</h3>
-                    {archetype.title && <p>{archetype.title}</p>}
+                    <h3 className="font-newsreader text-black">{archetype.name}</h3>
+                    {archetype.title && <p className="text-black/80">{archetype.title}</p>}
                   </div>
                 </div>
               </div>
@@ -114,19 +114,19 @@ const ArchetypesCarousel = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="space-y-2">
-            <p className="text-base mb-6 text-white/90 font-normal">
+            <p className="text-base mb-6 text-black/90 font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
           
           <div className="space-y-2">
-            <p className="text-base mb-6 text-white/90 font-normal">
+            <p className="text-base mb-6 text-black/90 font-normal">
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
           </div>
           
           <div className="space-y-2">
-            <p className="text-base mb-6 text-white/90 font-normal">
+            <p className="text-base mb-6 text-black/90 font-normal">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
             </p>
           </div>
