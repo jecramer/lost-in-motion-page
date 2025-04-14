@@ -1,13 +1,5 @@
 
-import React, { useRef, useEffect } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
 interface ArchetypeData {
@@ -75,7 +67,31 @@ const archetypes: ArchetypeData[] = [
 ];
 
 const ArchetypesCarousel = () => {
-  const carouselRef = useRef<any>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalItems = archetypes.length;
+  const itemsToShow = () => {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 2;
+    if (window.innerWidth <= 1024) return 3;
+    return 4;
+  };
+
+  // Clone the first few items to create a seamless loop
+  const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow())];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        // When we reach the end, quickly reset to 0 without animation
+        if (prevIndex >= totalItems - 1) {
+          return 0;
+        }
+        return prevIndex + 1;
+      });
+    }, 1200); // Move one item every 1.2 seconds
+
+    return () => clearInterval(interval);
+  }, [totalItems]);
 
   return (
     <div className="w-full py-16" style={{
@@ -89,26 +105,19 @@ const ArchetypesCarousel = () => {
         <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Archetypes</h2>
         
         <div className="carousel-container">
-          <div className="carousel-track">
-            {archetypes.map((archetype) => (
-              <div key={archetype.id} className="carousel-item">
+          <div 
+            className="carousel-track" 
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / itemsToShow())}%)` 
+            }}
+          >
+            {allItems.map((archetype, index) => (
+              <div key={`${archetype.id}-${index}`} className="carousel-item">
                 <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
                   <img 
                     src={archetype.imgSrc} 
                     alt={`${archetype.name} - ${archetype.title}`} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
-            {/* Duplicate first few items to create seamless loop effect */}
-            {archetypes.slice(0, 3).map((archetype) => (
-              <div key={`duplicate-${archetype.id}`} className="carousel-item">
-                <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
-                  <img 
-                    src={archetype.imgSrc} 
-                    alt={`${archetype.name} - ${archetype.title}`} 
-                    className="w-full h-full object-cover"
+                    className="carousel-image"
                   />
                 </div>
               </div>

@@ -8,7 +8,7 @@
 
 .carousel-track {
   display: flex;
-  animation: scroll 12s linear infinite;
+  transition: transform 0.5s ease;
   width: fit-content;
 }
 
@@ -38,16 +38,14 @@
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% * 9 / 4)); /* Move by the width of all original items */
-  }
-}
-
 /* Pause the animation when hovering over the carousel */
 .carousel-container:hover .carousel-track {
   animation-play-state: paused;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
