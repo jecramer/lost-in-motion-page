@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -43,7 +44,7 @@ const GuidingPillars = () => {
     <div className="w-full mb-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-3xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
+          <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Main content area - Left side */}
@@ -84,7 +85,7 @@ const GuidingPillars = () => {
             {/* Content area - Right side, aligned with top of image */}
             <div className="flex flex-col justify-start h-full">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg h-full">
-                <h3 className="text-2xl font-medium mb-4">{activeContent.title}</h3>
+                <h3 className="font-newsreader text-2xl font-medium mb-4">{activeContent.title}</h3>
                 <p className="text-base opacity-90 leading-relaxed">
                   {activeContent.description}
                 </p>

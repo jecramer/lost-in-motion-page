@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
@@ -99,7 +100,7 @@ const ArchetypesCarousel = () => {
                 <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
                   <img src={archetype.imgSrc} alt={`${archetype.name} - ${archetype.title}`} className="carousel-image" />
                   <div className="carousel-caption">
-                    <h3>{archetype.name}</h3>
+                    <h3 className="font-newsreader">{archetype.name}</h3>
                     {archetype.title && <p>{archetype.title}</p>}
                   </div>
                 </div>

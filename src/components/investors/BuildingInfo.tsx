@@ -7,7 +7,7 @@ const BuildingInfo = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white/30 backdrop-blur-sm rounded-lg p-8 shadow-lg">
-            <h2 className="font-newsreader font-semibold text-3xl mb-6 text-center opacity-[0.92]">Building The World's Biggest Book Club</h2>
+            <h2 className="font-newsreader font-semibold text-4xl mb-6 text-center opacity-[0.92]">Building The World's Biggest Book Club</h2>
             <p className="text-lg leading-relaxed opacity-[0.84] font-normal">1. Mission: To become the de facto online space for readers, authors, and publishers, connecting people through their taste in books and helping publishers reach the audiences they currently miss. The world's biggest book club. 
 
 
