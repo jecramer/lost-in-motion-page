@@ -16,7 +16,7 @@ const TeamSection = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
             {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index} className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+              <div key={index} className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
                 <div className="aspect-[3/4] w-full"></div>
               </div>
             ))}

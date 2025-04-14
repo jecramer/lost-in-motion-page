@@ -14,7 +14,7 @@ const RevenueSection = () => {
         <div className="max-w-5xl mx-auto">
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-white">Revenue Potential - 5 Year Horizon</h2>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 shadow-lg mb-12">
+          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-8 shadow-lg mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
               <div className="space-y-2">
                 <p className="text-base leading-relaxed opacity-[0.84] font-normal">
@@ -36,7 +36,7 @@ const RevenueSection = () => {
             </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden mx-auto shadow-lg" style={{ maxWidth: "700px", height: "350px" }}>
+          <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden mx-auto shadow-lg" style={{ maxWidth: "700px", height: "350px" }}>
             {/* Placeholder for revenue chart */}
           </div>
         </div>

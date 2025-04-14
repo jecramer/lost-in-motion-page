@@ -16,13 +16,13 @@ const AdvisorsSection = () => {
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
                 <div className="aspect-[3/4] w-full"></div>
               </div>
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
                 <div className="aspect-[3/4] w-full"></div>
               </div>
-              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
+              <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
                 <div className="aspect-[3/4] w-full"></div>
               </div>
             </div>
