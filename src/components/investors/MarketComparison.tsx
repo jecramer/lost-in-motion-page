@@ -25,7 +25,7 @@ const MarketComparison = () => {
             We're not chasing trends — we're creating space. Our genre-agnostic, creator-first platform is designed to reflect the full spectrum of today's reading culture, with 1.7 billion readers still waiting for a place that represents their tastes, communities, and voices.
           </p>
           
-          <div className="mx-auto" style={{ maxWidth: "843px" }}>
+          <div className="mx-auto" style={{ maxWidth: "632px" }}>
             <img 
               src="/lovable-uploads/ce39e4e3-80ae-4f5b-ab26-c8949868315d.png" 
               alt="Market Comparison Pie Chart" 
