@@ -46,19 +46,18 @@ const RevenueSection = () => {
         >
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-black">Revenue Potential - 5 Year Horizon</h2>
           
-          <div className="space-y-4 text-black mb-12">
-            <p className="text-base opacity-[0.84] font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          
           <div className="mx-auto" style={{ maxWidth: "900px", height: "500px" }}>
             <ChartContainer config={chartConfig} className="h-full">
               <LineChart data={revenueData} margin={{ top: 20, right: 30, left: 50, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid 
+                  strokeDasharray="3 3" 
+                  stroke="#2226"  // Darkened grid lines
+                />
                 <XAxis 
                   dataKey="year" 
                   label={{ value: 'Year', position: 'insideBottom', offset: -15 }}
+                  axisLine={{ stroke: "#333333" }}  // Darkened x-axis line
+                  tickLine={{ stroke: "#333333" }}  // Darkened x-axis tick lines
                 />
                 <YAxis 
                   label={{ 
@@ -67,6 +66,8 @@ const RevenueSection = () => {
                     position: 'insideLeft',
                     style: { textAnchor: 'middle' }
                   }}
+                  axisLine={{ stroke: "#333333" }}  // Darkened y-axis line
+                  tickLine={{ stroke: "#333333" }}  // Darkened y-axis tick lines
                 />
                 <ChartTooltip
                   content={<ChartTooltipContent />}
