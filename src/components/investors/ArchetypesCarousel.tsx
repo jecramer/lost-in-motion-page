@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
@@ -17,9 +18,9 @@ const archetypes: ArchetypeData[] = [
   },
   {
     id: 2,
-    imgSrc: "/lovable-uploads/44959d19-33b3-4d5d-8ddd-95cc4cb6a896.png",
-    name: "Dana Eckman",
-    title: "",
+    imgSrc: "/lovable-uploads/d145f66f-ca4c-4765-ba19-503e508bd56a.png",
+    name: "Katty Kay",
+    title: "Journalist @ BBC US",
   },
   {
     id: 3,
