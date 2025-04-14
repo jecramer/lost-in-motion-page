@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
@@ -87,7 +88,7 @@ const ArchetypesCarousel = () => {
 
   return (
     <div className="w-full py-16" style={{
-      background: "linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%)",
+      background: "linear-gradient(135deg, #E5DEFF 0%, #FDE1D3 50%, #F2FCE2 100%)",
     }}>
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-newsreader font-semibold text-4xl mb-8 text-white">Book Recommendations From Brilliant Minds</h2>
