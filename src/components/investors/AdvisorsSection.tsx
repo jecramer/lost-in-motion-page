@@ -1,6 +1,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Card } from "@/components/ui/card";
 
 const AdvisorsSection = () => {
   const advisorImages = [
@@ -30,20 +31,30 @@ const AdvisorsSection = () => {
         <div className="max-w-5xl mx-auto">
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-white">Our Advisors</h2>
           
-          <div className="flex flex-col md:flex-row gap-8 mb-12">
-            <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {advisorImages.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden shadow-[0_4px_8px_rgba(0,0,0,0.3)]" style={{ width: '280px', height: '280px' }}>
-                  <img 
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-col items-center md:flex-row md:items-start gap-8 mb-12">
+            <Card className="bg-transparent border-0 shadow-none w-full">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                {advisorImages.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className="rounded-lg overflow-hidden shadow-lg" 
+                    style={{ 
+                      width: '260px', 
+                      height: '320px',
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.2)' 
+                    }}
+                  >
+                    <img 
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Card>
             
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 mt-8 md:mt-0">
               <div className="text-white">
                 <p className="text-base mb-6 opacity-[0.84] font-normal">
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
