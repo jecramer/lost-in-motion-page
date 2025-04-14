@@ -34,7 +34,7 @@ const RevenueSection = () => {
             </div>
           </div>
           
-          <div className="bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden mx-auto" style={{ maxWidth: "700px", height: "350px" }}>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden mx-auto" style={{ maxWidth: "700px", height: "350px" }}>
             {/* Placeholder for revenue chart */}
           </div>
         </div>
