@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   LineChart,
@@ -93,9 +92,6 @@ const RevenueSection = () => {
                 />
               </LineChart>
             </ChartContainer>
-            <div className="text-center mt-4 text-sm text-black/70">
-              Get Lost - 5 Year Forecast (25% Lower Revenue Scenario)
-            </div>
           </div>
         </div>
       </div>
