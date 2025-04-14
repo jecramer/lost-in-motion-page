@@ -8,19 +8,74 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import "./ArchetypesCarousel.css";
+
+interface ArchetypeData {
+  id: number;
+  imgSrc: string;
+  name: string;
+  title: string;
+}
+
+const archetypes: ArchetypeData[] = [
+  {
+    id: 1,
+    imgSrc: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
+    name: "James Vowles",
+    title: "Team Principal @ Williams Racing",
+  },
+  {
+    id: 2,
+    imgSrc: "/lovable-uploads/44959d19-33b3-4d5d-8ddd-95cc4cb6a896.png",
+    name: "Dana Eckman",
+    title: "",
+  },
+  {
+    id: 3,
+    imgSrc: "/lovable-uploads/cb94ddf7-29a4-46a4-b3d7-888ef998bd8a.png",
+    name: "Jake Humphrey",
+    title: "Creator @ highperformance",
+  },
+  {
+    id: 4,
+    imgSrc: "/lovable-uploads/c0ba7fa2-66a0-4076-981c-a8f7aea8ec7f.png",
+    name: "Harry Stebbings",
+    title: "Founder @ 20VC",
+  },
+  {
+    id: 5,
+    imgSrc: "/lovable-uploads/86944ce9-1a20-4476-9b69-1098d0734dda.png",
+    name: "Steven Bartlett",
+    title: "Founder @ FLIGHTSTORY",
+  },
+  {
+    id: 6,
+    imgSrc: "/lovable-uploads/3870710e-fff7-4237-89a0-9d0d01e91158.png",
+    name: "Harry Stebbings",
+    title: "Founder @ 20VC",
+  },
+  {
+    id: 7,
+    imgSrc: "/lovable-uploads/e222bfc7-1fe6-41fb-9e81-d004b180a551.png",
+    name: "MY LIST",
+    title: "",
+  },
+  {
+    id: 8,
+    imgSrc: "/lovable-uploads/fe6517b6-a5af-4465-b8eb-c7a176d7b751.png",
+    name: "Joakim Achrén",
+    title: "General Partner @ F4 Fund",
+  },
+  {
+    id: 9,
+    imgSrc: "/lovable-uploads/efb70dad-7599-4bb0-99aa-ee48bb864ee8.png",
+    name: "Magnus Hambleton",
+    title: "VC @ byFounders",
+  },
+];
 
 const ArchetypesCarousel = () => {
   const carouselRef = useRef<any>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (carouselRef.current && carouselRef.current.api) {
-        carouselRef.current.api.scrollNext();
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="w-full py-16" style={{
@@ -33,35 +88,33 @@ const ArchetypesCarousel = () => {
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92] text-white">Archetypes</h2>
         
-        <Carousel
-          ref={carouselRef}
-          opts={{
-            align: "start",
-            loop: true,
-            containScroll: false,
-          }}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-4">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-1/3 lg:basis-1/4">
-                <div className="aspect-[3/2] w-full">
+        <div className="carousel-container">
+          <div className="carousel-track">
+            {archetypes.map((archetype) => (
+              <div key={archetype.id} className="carousel-item">
+                <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/dd37e1a9-e973-44cb-ad31-25894f1bd9f8.png" 
-                    alt="Erica Terranova, Head of Growth @ Moomin Characters" 
+                    src={archetype.imgSrc} 
+                    alt={`${archetype.name} - ${archetype.title}`} 
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10 flex items-center justify-center">
-            <ArrowBigLeft className="h-6 w-6 text-white" />
-          </CarouselPrevious>
-          <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 z-10 flex items-center justify-center">
-            <ArrowBigRight className="h-6 w-6 text-white" />
-          </CarouselNext>
-        </Carousel>
+            {/* Duplicate first few items to create seamless loop effect */}
+            {archetypes.slice(0, 3).map((archetype) => (
+              <div key={`duplicate-${archetype.id}`} className="carousel-item">
+                <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
+                  <img 
+                    src={archetype.imgSrc} 
+                    alt={`${archetype.name} - ${archetype.title}`} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 text-white">
           <div className="space-y-2">
