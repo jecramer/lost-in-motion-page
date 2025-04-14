@@ -18,10 +18,11 @@ const MarketComparison = () => {
             <span className="font-bold">The Vertical Is Saturated. The Market Isn't.</span>
           </h2>
           <p className="text-base mb-8 text-black opacity-[0.84]">
-            Wattpad and Inkitt have peaked in Tier 1 markets, with growth now limited to harder-to-monetise regions and a single, overplayed genre.
+            Wattpad, Inkitt, and others have hit their ceiling in Tier 1 markets. Their recent growth has come almost entirely from Tier 3 regions where monetisation is significantly harder. Romantasy, the genre that fuelled their rise, is now overplayed, and their platforms are entering a phase of consolidation rather than expansion.
           </p>
           <p className="text-base mb-8 text-black opacity-[0.84]">
-            <span className="font-bold">Get Lost</span> is building the next chapter - a genre-agnostic, creator-first platform playing for the 1.7 billion readers still unclaimed.
+            <span className="font-bold">Get Lost</span> is building what comes next.
+            We're not chasing trends — we're creating space. Our genre-agnostic, creator-first platform is designed to reflect the full spectrum of today's reading culture, with 1.7 billion readers still waiting for a place that represents their tastes, communities, and voices.
           </p>
           
           <div className="mx-auto" style={{ maxWidth: "843px" }}>
