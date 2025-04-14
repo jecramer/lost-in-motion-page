@@ -1,6 +1,5 @@
 
 import React from "react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
 
 const AdvisorsSection = () => {
@@ -34,16 +33,12 @@ const AdvisorsSection = () => {
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {advisorImages.map((image, index) => (
-                <div key={index} className="w-full overflow-hidden rounded-lg shadow-lg">
-                  <AspectRatio ratio={3/4} className="bg-white/10">
-                    <img 
-                      src={image.src}
-                      alt={image.alt}
-                      className={cn(
-                        "w-full h-full object-cover",
-                      )}
-                    />
-                  </AspectRatio>
+                <div key={index} className="rounded-lg shadow-lg overflow-hidden">
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full"
+                  />
                 </div>
               ))}
             </div>
