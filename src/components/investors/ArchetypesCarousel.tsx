@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 
@@ -52,18 +51,6 @@ const archetypes: ArchetypeData[] = [
     name: "MY LIST",
     title: "",
   },
-  {
-    id: 8,
-    imgSrc: "/lovable-uploads/fe6517b6-a5af-4465-b8eb-c7a176d7b751.png",
-    name: "Joakim Achrén",
-    title: "General Partner @ F4 Fund",
-  },
-  {
-    id: 9,
-    imgSrc: "/lovable-uploads/efb70dad-7599-4bb0-99aa-ee48bb864ee8.png",
-    name: "Magnus Hambleton",
-    title: "VC @ byFounders",
-  },
 ];
 
 const ArchetypesCarousel = () => {
@@ -72,7 +59,6 @@ const ArchetypesCarousel = () => {
   const [itemsToShow, setItemsToShow] = useState(4);
   const [isResetting, setIsResetting] = useState(false);
   
-  // Update items to show based on screen size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 480) setItemsToShow(1);
@@ -81,27 +67,22 @@ const ArchetypesCarousel = () => {
       else setItemsToShow(4);
     };
 
-    handleResize(); // Initialize
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Clone items to create a seamless loop effect
   const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (currentIndex >= totalItems - 1) {
-        // When we reach the end, we want to smoothly transition to the beginning
-        // First move to the cloned items (to maintain visual continuity)
         setCurrentIndex(currentIndex + 1);
         
-        // Then quickly reset to the first original item after the transition completes
         setTimeout(() => {
           setIsResetting(true);
           setCurrentIndex(0);
           
-          // Allow transitions again after reset
           setTimeout(() => {
             setIsResetting(false);
           }, 50);
@@ -109,7 +90,7 @@ const ArchetypesCarousel = () => {
       } else {
         setCurrentIndex(currentIndex + 1);
       }
-    }, 3000); // Increased to 3 seconds (3000ms)
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [currentIndex, totalItems]);
