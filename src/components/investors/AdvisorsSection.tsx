@@ -4,6 +4,21 @@ import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 
 const AdvisorsSection = () => {
+  const advisorImages = [
+    {
+      src: "/lovable-uploads/025c9b48-5629-41e7-abf7-1d9f9e92349a.png",
+      alt: "Advisor 1"
+    },
+    {
+      src: "/lovable-uploads/a70e6269-a230-4c39-b8ba-938e33a440a2.png",
+      alt: "Advisor 2"
+    },
+    {
+      src: "/lovable-uploads/32e4b91e-0720-4173-8926-a8035286fccf.png",
+      alt: "Advisor 3"
+    }
+  ];
+
   return (
     <div className="w-full py-20" style={{
       backgroundImage: `url('/bg.png')`,
@@ -17,6 +32,23 @@ const AdvisorsSection = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-white">Our Advisors</h2>
           
           <div className="flex flex-col items-center md:flex-row md:items-start gap-8 mb-12">
+            <Card className="bg-transparent border-0 shadow-none w-full">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                {advisorImages.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className="rounded-lg overflow-hidden shadow-lg"
+                  >
+                    <img 
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-auto h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Card>
+            
             <div className="md:w-full mt-8 md:mt-0">
               <div className="text-white">
                 <p className="text-base mb-6 opacity-[0.84] font-normal">
