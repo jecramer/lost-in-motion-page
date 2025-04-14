@@ -23,7 +23,7 @@ const MarketComparison = () => {
           
           <div className="mx-auto" style={{ maxWidth: "1125px" }}>
             <img 
-              src="/lovable-uploads/b69383db-e4ff-463c-b693-e328ea789eea.png" 
+              src="/lovable-uploads/f0703492-ee56-410f-ae81-2515cf0c3330.png" 
               alt="Market Comparison Pie Chart" 
               className="w-full object-contain"
             />
