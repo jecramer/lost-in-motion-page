@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -52,8 +53,8 @@ const GuidingPillars = () => {
               <Card className="w-full aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
-                    src="/lovable-uploads/57a9e15d-0025-4d8b-bd42-3be25b8aea1a.png" 
-                    alt="Guiding Pillars" 
+                    src={activeContent.image} 
+                    alt={activeContent.title} 
                     className="w-full h-full object-cover transition-opacity duration-300"
                   />
                 </AspectRatio>
@@ -81,7 +82,7 @@ const GuidingPillars = () => {
               </div>
             </div>
             
-            {/* Content area - Right side, aligned with top of image */}
+            {/* Content area - Right side */}
             <div className="flex flex-col justify-start h-full">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg h-full">
                 <h3 className="font-newsreader text-2xl font-medium mb-4">{activeContent.title}</h3>
@@ -98,3 +99,4 @@ const GuidingPillars = () => {
 };
 
 export default GuidingPillars;
+
