@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -19,7 +20,7 @@ const pillarsContent = [
   {
     id: "twitch",
     title: "The Twitch of Books",
-    image: "/lovable-uploads/a3082241-5da5-4725-8934-cdf80b763b7a.png",
+    image: "/lovable-uploads/a3be90fb-1e3d-4aa0-9479-e7f48c9dc506.png",
     description: "We're creating an interactive platform where authors can connect directly with readers in real-time. Imagine watching your favorite author write, discuss their process, or answer questions about their latest work."
   },
   {
