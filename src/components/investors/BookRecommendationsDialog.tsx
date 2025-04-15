@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -69,29 +68,31 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 
           <div className="p-6 bg-white">
             <h4 className="text-xl font-semibold mb-4">Book Recommendations</h4>
-            <ScrollArea className="w-full" orientation="horizontal">
-              <div className="flex gap-4 pb-4">
-                {bookRecommendations.map((book, index) => (
-                  <div key={index} className="flex-shrink-0">
-                    <div className="w-32 h-48 bg-gray-100 rounded overflow-hidden mb-2">
-                      {bookCovers[index].data ? (
-                        <img
-                          src={bookCovers[index].data}
-                          alt={`${book.title} cover`}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gray-200 animate-pulse" />
-                      )}
+            <div className="overflow-auto">
+              <ScrollArea className="w-full">
+                <div className="flex gap-4 pb-4" style={{ minWidth: "min-content" }}>
+                  {bookRecommendations.map((book, index) => (
+                    <div key={index} className="flex-shrink-0">
+                      <div className="w-32 h-48 bg-gray-100 rounded overflow-hidden mb-2">
+                        {bookCovers[index].data ? (
+                          <img
+                            src={bookCovers[index].data}
+                            alt={`${book.title} cover`}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-200 animate-pulse" />
+                        )}
+                      </div>
+                      <div className="w-32">
+                        <p className="font-medium text-sm line-clamp-2">{book.title}</p>
+                        <p className="text-xs text-gray-600">{book.author}</p>
+                      </div>
                     </div>
-                    <div className="w-32">
-                      <p className="font-medium text-sm line-clamp-2">{book.title}</p>
-                      <p className="text-xs text-gray-600">{book.author}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
           </div>
         </div>
       </DialogContent>
