@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -57,9 +56,9 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
         <div className="flex flex-col">
           <div className="relative">
             <img
-              src="/lovable-uploads/0dfe3e6d-4de3-4262-a352-c80a709d9d43.png"
+              src="/lovable-uploads/19d8307a-d2fb-4bfe-a96d-a82ac1e31332.png"
               alt={personName}
-              className="w-full h-[500px] object-cover object-center"
+              className="w-full h-[500px] object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
