@@ -3,6 +3,7 @@ import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { X } from "lucide-react";
+import { useBookCovers } from "@/hooks/useBookCovers";
 
 interface BookRecommendation {
   title: string;
@@ -41,6 +42,8 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   personName,
   personTitle,
 }) => {
+  const bookCovers = useBookCovers(bookRecommendations);
+
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden">
@@ -50,30 +53,40 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
         >
           <X className="h-4 w-4 text-white" />
         </button>
-        
-        <div className="grid md:grid-cols-[1fr,400px]">
-          <div className="relative aspect-[4/3] md:aspect-auto">
+
+        <div className="flex flex-col">
+          <div className="relative">
             <img
               src={personImage}
               alt={personName}
-              className="w-full h-full object-cover"
+              className="w-full h-[400px] object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
               <p className="text-white/80">{personTitle}</p>
             </div>
           </div>
-          
+
           <div className="p-6 bg-white">
             <h4 className="text-xl font-semibold mb-4">Book Recommendations</h4>
-            <ScrollArea className="h-[500px] pr-4">
-              <div className="space-y-4">
+            <ScrollArea className="w-full" orientation="horizontal">
+              <div className="flex gap-4 pb-4">
                 {bookRecommendations.map((book, index) => (
-                  <div key={index} className="flex gap-4 items-center">
-                    <div className="h-16 w-12 bg-gray-200 rounded flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">{book.title}</p>
-                      <p className="text-sm text-gray-600">{book.author}</p>
+                  <div key={index} className="flex-shrink-0">
+                    <div className="w-32 h-48 bg-gray-100 rounded overflow-hidden mb-2">
+                      {bookCovers[index].data ? (
+                        <img
+                          src={bookCovers[index].data}
+                          alt={`${book.title} cover`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-200 animate-pulse" />
+                      )}
+                    </div>
+                    <div className="w-32">
+                      <p className="font-medium text-sm line-clamp-2">{book.title}</p>
+                      <p className="text-xs text-gray-600">{book.author}</p>
                     </div>
                   </div>
                 ))}
