@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -8,7 +7,7 @@ const pillarsContent = [
   {
     id: "community",
     title: "Community",
-    image: "/lovable-uploads/662d8b7a-6cb6-416b-a590-94b64b898796.png",
+    image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
     description: "Our platform fosters a vibrant community of readers who share recommendations, discuss books, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social."
   },
   {
@@ -99,4 +98,3 @@ const GuidingPillars = () => {
 };
 
 export default GuidingPillars;
-
