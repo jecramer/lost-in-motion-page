@@ -57,9 +57,9 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
         <div className="flex flex-col">
           <div className="relative">
             <img
-              src="/lovable-uploads/100754c1-600c-46d6-ab06-2469b06cf38e.png"
+              src="/lovable-uploads/5e754b10-c393-4a29-99b4-692ff49bc6c2.png"
               alt={personName}
-              className="w-full h-[500px] object-cover object-center"
+              className="w-full h-[500px] object-cover object-[center_35%]"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
