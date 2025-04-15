@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -53,8 +52,8 @@ const GuidingPillars = () => {
               <Card className="w-full aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
-                    src={activeContent.image} 
-                    alt={activeContent.title} 
+                    src="/lovable-uploads/57a9e15d-0025-4d8b-bd42-3be25b8aea1a.png" 
+                    alt="Guiding Pillars" 
                     className="w-full h-full object-cover transition-opacity duration-300"
                   />
                 </AspectRatio>

@@ -103,7 +103,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 
           <div className="p-6 bg-[#94af45]">
             <h4 className="text-xl font-semibold mb-4">Steven's Top 10 Favourite Books</h4>
-            <ScrollArea className="w-full" orientation="horizontal">
+            <ScrollArea className="w-full" style={{ overflow: 'auto' }}>
               <div className="flex gap-4 pb-4 w-max">
                 {bookRecommendations.map((book, index) => (
                   <div key={index} className="flex-shrink-0">
