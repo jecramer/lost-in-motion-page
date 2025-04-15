@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -66,7 +67,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          <div className="p-6 bg-white">
+          <div className="p-6 bg-[#94af45]">
             <h4 className="text-xl font-semibold mb-4">Book Recommendations</h4>
             <div className="overflow-auto">
               <ScrollArea className="w-full">
