@@ -1,6 +1,6 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
+import BookRecommendationsDialog from "./BookRecommendationsDialog";
 
 interface ArchetypeData {
   id: number;
@@ -53,6 +53,7 @@ const ArchetypesCarousel = () => {
   const totalItems = archetypes.length;
   const [itemsToShow, setItemsToShow] = useState(4);
   const [isResetting, setIsResetting] = useState(false);
+  const [selectedArchetype, setSelectedArchetype] = useState<ArchetypeData | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -100,8 +101,12 @@ const ArchetypesCarousel = () => {
             transition: isResetting ? 'none' : 'transform 0.5s ease'
           }}>
             {allItems.map((archetype, index) => (
-              <div key={`${archetype.id}-${index}`} className="carousel-item">
-                <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden">
+              <div 
+                key={`${archetype.id}-${index}`} 
+                className="carousel-item"
+                onClick={() => setSelectedArchetype(archetype)}
+              >
+                <div className="aspect-[3/2] w-full relative rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
                   <img src={archetype.imgSrc} alt={`${archetype.name} - ${archetype.title}`} className="carousel-image" />
                   <div className="carousel-caption">
                     <h3 className="font-newsreader text-black">{archetype.name}</h3>
@@ -132,6 +137,14 @@ const ArchetypesCarousel = () => {
             </p>
           </div>
         </div>
+        
+        <BookRecommendationsDialog
+          open={!!selectedArchetype}
+          onClose={() => setSelectedArchetype(null)}
+          personImage={selectedArchetype?.imgSrc || ''}
+          personName={selectedArchetype?.name || ''}
+          personTitle={selectedArchetype?.title || ''}
+        />
       </div>
     </div>
   );
