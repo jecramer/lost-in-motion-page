@@ -13,6 +13,7 @@ import TeamSection from "@/components/investors/TeamSection";
 import AdvisorsSection from "@/components/investors/AdvisorsSection";
 import RoadmapSection from "@/components/investors/RoadmapSection";
 import OdinSection from "@/components/investors/OdinSection";
+import ScrollToTop from "@/components/investors/ScrollToTop";
 
 const Investors = () => {
   return (
@@ -30,6 +31,7 @@ const Investors = () => {
         <AdvisorsSection />
         <RoadmapSection />
         <OdinSection />
+        <ScrollToTop />
       </BackgroundWrapper>
     </>
   );
