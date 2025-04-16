@@ -34,11 +34,13 @@ const ProblemStatements = () => {
                   <h3 className="font-newsreader text-2xl font-medium mb-4 opacity-[0.92] text-center">
                     {statement.title}
                   </h3>
-                  <img 
-                    src={statement.image} 
-                    alt={statement.title}
-                    className="w-32 h-32 object-cover rounded-lg mb-4"
-                  />
+                  <div className="w-full h-64 mb-4 overflow-hidden rounded-lg">
+                    <img 
+                      src={statement.image} 
+                      alt={statement.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="absolute left-0 top-full w-full bg-white/95 backdrop-blur-sm p-4 rounded-b-lg transform translate-y-0 opacity-0 group-hover:opacity-100 group-hover:-translate-y-full transition-all duration-200">
                     <p className="text-base opacity-[0.84] text-center">{statement.content}</p>
                   </div>
