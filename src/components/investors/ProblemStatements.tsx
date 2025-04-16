@@ -4,7 +4,7 @@ const problemStatements = [
   {
     title: "Book discovery is broken",
     content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80&w=400"  // Woman sitting on a bed using a laptop, choosing a book
+    image: "/lovable-uploads/b3a5106e-9f74-47d4-9190-7174dbf38ac2.png"  // Image of books with a hand selecting a book
   },
   {
     title: "€15 billion a year is wasted",
