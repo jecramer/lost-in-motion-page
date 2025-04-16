@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-// Content for each pillar
 const pillarsContent = [
   {
     id: "community",
-    title: "Community",
+    title: "Unique Reading Fingerprint",
     image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
     description: "Our platform fosters a vibrant community of readers who share recommendations, discuss books, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social."
   },
@@ -33,10 +32,8 @@ const pillarsContent = [
 const GuidingPillars = () => {
   const [activePillar, setActivePillar] = useState("community");
 
-  // Find the active pillar content
   const activeContent = pillarsContent.find(pillar => pillar.id === activePillar) || pillarsContent[0];
   
-  // Filter out the active pillar to show only non-active pillars as thumbnails
   const thumbnailPillars = pillarsContent.filter(pillar => pillar.id !== activePillar);
 
   return (
@@ -46,9 +43,7 @@ const GuidingPillars = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Main content area - Left side */}
             <div className="flex flex-col space-y-4">
-              {/* Main image */}
               <Card className="w-full aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
                 <AspectRatio ratio={1/1}>
                   <img 
@@ -59,7 +54,6 @@ const GuidingPillars = () => {
                 </AspectRatio>
               </Card>
               
-              {/* Thumbnail images - only showing non-active pillars */}
               <div className="grid grid-cols-3 gap-4">
                 {thumbnailPillars.map((pillar) => (
                   <button
@@ -81,7 +75,6 @@ const GuidingPillars = () => {
               </div>
             </div>
             
-            {/* Content area - Right side */}
             <div className="flex flex-col justify-start h-full">
               <div className="bg-[#d5d197]/60 backdrop-blur-sm rounded-lg p-8 shadow-lg h-full">
                 <h3 className="font-newsreader text-2xl font-medium mb-4">{activeContent.title}</h3>
