@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -6,7 +5,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 const pillarsContent = [
   {
     id: "community",
-    title: "Social Reading Revolution", // Updated title here
+    title: "Social Reading Revolution",
     image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
     description: "Our platform fosters a vibrant community of readers who share recommendations, discuss books, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social."
   },
@@ -24,9 +23,9 @@ const pillarsContent = [
   },
   {
     id: "c25k",
-    title: "Build Reading Stamina", // Updated title here
+    title: "Build Reading Stamina",
     image: "/lovable-uploads/bfdf6284-07b9-47e0-9e48-bf6a47ab379e.png",
-    description: "Just like Couch to 5K helps new runners build stamina gradually, our reading program helps non-readers build a sustainable reading habit through scientifically designed progression and gamified challenges."
+    description: "Just as the \"Couch To 5K\" program helps people build a healthy exercise habit, Get Lost's reading program helps lapsed readers to build a sustainable reading habit through scientifically designed progression and social challenges.\n\nGet Lost is designed to learn about your taste, mood, and preferences so that book recommendations really hit the mark."
   }
 ];
 
