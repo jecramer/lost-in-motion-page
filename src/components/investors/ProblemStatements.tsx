@@ -27,7 +27,7 @@ const ProblemStatements = () => {
           <h2 className="font-newsreader font-semibold text-4xl mb-8 text-black text-center opacity-[0.92]">
             The $15bn Book Publishing Opportunity
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {problemStatements.map((statement, index) => (
               <div key={index} className="relative group">
                 <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6 cursor-pointer transition-all duration-300 hover:bg-white/40 overflow-hidden flex flex-col items-center justify-center">
@@ -47,6 +47,11 @@ const ProblemStatements = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-8 max-w-3xl mx-auto">
+            <p className="text-lg leading-relaxed opacity-[0.84] text-center">
+              Book publishers spend €15bn a year on marketing, much of it through channels that don't reach engaged readers. Ads are misplaced, social content gets buried, and recommendation algorithms favour the biggest players. Get Lost changes the game. Psychographic segmentation and discovery means a shift from trend following to taste-led. From blanket guesswork to pinpoint prediction.
+            </p>
           </div>
         </div>
       </div>
