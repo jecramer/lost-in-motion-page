@@ -1,22 +1,21 @@
 
 import React from "react";
-import { BookX, BanknoteIcon, UsersRound } from "lucide-react";
 
 const problemStatements = [
   {
     title: "Book discovery is broken",
     content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
-    icon: <BookX className="w-32 h-32 mb-4 opacity-90 text-red-500/80" />
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400"  // Library maze of books
   },
   {
     title: "€15 billion a year is wasted",
     content: "€15 billion is spent every year by publishers trying to market their product - and most of it misses the mark.",
-    icon: <BanknoteIcon className="w-32 h-32 mb-4 opacity-90 text-emerald-600/80" />
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=400"  // Money/business concept
   },
   {
     title: "Where's the audience?",
     content: "188,000 books were published in the UK in 2023 - most never find an audience.",
-    icon: <UsersRound className="w-32 h-32 mb-4 opacity-90 text-blue-500/80" />
+    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"  // Empty audience/seats
   }
 ];
 
@@ -35,7 +34,11 @@ const ProblemStatements = () => {
                   <h3 className="font-newsreader text-2xl font-medium mb-4 opacity-[0.92] text-center">
                     {statement.title}
                   </h3>
-                  {statement.icon}
+                  <img 
+                    src={statement.image} 
+                    alt={statement.title}
+                    className="w-32 h-32 object-cover rounded-lg mb-4"
+                  />
                   <div className="absolute left-0 top-full w-full bg-white/95 backdrop-blur-sm p-4 rounded-b-lg transform translate-y-0 opacity-0 group-hover:opacity-100 group-hover:-translate-y-full transition-all duration-200">
                     <p className="text-base opacity-[0.84] text-center">{statement.content}</p>
                   </div>
@@ -50,4 +53,3 @@ const ProblemStatements = () => {
 };
 
 export default ProblemStatements;
-
