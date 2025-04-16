@@ -50,7 +50,7 @@ const ProblemStatements = () => {
           </div>
           <div className="bg-white/30 backdrop-blur-sm rounded-lg p-8">
             <p className="text-lg leading-relaxed opacity-[0.84] text-center">
-              Book publishers spend €15bn a year on marketing, much of it through channels that don't reach engaged readers. Ads are misplaced, social content gets buried, and recommendation algorithms favour the biggest players. Get Lost changes the game. Psychographic segmentation and discovery means a shift from trend following to taste-led. From blanket guesswork to pinpoint prediction.
+              188,000 books were published in the UK in 2023 - most never find an audience thanks to outdated marketing strategies.
             </p>
           </div>
         </div>
