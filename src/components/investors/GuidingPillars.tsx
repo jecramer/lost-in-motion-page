@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -5,7 +6,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 const pillarsContent = [
   {
     id: "community",
-    title: "Unique Reading Fingerprint",
+    title: "Social Reading Revolution", // Updated title here
     image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
     description: "Our platform fosters a vibrant community of readers who share recommendations, discuss books, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social."
   },
