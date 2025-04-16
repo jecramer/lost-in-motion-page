@@ -4,7 +4,7 @@ import React from "react";
 const problemStatements = [
   {
     title: "Book discovery is broken",
-    content: "188,000 books were published in the UK in 2023 - most never find an audience thanks to outdated marketing strategies.",
+    content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
     image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400"  // Library maze of books
   },
   {
