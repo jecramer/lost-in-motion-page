@@ -1,22 +1,22 @@
 
 import React from "react";
-import { BookX, EuroIcon, Users } from "lucide-react";
+import { BookX, BanknoteIcon, UsersRound } from "lucide-react";
 
 const problemStatements = [
   {
     title: "Book discovery is broken",
     content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
-    icon: <BookX className="w-6 h-6 mb-3 opacity-75" />
+    icon: <BookX className="w-16 h-16 mb-4 opacity-90 text-red-500/80" />
   },
   {
     title: "€15 billion a year is wasted",
     content: "€15 billion is spent every year by publishers trying to market their product - and most of it misses the mark.",
-    icon: <EuroIcon className="w-6 h-6 mb-3 opacity-75" />
+    icon: <BanknoteIcon className="w-16 h-16 mb-4 opacity-90 text-emerald-600/80" />
   },
   {
     title: "Where's the audience?",
     content: "188,000 books were published in the UK in 2023 - most never find an audience.",
-    icon: <Users className="w-6 h-6 mb-3 opacity-75" />
+    icon: <UsersRound className="w-16 h-16 mb-4 opacity-90 text-blue-500/80" />
   }
 ];
 
