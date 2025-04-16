@@ -4,17 +4,17 @@ const problemStatements = [
   {
     title: "Book discovery is broken",
     content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
-    image: "/lovable-uploads/b3a5106e-9f74-47d4-9190-7174dbf38ac2.png"  // Image of books with a hand selecting a book
+    image: "/lovable-uploads/b3a5106e-9f74-47d4-9190-7174dbf38ac2.png"
   },
   {
     title: "€15 billion a year is wasted",
     content: "€15 billion is spent every year by publishers trying to market their product - and most of it misses the mark.",
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=400"  // Money/business concept
+    image: "/lovable-uploads/09560968-1713-4264-bdc8-db31e68aeaed.png"
   },
   {
     title: "Where's the audience?",
     content: "188,000 books were published in the UK in 2023 - most never find an audience.",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"  // Empty audience/seats
+    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"
   }
 ];
 
