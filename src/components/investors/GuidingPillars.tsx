@@ -24,7 +24,7 @@ const pillarsContent = [
   },
   {
     id: "c25k",
-    title: "C25K for Books",
+    title: "Build Reading Stamina", // Updated title here
     image: "/lovable-uploads/bfdf6284-07b9-47e0-9e48-bf6a47ab379e.png",
     description: "Just like Couch to 5K helps new runners build stamina gradually, our reading program helps non-readers build a sustainable reading habit through scientifically designed progression and gamified challenges."
   }
