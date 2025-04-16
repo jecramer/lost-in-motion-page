@@ -25,7 +25,7 @@ const ProblemStatements = () => {
     <div className="w-full py-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-4xl mb-8 text-white text-center opacity-[0.92]">
+          <h2 className="font-newsreader font-semibold text-4xl mb-8 text-black text-center opacity-[0.92]">
             The $15bn Book Publishing Opportunity
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -50,3 +50,4 @@ const ProblemStatements = () => {
 };
 
 export default ProblemStatements;
+
