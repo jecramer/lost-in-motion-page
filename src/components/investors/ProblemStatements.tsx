@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const problemStatements = [
@@ -8,7 +9,7 @@ const problemStatements = [
   },
   {
     title: "€15 billion a year is wasted",
-    content: "€15 billion is spent every year by publishers trying to market their product - and most of it misses the mark.",
+    content: "Publishers' marketing spend uses outdated tools and inefficient targeting, most of it missing the mark.",
     image: "/lovable-uploads/09560968-1713-4264-bdc8-db31e68aeaed.png"
   },
   {
