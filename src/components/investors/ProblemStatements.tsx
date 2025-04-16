@@ -4,7 +4,7 @@ const problemStatements = [{
   content: "Algorithms push trends. Amazon pushes transactions. Readers are overwhelmed.",
   image: "/lovable-uploads/b3a5106e-9f74-47d4-9190-7174dbf38ac2.png"
 }, {
-  title: "€15 billion a year is wasted",
+  title: "Marketing is ineffective",
   content: "Publishers' marketing spend uses outdated tools and inefficient targeting, most of it missing the mark.",
   image: "/lovable-uploads/09560968-1713-4264-bdc8-db31e68aeaed.png"
 }, {
@@ -12,6 +12,7 @@ const problemStatements = [{
   content: "Discussion around books is scattered across the internet, fragmented and hard to follow.",
   image: "/lovable-uploads/74c46143-b555-4236-9f34-e7bdd569e0b2.png"
 }];
+
 const ProblemStatements = () => {
   return <div className="w-full py-16">
       <div className="container mx-auto px-4 md:px-8">
@@ -43,4 +44,5 @@ const ProblemStatements = () => {
       </div>
     </div>;
 };
+
 export default ProblemStatements;
