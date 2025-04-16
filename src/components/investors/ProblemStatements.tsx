@@ -13,7 +13,7 @@ const problemStatements = [
     image: "/lovable-uploads/09560968-1713-4264-bdc8-db31e68aeaed.png"
   },
   {
-    title: "Where's the audience?",
+    title: "Where's the community?",
     content: "Discussion around books is scattered across the internet, fragmented and hard to follow.",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"
   }
