@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import BackgroundWrapper from "@/components/investors/BackgroundWrapper";
 import InvestorsHero from "@/components/investors/InvestorsHero";
 import BuildingInfo from "@/components/investors/BuildingInfo";
+import ProblemStatements from "@/components/investors/ProblemStatements";
 import GuidingPillars from "@/components/investors/GuidingPillars";
 import ArchetypesCarousel from "@/components/investors/ArchetypesCarousel";
 import MarketComparison from "@/components/investors/MarketComparison";
@@ -20,6 +21,7 @@ const Investors = () => {
       <BackgroundWrapper>
         <InvestorsHero />
         <BuildingInfo />
+        <ProblemStatements />
         <GuidingPillars />
         <ArchetypesCarousel />
         <MarketComparison />
