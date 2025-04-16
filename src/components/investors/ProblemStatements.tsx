@@ -14,7 +14,7 @@ const problemStatements = [
   },
   {
     title: "Where's the audience?",
-    content: "188,000 books were published in the UK in 2023 - most never find an audience.",
+    content: "Discussion around books is scattered across the internet, fragmented and hard to follow.",
     image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"
   }
 ];
