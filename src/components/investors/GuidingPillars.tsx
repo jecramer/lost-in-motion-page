@@ -31,7 +31,7 @@ const pillarsContent = [
   {
     id: "subscribe",
     title: "Subscribe to creators for exclusive book content and recommendations",
-    image: "/lovable-uploads/a899c28b-e800-4852-b1f6-9b5adf196576.png",
+    image: "/lovable-uploads/44bbd380-9804-4c1c-9de0-97dea4bacdc0.png",
     description: "Support your favourite authors, BookTok influencers, or literary curators by subscribing directly through Get Lost. Unlock exclusive content like behind-the-scenes reading notes, early-access lists, and deep-dive essays into favourite titles. Think of it as Patreon for readers — a new way to connect with the people shaping your literary world, free from the noise of mainstream social media. Your subscription supports their work and brings you closer to the stories and voices you love.\n\nKeywords: exclusive content from authors, subscribe to creators, book content subscriptions, author membership platform"
   },
   {
