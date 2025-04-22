@@ -22,10 +22,10 @@ const Investors = () => {
       <BackgroundWrapper>
         <InvestorsHero />
         <BuildingInfo />
-        <ProblemStatements />
         <div className="mb-20">
           <ArchetypesCarousel />
         </div>
+        <ProblemStatements />
         <MarketComparison />
         <GuidingPillars />
         <RevenueSection />
