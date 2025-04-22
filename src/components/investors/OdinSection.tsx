@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -57,7 +58,13 @@ const OdinSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <Card className="w-full max-w-sm aspect-[4/5] bg-gray-200 border-none shadow-none"></Card>
+              <Card className="w-full max-w-sm overflow-hidden">
+                <img 
+                  src="/lovable-uploads/9abe1d3b-e8a4-430d-b91a-789d6635e4bf.png" 
+                  alt="Book Review" 
+                  className="w-full h-auto"
+                />
+              </Card>
             </div>
             
             <div className="space-y-4">
@@ -77,3 +84,4 @@ const OdinSection = () => {
 };
 
 export default OdinSection;
+
