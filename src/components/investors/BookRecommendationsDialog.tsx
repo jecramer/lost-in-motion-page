@@ -1,25 +1,23 @@
-
-import React from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
-import { useBookCovers } from "@/hooks/useBookCovers";
-
-interface BookRecommendation {
-  title: string;
-  author: string;
-}
+import React from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+} from "@/components/ui/dialog";
+import SignUpDialog from '@/components/SignUpDialog';
+import { BookData } from '@/types/books';
 
 interface BookRecommendationsDialogProps {
   open: boolean;
   onClose: () => void;
   personImage: string;
   personName: string;
-  personTitle: string;
-  bookRecommendations: BookRecommendation[];
+  personTitle?: string;
+  bookRecommendations: BookData[];
   headerImage?: string;
 }
 
-const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
+const BookRecommendationsDialog = ({
   open,
   onClose,
   personImage,
@@ -27,7 +25,12 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   personTitle,
   bookRecommendations,
   headerImage
-}) => {
+}: BookRecommendationsDialogProps) => {
+  // If it's the "MY LIST" dialog, show the SignUpDialog instead
+  if (personName === "MY LIST") {
+    return <SignUpDialog open={open} onClose={onClose} />;
+  }
+
   const bookCovers = useBookCovers(bookRecommendations);
   
   // Use specific images for Steven Bartlett, Katty Kay, and James Vowles, otherwise use the provided headerImage
