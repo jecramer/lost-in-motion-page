@@ -18,7 +18,6 @@ interface BookRecommendationsDialogProps {
   personTitle: string;
   bookRecommendations: BookRecommendation[];
   headerImage?: string;
-  headerColor?: string;
 }
 
 const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
@@ -28,8 +27,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   personName,
   personTitle,
   bookRecommendations,
-  headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png",
-  headerColor = "#94af45"
+  headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png"
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
 
@@ -49,7 +47,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          <div className="p-6" style={{ backgroundColor: headerColor }}>
+          <div className="p-6" style={{ backgroundColor: "#94af45" }}>
             <h4 className="text-xl font-semibold mb-4">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             <ScrollArea className="w-full" style={{ overflow: 'auto' }}>
               <div className="flex gap-4 pb-4 w-max">
