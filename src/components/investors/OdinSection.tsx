@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -54,22 +55,6 @@ const OdinSection = () => {
               Contact Us
             </Button>
           </form>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center">
-              <Card className="w-full max-w-sm aspect-[4/5] bg-gray-200 border-none shadow-none"></Card>
-            </div>
-            
-            <div className="space-y-4">
-              <p className="text-xl leading-relaxed text-black opacity-[0.84] hover:opacity-100 transition-opacity">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-                ab illo inventore veritatis et quasi ed ut perspiciatis unde omnis iste natus
-                error sit voluptatem accusantium doloremque laudantium, totam rem
-                aperiam
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
