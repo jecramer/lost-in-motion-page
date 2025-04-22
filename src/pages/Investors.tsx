@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import BackgroundWrapper from "@/components/investors/BackgroundWrapper";
@@ -25,9 +24,9 @@ const Investors = () => {
         <div className="mb-20">
           <ArchetypesCarousel />
         </div>
+        <GuidingPillars />
         <ProblemStatements />
         <MarketComparison />
-        <GuidingPillars />
         <RevenueSection />
         <TeamSection />
         <AdvisorsSection />
