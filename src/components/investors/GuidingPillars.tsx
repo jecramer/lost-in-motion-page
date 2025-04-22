@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -6,27 +5,33 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 const pillarsContent = [
   {
     id: "community",
-    title: "Social Reading Revolution",
+    title: "Join a community of readers",
     image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
-    description: "Our platform fosters a vibrant community of readers who share recommendations, discuss books, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social."
+    description: "Discover and share books with friends, authors, and creators."
   },
   {
     id: "recommendation",
-    title: "Recommendation Engine",
+    title: "Get personalised recommendations",
     image: "/lovable-uploads/f6ba601c-2dfd-4915-a00a-de99dbca30fd.png",
-    description: "Our AI-powered recommendation system learns from your reading habits and preferences to suggest books you'll love. Unlike generic algorithms, our engine understands nuanced connections between books and readers."
+    description: "Smart suggestions powered by people and machine learning."
   },
   {
-    id: "twitch",
-    title: "The Twitch of Books",
-    image: "/twitch_books.gif",
-    description: "We're creating an interactive platform where authors can connect directly with readers in real-time. Imagine watching your favorite author write, discuss their process, or answer questions about their latest work."
-  },
-  {
-    id: "c25k",
-    title: "Build Reading Stamina",
+    id: "explore",
+    title: "Explore curated booklists",
     image: "/lovable-uploads/bfdf6284-07b9-47e0-9e48-bf6a47ab379e.png",
-    description: "Just as the \"Couch To 5K\" program helps people build a healthy exercise habit, Get Lost's reading program helps lapsed readers to build a sustainable reading habit through scientifically designed progression and social challenges.\n\nGet Lost is designed to learn about your taste, mood, and preferences so that book recommendations really hit the mark."
+    description: "Follow trusted voices and uncover hidden gems."
+  },
+  {
+    id: "habits",
+    title: "Build healthy reading habits",
+    image: "/lovable-uploads/74c46143-b555-4236-9f34-e7bdd569e0b2.png",
+    description: "Take on challenges that make reading joyful again."
+  },
+  {
+    id: "subscribe",
+    title: "Subscribe for exclusive content",
+    image: "/lovable-uploads/ce39e4e3-80ae-4f5b-ab26-c8949868315d.png",
+    description: "Support your favourite creators and unlock behind-the-scenes insights."
   }
 ];
 
