@@ -80,11 +80,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 
             <div 
               ref={scrollContainerRef} 
-              className="overflow-x-auto pb-2" 
-              style={{ 
-                scrollbarWidth: 'none', 
-                msOverflowStyle: 'none' 
-              }}
+              className="overflow-x-auto scrollbar-hide pb-2"
             >
               <div className="flex gap-4 min-w-max">
                 {bookRecommendations.map((book, index) => (
@@ -109,12 +105,6 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                 ))}
               </div>
             </div>
-
-            <style jsx>{`
-              div[ref="scrollContainerRef"]::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
           </div>
         </div>
       </DialogContent>
