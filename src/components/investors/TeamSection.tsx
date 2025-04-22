@@ -1,4 +1,5 @@
 import React from "react";
+
 const TeamSection = () => {
   const teamMembers = [{
     name: "Martin Jurasek",
@@ -21,51 +22,47 @@ const TeamSection = () => {
     image: "/lovable-uploads/bcf46678-7d0d-495e-94d7-aa8333c0ce47.png",
     linkedin: "https://www.linkedin.com/in/andrey-morskov/"
   }];
-  return <div className="w-full py-20" style={{
-    background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
-    backdropFilter: 'blur(10px)'
-  }}>
+
+  return (
+    <div className="w-full py-20" style={{
+      background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
+      backdropFilter: 'blur(10px)'
+    }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-slate-950">The Get Lost Team</h2>
+          <h2 className="font-newsreader font-semibold text-5xl mb-10 text-center text-slate-950 hover:opacity-90 transition-opacity">The Get Lost Team</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {teamMembers.map(member => <div key={member.name} className="flex flex-col items-center space-y-3">
-                <img src={member.image} alt={member.name} className="w-40 h-40 object-cover" />
+            {teamMembers.map(member => (
+              <div key={member.name} className="flex flex-col items-center space-y-3 transform transition-all duration-300 hover:translate-y-[-8px]">
+                <img src={member.image} alt={member.name} className="w-40 h-40 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow" />
                 <div className="text-center">
-                  <h4 className="font-semibold text-slate-950 text-xl">{member.name}</h4>
+                  <h4 className="font-semibold text-slate-950 text-2xl">{member.name}</h4>
                   <p className="text-slate-950 text-lg">{member.role}</p>
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 mt-1">
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors mt-1">
                     LinkedIn
                   </a>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-slate-950 mb-4">We've built communities and products people love</h3>
-              <p className="mb-6 opacity-[0.84] text-slate-950 font-normal text-lg">
-                Our team's roots lie in games, social platforms, and interactive tools – spaces where design meets psychology, and where community isn't just a metric but a feeling. We've shaped experiences that linger in memory, quietly guiding millions through worlds both playful and purposeful. That sensibility now finds a new home in Get Lost.
-              </p>
-            </div>
-            
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-slate-950 mb-4">We understand how communities grow and why people stay</h3>
-              <p className="mb-6 opacity-[0.84] font-normal text-slate-950 text-lg">
-                From the mechanics of engagement to the nuance of tone, we've studied what makes people lean in. Our backgrounds span data, strategy, design, and development – all oriented around one idea: technology should invite, not impose. We build systems that reward curiosity and invite participation, without shouting for attention.
-              </p>
-            </div>
-            
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-slate-950 mb-4">We're making space for a different kind of digital life</h3>
-              <p className="mb-6 opacity-[0.84] font-normal text-slate-950 text-lg">
-                In a landscape crowded with noise, Get Lost offers something quieter – but more resonant. Here, discovery is thoughtful, social is meaningful, and the line between creator and audience begins to blur. We believe in helping people get lost in things that matter. Not by accident, but by design.
-              </p>
-            </div>
+            {["We've built communities and products people love", 
+              "We understand how communities grow and why people stay",
+              "We're making space for a different kind of digital life"].map((title, index) => (
+              <div key={index} className="space-y-2 transform transition-all duration-300 hover:translate-y-[-8px]">
+                <h3 className="text-2xl font-semibold text-slate-950 mb-4">{title}</h3>
+                <p className="mb-6 opacity-[0.84] text-slate-950 font-normal text-lg hover:opacity-100 transition-opacity">
+                  Our team's roots lie in games, social platforms, and interactive tools – spaces where design meets psychology, and where community isn't just a metric but a feeling. We've shaped experiences that linger in memory, quietly guiding millions through worlds both playful and purposeful. That sensibility now finds a new home in Get Lost.
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default TeamSection;

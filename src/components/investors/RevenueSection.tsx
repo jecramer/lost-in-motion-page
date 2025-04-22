@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   LineChart,
@@ -12,7 +11,6 @@ import {
 } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
-// Revenue forecast data
 const revenueData = [
   { year: "2025", totalRevenue: 10, userAcquisitionCost: 5 },
   { year: "2026", totalRevenue: 30, userAcquisitionCost: 15 },
@@ -42,20 +40,18 @@ const RevenueSection = () => {
       backgroundAttachment: 'fixed'
     }}>
       <div className="container mx-auto px-4 md:px-8">
-        <div 
-          className="max-w-5xl mx-auto bg-white/30 backdrop-blur-sm p-10 rounded-lg shadow-lg" 
-        >
-          <h2 className="font-newsreader font-semibold text-4xl mb-6 text-center text-black">Revenue Potential - 5 Year Horizon</h2>
+        <div className="max-w-5xl mx-auto bg-white/30 backdrop-blur-sm p-10 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+          <h2 className="font-newsreader font-semibold text-5xl mb-6 text-center text-black hover:opacity-90 transition-opacity">Revenue Potential - 5 Year Horizon</h2>
           
-          <div className="max-w-4xl mx-auto mb-12 text-center text-black">
-            <p className="text-lg">
+          <div className="max-w-4xl mx-auto mb-12 text-center">
+            <p className="text-xl text-black opacity-[0.84] hover:opacity-100 transition-opacity">
               Our financial projections show substantial growth potential over the next five years.
               We've carefully modeled our user acquisition costs against projected revenue streams
               to demonstrate the path to profitability and scale.
             </p>
           </div>
           
-          <div className="mx-auto" style={{ maxWidth: "900px", height: "500px" }}>
+          <div className="mx-auto transform transition-all duration-300 hover:scale-[1.01]" style={{ maxWidth: "900px", height: "500px" }}>
             <ChartContainer config={chartConfig} className="h-full">
               <LineChart data={revenueData} margin={{ top: 20, right: 30, left: 50, bottom: 20 }}>
                 <CartesianGrid 
