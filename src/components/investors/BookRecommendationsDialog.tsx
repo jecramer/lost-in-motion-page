@@ -1,7 +1,6 @@
-
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X, ArrowLeft, ArrowRight } from "lucide-react";
+import { X } from "lucide-react";
 import { useBookCovers } from "@/hooks/useBookCovers";
 
 interface BookRecommendation {
@@ -29,35 +28,6 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png"
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    
-    const scrollAmount = 250;
-    const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
-    
-    scrollContainerRef.current.scrollTo({
-      left: newScrollPosition,
-      behavior: 'smooth'
-    });
-  };
-
-  // Force scroll initialization and reset position when dialog opens
-  useEffect(() => {
-    if (open && scrollContainerRef.current) {
-      // Use a small timeout to ensure the component is fully rendered
-      setTimeout(() => {
-        if (scrollContainerRef.current) {
-          scrollContainerRef.current.scrollLeft = 0;
-          
-          // Force browser to acknowledge the scrollable area
-          scrollContainerRef.current.style.overflowX = 'scroll';
-          scrollContainerRef.current.style.overflowX = 'auto';
-        }
-      }, 100);
-    }
-  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -67,6 +37,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
         </button>
 
         <div className="flex flex-col max-h-[90vh]">
+          {/* Header section - kept unchanged */}
           <div className="relative">
             <img src={headerImage} alt={personName} className="w-[892px] h-[500px] object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -75,75 +46,54 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          <div className="p-6 bg-[#94af45]">
+          {/* Books section with vertical scrolling */}
+          <div className="p-6 bg-[#94af45] max-h-[600px] flex flex-col">
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             
-            <div className="relative">
-              {/* Scroll buttons with high z-index and contrasting background */}
-              <button 
-                onClick={() => handleScroll('left')} 
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-40 bg-black/50 hover:bg-black/70 rounded-r-full p-2 transition-colors"
-                aria-label="Scroll left"
-              >
-                <ArrowLeft className="h-6 w-6 text-white" />
-              </button>
-              
-              <button 
-                onClick={() => handleScroll('right')} 
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-40 bg-black/50 hover:bg-black/70 rounded-l-full p-2 transition-colors"
-                aria-label="Scroll right"
-              >
-                <ArrowRight className="h-6 w-6 text-white" />
-              </button>
-
-              {/* Gradient indicators with lower z-index */}
-              <div className="absolute left-0 top-0 bottom-0 w-16 z-30 bg-gradient-to-r from-[#94af45] to-transparent pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-16 z-30 bg-gradient-to-l from-[#94af45] to-transparent pointer-events-none"></div>
-
-              {/* Scrollable container with explicit scrolling styles */}
-              <div 
-                ref={scrollContainerRef} 
-                className="overflow-x-auto pb-4 pt-2 px-4 mx-10" 
-                style={{ 
-                  WebkitOverflowScrolling: 'touch',
-                  overscrollBehaviorX: 'contain',
-                  scrollbarWidth: 'none', /* Firefox */
-                  msOverflowStyle: 'none', /* IE and Edge */
-                }}
-              >
-                {/* Make sure scrollbar is hidden for webkit */}
-                <style dangerouslySetInnerHTML={{ __html: `
-                  .overflow-x-auto::-webkit-scrollbar {
-                    display: none;
-                  }
-                `}} />
-                
-                <div className="flex gap-6 min-w-max">
-                  {bookRecommendations.map((book, index) => (
-                    <div key={index} className="flex-shrink-0 transition-all hover:scale-105 w-48">
-                      <div className="w-full h-72 bg-gray-100 rounded-md overflow-hidden shadow-lg">
-                        {bookCovers[index].data ? (
-                          <img 
-                            src={bookCovers[index].data} 
-                            alt={`${book.title} cover`} 
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = "https://via.placeholder.com/200x300?text=No+Cover";
-                            }}
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-400 text-sm text-center p-2">
-                            Loading...
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-2 text-white text-sm font-medium truncate max-w-48">{book.title}</div>
-                      <div className="text-white/70 text-xs truncate max-w-48">{book.author}</div>
+            <div className="overflow-y-auto flex-1 pr-4 custom-scrollbar">
+              <div className="grid grid-cols-5 gap-6 auto-rows-max">
+                {bookRecommendations.map((book, index) => (
+                  <div key={index} className="flex-shrink-0 transition-all hover:scale-105">
+                    <div className="w-full aspect-[2/3] bg-gray-100 rounded-md overflow-hidden shadow-lg">
+                      {bookCovers[index].data ? (
+                        <img 
+                          src={bookCovers[index].data} 
+                          alt={`${book.title} cover`} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://via.placeholder.com/200x300?text=No+Cover";
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-400 text-sm text-center p-2">
+                          Loading...
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                    <div className="mt-2 text-white text-sm font-medium truncate">{book.title}</div>
+                    <div className="text-white/70 text-xs truncate">{book.author}</div>
+                  </div>
+                ))}
               </div>
             </div>
+
+            {/* Custom scrollbar styles */}
+            <style dangerouslySetInnerHTML={{ __html: `
+              .custom-scrollbar::-webkit-scrollbar {
+                width: 8px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 4px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.4);
+              }
+            `}} />
           </div>
         </div>
       </DialogContent>
