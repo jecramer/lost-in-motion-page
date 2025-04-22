@@ -25,6 +25,7 @@ export const archetypes: ArchetypeData[] = [
     name: "Jake Humphrey",
     title: "Creator @ highperformance",
     headerColor: "#FF5A5F",
+    headerImage: "/lovable-uploads/68ed200d-7969-486f-804c-98fa83720ced.png", // New header image
     books: jakeBooks
   },
   {
@@ -61,4 +62,3 @@ export const archetypes: ArchetypeData[] = [
     books: myListBooks
   }
 ];
-
