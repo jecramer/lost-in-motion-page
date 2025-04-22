@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const problemStatements = [
@@ -26,7 +27,7 @@ const ProblemStatements = () => {
           <h2 className="font-newsreader font-semibold mb-8 text-center opacity-[0.92] text-5xl text-slate-950 hover:opacity-100 transition-opacity">The $15bn Opportunity in Book Publishing</h2>
           
           <div className="bg-white/30 backdrop-blur-sm rounded-lg p-8 mb-12 transform transition-all duration-300 hover:bg-white/40">
-            <p className="leading-relaxed opacity-[0.84] text-center text-2xl hover:opacity-100 transition-opacity">Book publishers spend €15bn a year on marketing, much of it through channels that don't reach engaged readers. Ads are misplaced, social content gets buried, and recommendation algorithms favour the biggest players. Get Lost changes the game. Psychographic segmentation and discovery means a shift from trend-following to taste-led. From blanket guesswork to pinpoint prediction.</p>
+            <p className="leading-relaxed opacity-[0.84] text-center text-xl hover:opacity-100 transition-opacity">Book publishers spend €15bn a year on marketing, much of it through channels that don't reach engaged readers. Ads are misplaced, social content gets buried, and recommendation algorithms favour the biggest players. Get Lost changes the game. Psychographic segmentation and discovery means a shift from trend-following to taste-led. From blanket guesswork to pinpoint prediction.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -40,7 +41,7 @@ const ProblemStatements = () => {
                     <img src={statement.image} alt={statement.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute left-0 top-full w-full bg-white/95 backdrop-blur-sm p-4 rounded-b-lg transform translate-y-0 opacity-0 group-hover:opacity-100 group-hover:-translate-y-full transition-all duration-200">
-                    <p className="text-base opacity-[0.84] text-center">{statement.content}</p>
+                    <p className="text-lg opacity-[0.84] text-center">{statement.content}</p>
                   </div>
                 </div>
               </div>

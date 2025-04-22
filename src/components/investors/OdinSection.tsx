@@ -6,7 +6,7 @@ const OdinSection = () => {
   return <div className="w-full py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-black">Join the Deal On</h2>
+          <h2 className="font-newsreader font-semibold text-5xl mb-10 text-center text-black">Join the Deal On</h2>
           
           <div className="flex justify-center mb-12">
             <img alt="ODIN Logo" className="h-[28.8]" src="/lovable-uploads/32dc47be-4d3e-4521-9c0f-5ca5dbccfca7.png" />
@@ -18,7 +18,7 @@ const OdinSection = () => {
             </div>
             
             <div className="space-y-4">
-              <p className="text-base leading-relaxed text-black">
+              <p className="text-xl leading-relaxed text-black opacity-[0.84] hover:opacity-100 transition-opacity">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
                 ab illo inventore veritatis et quasi ed ut perspiciatis unde omnis iste natus

@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const TeamSection = () => {
@@ -53,7 +54,7 @@ const TeamSection = () => {
               "We're making space for a different kind of digital life"].map((title, index) => (
               <div key={index} className="space-y-2 transform transition-all duration-300 hover:translate-y-[-8px]">
                 <h3 className="text-2xl font-semibold text-slate-950 mb-4">{title}</h3>
-                <p className="mb-6 opacity-[0.84] text-slate-950 font-normal text-lg hover:opacity-100 transition-opacity">
+                <p className="mb-6 opacity-[0.84] text-slate-950 font-normal text-xl hover:opacity-100 transition-opacity">
                   Our team's roots lie in games, social platforms, and interactive tools – spaces where design meets psychology, and where community isn't just a metric but a feeling. We've shaped experiences that linger in memory, quietly guiding millions through worlds both playful and purposeful. That sensibility now finds a new home in Get Lost.
                 </p>
               </div>
