@@ -1,11 +1,14 @@
+
 import React from 'react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
 } from "@/components/ui/dialog";
+import { X } from "lucide-react"; // Add the missing X icon import
 import SignUpDialog from '@/components/SignUpDialog';
 import { BookData } from '@/types/books';
+import { useBookCovers } from '@/hooks/useBookCovers'; // Add the missing hook import
 
 interface BookRecommendationsDialogProps {
   open: boolean;

@@ -14,3 +14,5 @@ export interface ArchetypeData {
   books: BookRecommendation[];
 }
 
+// Add the BookData type that was missing
+export type BookData = BookRecommendation;
