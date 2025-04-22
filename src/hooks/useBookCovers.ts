@@ -42,6 +42,16 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
           return "https://m.media-amazon.com/images/I/81gTRv2HXrL._AC_UF1000,1000_QL80_.jpg";
         }
         
+        // Special case for Atomic Habits by James Clear showing Finnish version
+        if (book.title === "Atomic Habits" && book.author === "James Clear") {
+          return "https://m.media-amazon.com/images/I/81wgcld4wxL._AC_UF1000,1000_QL80_.jpg";
+        }
+        
+        // Special case for The Chimp Paradox which might show up incorrectly
+        if (book.title === "The Chimp Paradox" && book.author === "Prof Steve Peters") {
+          return "https://m.media-amazon.com/images/I/71J+6InELdL._AC_UF1000,1000_QL80_.jpg";
+        }
+        
         // First try Google Books API with language preference set to English
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
