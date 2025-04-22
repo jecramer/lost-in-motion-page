@@ -1,34 +1,41 @@
 
 import React from "react";
 import { Button } from "./ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
 
-  // Only show investors link if on the /investors route
-  const showInvestorsLink = location.pathname === '/investors';
+  const scrollToOdin = () => {
+    const odinSection = document.getElementById('odin-section');
+    if (odinSection) {
+      odinSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Only show investors link if on the home route
+  const showInvestorsLink = location.pathname === '/';
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-black/30 backdrop-blur-sm z-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
         {/* Logo / Brand */}
         <div className="flex items-center">
-          <Link to="/" className="text-white font-newsreader text-2xl font-semibold hover:text-slate-200 transition-colors">
+          <a href="/" className="text-white font-newsreader text-2xl font-semibold hover:text-slate-200 transition-colors">
             Get Lost
-          </Link>
+          </a>
         </div>
 
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
           {showInvestorsLink && (
-            <Link 
-              to="/investors" 
+            <button 
+              onClick={scrollToOdin}
               className="text-white font-newsreader hover:text-slate-200 transition-colors"
             >
               Investors
-            </Link>
+            </button>
           )}
           
           <a 
