@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
 const MarketComparison = () => {
   return (
@@ -26,6 +28,22 @@ const MarketComparison = () => {
             maxWidth: "632px"
           }}>
             <img src="/lovable-uploads/ce39e4e3-80ae-4f5b-ab26-c8949868315d.png" alt="Market Comparison Pie Chart" className="w-full object-contain" />
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <a 
+              href="https://jamescramer.substack.com/p/unlocking-storytelling-the-rise-of" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button 
+                className="group flex items-center gap-2 text-lg font-medium transition-all duration-300 hover:gap-4"
+                variant="outline"
+              >
+                Learn More
+                <ArrowRight className="h-4 w-4 transition-all duration-300" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
