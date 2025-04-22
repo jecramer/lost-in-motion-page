@@ -30,11 +30,13 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
   
-  // Use specific images for Steven Bartlett and Katty Kay, otherwise use the provided headerImage
+  // Use specific images for Steven Bartlett, Katty Kay, and James Vowles, otherwise use the provided headerImage
   const displayHeaderImage = personName === "Steven Bartlett"
     ? "/lovable-uploads/68948e18-2e65-4d14-bbfc-130f24b93acb.png"
     : personName === "Katty Kay"
     ? "/lovable-uploads/c6df641f-3b25-4e9a-8636-5552a34835a3.png"
+    : personName === "James Vowles"
+    ? "/lovable-uploads/f79c20a3-155a-464b-99d5-75b923eb65e8.png"
     : (headerImage || "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png");
 
   return (
