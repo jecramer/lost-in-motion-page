@@ -1,6 +1,6 @@
+
 import React, { useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { useBookCovers } from "@/hooks/useBookCovers";
 
@@ -78,11 +78,18 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
               <ArrowRight className="h-6 w-6 text-white" />
             </button>
 
-            <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide">
+            <div 
+              ref={scrollContainerRef} 
+              className="overflow-x-auto pb-2" 
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none' 
+              }}
+            >
               <div className="flex gap-4 min-w-max">
                 {bookRecommendations.map((book, index) => (
                   <div key={index} className="flex-shrink-0">
-                    <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden">
+                    <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden shadow-md">
                       {bookCovers[index].data ? (
                         <img 
                           src={bookCovers[index].data} 
@@ -102,6 +109,12 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                 ))}
               </div>
             </div>
+
+            <style jsx>{`
+              div[ref="scrollContainerRef"]::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
           </div>
         </div>
       </DialogContent>
