@@ -25,7 +25,7 @@ export const archetypes: ArchetypeData[] = [
     name: "Jake Humphrey",
     title: "Creator @ highperformance",
     headerColor: "#FF5A5F",
-    headerImage: "/lovable-uploads/68ed200d-7969-486f-804c-98fa83720ced.png", // New header image
+    headerImage: "/lovable-uploads/68ed200d-7969-486f-804c-98fa83720ced.png",
     books: jakeBooks
   },
   {
@@ -46,14 +46,6 @@ export const archetypes: ArchetypeData[] = [
     books: stevenBooks
   },
   {
-    id: 6,
-    imgSrc: "/lovable-uploads/3870710e-fff7-4237-89a0-9d0d01e91158.png",
-    name: "Harry Stebbings",
-    title: "Founder @ 20VC",
-    headerColor: "#94af45",
-    books: harryBooks
-  },
-  {
     id: 7,
     imgSrc: "/lovable-uploads/e222bfc7-1fe6-41fb-9e81-d004b180a551.png",
     name: "MY LIST",
@@ -62,3 +54,4 @@ export const archetypes: ArchetypeData[] = [
     books: myListBooks
   }
 ];
+
