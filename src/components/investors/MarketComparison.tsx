@@ -1,3 +1,4 @@
+
 import React from "react";
 const MarketComparison = () => {
   return <div style={{
@@ -9,7 +10,7 @@ const MarketComparison = () => {
   }} className="w-full py-0">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto bg-white/30 backdrop-blur-sm p-10 rounded-lg shadow-lg">
-          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-black">
+          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-black text-center">
             <span className="font-bold">The Vertical Is Saturated. The Market Isn't.</span>
           </h2>
           <p className="text-base mb-6 opacity-[0.84] font-normal text-black">
