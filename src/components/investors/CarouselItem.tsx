@@ -5,11 +5,22 @@ import { ArchetypeData } from '@/types/books';
 interface CarouselItemProps {
   archetype: ArchetypeData;
   onClick: () => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }
 
-const CarouselItem: React.FC<CarouselItemProps> = ({ archetype, onClick }) => {
+const CarouselItem: React.FC<CarouselItemProps> = ({ 
+  archetype, 
+  onClick,
+  onMouseEnter,
+  onMouseLeave
+}) => {
   return (
-    <div className="carousel-item">
+    <div 
+      className="carousel-item"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div 
         className="aspect-[3/2] w-full relative rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
         onClick={onClick}
@@ -29,4 +40,3 @@ const CarouselItem: React.FC<CarouselItemProps> = ({ archetype, onClick }) => {
 };
 
 export default CarouselItem;
-

@@ -9,6 +9,7 @@ import { ArchetypeData } from "@/types/books";
 
 const ArchetypesCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const totalItems = archetypes.length;
   const [itemsToShow, setItemsToShow] = useState(4);
   const [isResetting, setIsResetting] = useState(false);
@@ -29,6 +30,8 @@ const ArchetypesCarousel = () => {
   const allItems = [...archetypes, ...archetypes.slice(0, itemsToShow)];
 
   useEffect(() => {
+    if (isHovered) return; // Pause animation when hovered
+
     const interval = setInterval(() => {
       if (currentIndex >= totalItems - 1) {
         setCurrentIndex(currentIndex + 1);
@@ -44,7 +47,7 @@ const ArchetypesCarousel = () => {
       }
     }, 3000);
     return () => clearInterval(interval);
-  }, [currentIndex, totalItems]);
+  }, [currentIndex, totalItems, isHovered]);
 
   return (
     <div className="w-full py-16" style={{
@@ -69,6 +72,8 @@ const ArchetypesCarousel = () => {
                 key={`${archetype.id}-${index}`}
                 archetype={archetype}
                 onClick={() => setSelectedArchetype(archetype)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               />
             ))}
           </div>
@@ -93,4 +98,3 @@ const ArchetypesCarousel = () => {
 };
 
 export default ArchetypesCarousel;
-
