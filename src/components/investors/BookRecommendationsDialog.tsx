@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -47,10 +46,10 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          <ScrollArea className="flex-1 h-full max-h-[400px]">
-            <div className="p-6 bg-[#94af45]">
-              <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
-              <div className="flex gap-4 pb-4 overflow-x-auto w-max">
+          <div className="p-6 bg-[#94af45]">
+            <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
+            <ScrollArea className="w-full" orientation="horizontal">
+              <div className="flex gap-4 pb-4 min-w-max">
                 {bookRecommendations.map((book, index) => (
                   <div key={index} className="flex-shrink-0">
                     <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden">
@@ -69,15 +68,11 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                         </div>
                       )}
                     </div>
-                    <div className="mt-2">
-                      <p className="font-medium text-sm text-white line-clamp-2">{book.title}</p>
-                      <p className="text-xs text-white/80">{book.author}</p>
-                    </div>
                   </div>
                 ))}
               </div>
-            </div>
-          </ScrollArea>
+            </ScrollArea>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
