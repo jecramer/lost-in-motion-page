@@ -1,50 +1,144 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 import BookRecommendationsDialog from "./BookRecommendationsDialog";
+
+interface BookRecommendation {
+  title: string;
+  author: string;
+}
 
 interface ArchetypeData {
   id: number;
   imgSrc: string;
   name: string;
   title: string;
+  headerImage?: string;
+  headerColor?: string;
+  books: BookRecommendation[];
 }
+
+const jamesBooks: BookRecommendation[] = [
+  { title: "The Art of Racing in the Rain", author: "Garth Stein" },
+  { title: "Drive to Survive", author: "Toby Vintcent" },
+  { title: "How to Build a Car", author: "Adrian Newey" },
+  { title: "Total Competition", author: "Ross Brawn & Adam Parr" },
+  { title: "The Mechanic", author: "Marc Priestley" },
+  { title: "Winning Is Not Enough", author: "Jackie Stewart" },
+  { title: "The Power of Now", author: "Eckhart Tolle" },
+  { title: "Mindset", author: "Carol S. Dweck" }
+];
+
+const kattyBooks: BookRecommendation[] = [
+  { title: "Bad Blood", author: "John Carreyrou" },
+  { title: "Educated", author: "Tara Westover" },
+  { title: "Becoming", author: "Michelle Obama" },
+  { title: "The New Silk Roads", author: "Peter Frankopan" },
+  { title: "The Splendid and the Vile", author: "Erik Larson" },
+  { title: "A Promised Land", author: "Barack Obama" },
+  { title: "The Vanishing Half", author: "Brit Bennett" },
+  { title: "Where the Crawdads Sing", author: "Delia Owens" }
+];
+
+const jakeBooks: BookRecommendation[] = [
+  { title: "High Performance", author: "Jake Humphrey & Prof Damian Hughes" },
+  { title: "Legacy", author: "James Kerr" },
+  { title: "Atomic Habits", author: "James Clear" },
+  { title: "Ego Is the Enemy", author: "Ryan Holiday" },
+  { title: "Endure", author: "Alex Hutchinson" },
+  { title: "The Chimp Paradox", author: "Prof Steve Peters" },
+  { title: "Black Box Thinking", author: "Matthew Syed" },
+  { title: "Shoe Dog", author: "Phil Knight" }
+];
+
+const harryBooks: BookRecommendation[] = [
+  { title: "Explosive Growth", author: "Cliff Lerner" },
+  { title: "The Hard Thing About Hard Things", author: "Ben Horowitz" },
+  { title: "Zero to One", author: "Peter Thiel and Blake Masters" },
+  { title: "The Lean Startup", author: "Eric Ries" },
+  { title: "When Breath Becomes Air", author: "Paul Kalanithi" },
+  { title: "The 7 Habits of Highly Effective People", author: "Stephen R. Covey" },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
+  { title: "Sapiens: A Brief History of Humankind", author: "Yuval Noah Harari" },
+  { title: "The Innovator's Dilemma", author: "Clayton M. Christensen" },
+  { title: "The Art of War", author: "Sun Tzu" }
+];
+
+const stevenBooks: BookRecommendation[] = [
+  { title: "Shoe Dog", author: "Phil Knight" },
+  { title: "Man's Search for Meaning", author: "Viktor E. Frankl" },
+  { title: "Becoming", author: "Michelle Obama" },
+  { title: "The Courage to Be Disliked", author: "Ichiro Kishimi & Fumitake Koga" },
+  { title: "Greenlights", author: "Matthew McConaughey" },
+  { title: "Can't Hurt Me", author: "David Goggins" },
+  { title: "Atomic Habits", author: "James Clear" },
+  { title: "Influence", author: "Robert B. Cialdini" },
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
+  { title: "Daring Greatly", author: "Brené Brown" }
+];
+
+const myListBooks: BookRecommendation[] = [
+  { title: "Deep Work", author: "Cal Newport" },
+  { title: "Digital Minimalism", author: "Cal Newport" },
+  { title: "How to Win Friends and Influence People", author: "Dale Carnegie" },
+  { title: "Essentialism", author: "Greg McKeown" },
+  { title: "The Four Agreements", author: "Don Miguel Ruiz" },
+  { title: "The Power of Habit", author: "Charles Duhigg" },
+  { title: "Start with Why", author: "Simon Sinek" },
+  { title: "Everybody Writes", author: "Ann Handley" }
+];
 
 const archetypes: ArchetypeData[] = [
   {
     id: 1,
     imgSrc: "/lovable-uploads/cd3787d9-8b1c-41d7-a0ac-eb6c8f331368.png",
     name: "James Vowles",
-    title: "Team Principal @ Williams Racing"
+    title: "Team Principal @ Williams Racing",
+    headerColor: "#00A0DE",
+    books: jamesBooks
   }, {
     id: 2,
     imgSrc: "/lovable-uploads/d145f66f-ca4c-4765-ba19-503e508bd56a.png",
     name: "Katty Kay",
-    title: "Journalist @ BBC US"
+    title: "Journalist @ BBC US",
+    headerColor: "#BB1919",
+    books: kattyBooks
   }, {
     id: 3,
     imgSrc: "/lovable-uploads/cb94ddf7-29a4-46a4-b3d7-888ef998bd8a.png",
     name: "Jake Humphrey",
-    title: "Creator @ highperformance"
+    title: "Creator @ highperformance",
+    headerColor: "#FF5A5F",
+    books: jakeBooks
   }, {
     id: 4,
     imgSrc: "/lovable-uploads/c0ba7fa2-66a0-4076-981c-a8f7aea8ec7f.png",
     name: "Harry Stebbings",
-    title: "Founder @ 20VC"
+    title: "Founder @ 20VC",
+    headerImage: "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png",
+    headerColor: "#94af45",
+    books: harryBooks
   }, {
     id: 5,
     imgSrc: "/lovable-uploads/98702e58-a3f6-4d47-8749-ae6e1dc8757c.png",
     name: "Steven Bartlett",
-    title: "Founder @ FLIGHTSTORY"
+    title: "Founder @ FLIGHTSTORY",
+    headerColor: "#6B46C1",
+    books: stevenBooks
   }, {
     id: 6,
     imgSrc: "/lovable-uploads/3870710e-fff7-4237-89a0-9d0d01e91158.png",
     name: "Harry Stebbings",
-    title: "Founder @ 20VC"
+    title: "Founder @ 20VC",
+    headerColor: "#94af45",
+    books: harryBooks
   }, {
     id: 7,
     imgSrc: "/lovable-uploads/e222bfc7-1fe6-41fb-9e81-d004b180a551.png",
     name: "MY LIST",
-    title: ""
+    title: "",
+    headerColor: "#22C55E",
+    books: myListBooks
   }
 ];
 
@@ -138,13 +232,18 @@ const ArchetypesCarousel = () => {
           </div>
         </div>
         
-        <BookRecommendationsDialog
-          open={!!selectedArchetype}
-          onClose={() => setSelectedArchetype(null)}
-          personImage={selectedArchetype?.imgSrc || ''}
-          personName={selectedArchetype?.name || ''}
-          personTitle={selectedArchetype?.title || ''}
-        />
+        {selectedArchetype && (
+          <BookRecommendationsDialog
+            open={!!selectedArchetype}
+            onClose={() => setSelectedArchetype(null)}
+            personImage={selectedArchetype.imgSrc}
+            personName={selectedArchetype.name}
+            personTitle={selectedArchetype.title}
+            bookRecommendations={selectedArchetype.books}
+            headerImage={selectedArchetype.headerImage}
+            headerColor={selectedArchetype.headerColor}
+          />
+        )}
       </div>
     </div>
   );

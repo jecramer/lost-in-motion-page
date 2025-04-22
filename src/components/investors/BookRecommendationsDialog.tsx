@@ -16,57 +16,20 @@ interface BookRecommendationsDialogProps {
   personImage: string;
   personName: string;
   personTitle: string;
+  bookRecommendations: BookRecommendation[];
+  headerImage?: string;
+  headerColor?: string;
 }
-
-const bookRecommendations: BookRecommendation[] = [
-  {
-    title: "Explosive Growth",
-    author: "Cliff Lerner"
-  },
-  {
-    title: "The Hard Thing About Hard Things",
-    author: "Ben Horowitz"
-  },
-  {
-    title: "Zero to One",
-    author: "Peter Thiel and Blake Masters"
-  },
-  {
-    title: "The Lean Startup",
-    author: "Eric Ries"
-  },
-  {
-    title: "When Breath Becomes Air",
-    author: "Paul Kalanithi"
-  },
-  {
-    title: "The 7 Habits of Highly Effective People",
-    author: "Stephen R. Covey"
-  },
-  {
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman"
-  },
-  {
-    title: "Sapiens: A Brief History of Humankind",
-    author: "Yuval Noah Harari"
-  },
-  {
-    title: "The Innovator's Dilemma",
-    author: "Clayton M. Christensen"
-  },
-  {
-    title: "The Art of War",
-    author: "Sun Tzu"
-  }
-];
 
 const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   open,
   onClose,
   personImage,
   personName,
-  personTitle
+  personTitle,
+  bookRecommendations,
+  headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png",
+  headerColor = "#94af45"
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
 
@@ -79,15 +42,15 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 
         <div className="flex flex-col">
           <div className="relative">
-            <img src="/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png" alt={personName} className="w-[892px] full h-[500px] object-cover" />
+            <img src={headerImage} alt={personName} className="w-[892px] full h-[500px] object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
               <p className="text-white/80">{personTitle}</p>
             </div>
           </div>
 
-          <div className="p-6 bg-[#94af45]">
-            <h4 className="text-xl font-semibold mb-4">Harry's Top 10 Favourite Books</h4>
+          <div className="p-6" style={{ backgroundColor: headerColor }}>
+            <h4 className="text-xl font-semibold mb-4">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             <ScrollArea className="w-full" style={{ overflow: 'auto' }}>
               <div className="flex gap-4 pb-4 w-max">
                 {bookRecommendations.map((book, index) => (
