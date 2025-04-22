@@ -6,21 +6,21 @@ const AdvisorsSection = () => {
   const advisorImages = [
     {
       src: "/lovable-uploads/025c9b48-5629-41e7-abf7-1d9f9e92349a.png",
-      alt: "Eero Jyske",
-      name: "Eero Jyske",
-      linkedin: "https://www.linkedin.com/in/eerojyske"
-    },
-    {
-      src: "/lovable-uploads/32e4b91e-0720-4173-8926-a8035286fccf.png",
-      alt: "Olli Nuutinen",
-      name: "Olli Nuutinen",
-      linkedin: "https://www.linkedin.com/in/onuutinen/"
-    },
-    {
-      src: "/lovable-uploads/a70e6269-a230-4c39-b8ba-938e33a440a2.png",
       alt: "Sander Knol",
       name: "Sander Knol",
       linkedin: "https://www.linkedin.com/in/sander-knol-568644/"
+    },
+    {
+      src: "/lovable-uploads/32e4b91e-0720-4173-8926-a8035286fccf.png",
+      alt: "Eero Jyske",
+      name: "Eero Jyske", 
+      linkedin: "https://www.linkedin.com/in/eerojyske"
+    },
+    {
+      src: "/lovable-uploads/a70e6269-a230-4c39-b8ba-938e33a440a2.png",
+      alt: "Olli Nuutinen",
+      name: "Olli Nuutinen",
+      linkedin: "https://www.linkedin.com/in/onuutinen/"
     }
   ];
 
