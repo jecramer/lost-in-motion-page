@@ -31,6 +31,19 @@
     
     <!-- Launch list widget -->
     <script src="https://getlaunchlist.com/js/widget.js" defer></script>
+    
+    <!-- Hide Lovable badge -->
+    <style>
+      .lovable-badge, 
+      [class*="lovable-badge"],
+      [id*="lovable-badge"],
+      a[href*="lovable.dev"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
 
   <body>
