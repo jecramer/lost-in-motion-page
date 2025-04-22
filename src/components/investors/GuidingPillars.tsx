@@ -7,7 +7,7 @@ const pillarsContent = [
     id: "community",
     title: "Join a community of readers",
     image: "/lovable-uploads/80471580-6877-4cb1-8eb5-be199d57c102.png",
-    description: "Discover and share books with friends, authors, and creators."
+    description: "Our platform fosters a vibrant community of readers who share recommendations, discussions, and participate in reading challenges together. We believe that reading is more enjoyable and meaningful when it's social.\n\nSocial features turn readers into loyal users. Community tools deepen emotional investment and create the conditions for viral growth through word-of-mouth and shared discovery."
   },
   {
     id: "recommendation",
