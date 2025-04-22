@@ -13,7 +13,7 @@ const pillarsContent = [
   {
     id: "recommendation",
     title: "Get personalised book recommendations powered by people and AI",
-    image: "/lovable-uploads/85663bdf-4167-4dcf-8183-cb7154b4ac6c.png",
+    image: "/lovable-uploads/73a8d19e-44c8-4130-8069-3b7b56ca140b.png",
     description: "Our intelligent book recommendation engine blends human taste with cutting-edge technology. Discover titles recommended by people who share your reading style, as well as algorithmic suggestions tailored to your habits and preferences. Whether you enjoy literary fiction, fantasy epics, or short story collections, Get Lost learns what moves you and introduces books that match. No endless scrolling or sponsored placements — just honest, relevant book suggestions you'll actually want to read.\n\nKeywords: personalised book recommendations, AI book suggestion engine, apps like StoryGraph, book finder app"
   },
   {
