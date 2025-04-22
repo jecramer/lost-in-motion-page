@@ -23,9 +23,11 @@ const Investors = () => {
         <InvestorsHero />
         <BuildingInfo />
         <ProblemStatements />
+        <div className="mb-20">
+          <ArchetypesCarousel />
+        </div>
         <GuidingPillars />
         <MarketComparison />
-        <ArchetypesCarousel />
         <RevenueSection />
         <TeamSection />
         <AdvisorsSection />
