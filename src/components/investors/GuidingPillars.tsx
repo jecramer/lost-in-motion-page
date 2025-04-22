@@ -6,43 +6,43 @@ const pillarsContent = [
   {
     id: "community",
     title: "Join a community of readers who love books as much as you do",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/0ee759aa-7cfa-4596-89d6-64bc19f7e9a2.png",
     description: "Discover a social reading experience unlike any other. Get Lost connects you with fellow readers, authors, and BookTok creators in a space made for authentic conversation. Unlike review platforms built for anonymous ratings or impersonal algorithms, Get Lost encourages meaningful interaction around the books you care about. Whether you're diving into a group discussion, following someone with impeccable taste, or just browsing curated feeds, you're never reading alone. Join the next generation of reading apps that prioritise community over clicks.\n\nKeywords: social reading app, book community, app like Goodreads, reading with friends"
   },
   {
     id: "recommendation",
     title: "Get personalised book recommendations powered by people and AI",
-    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/85663bdf-4167-4dcf-8183-cb7154b4ac6c.png",
     description: "Our intelligent book recommendation engine blends human taste with cutting-edge technology. Discover titles recommended by people who share your reading style, as well as algorithmic suggestions tailored to your habits and preferences. Whether you enjoy literary fiction, fantasy epics, or short story collections, Get Lost learns what moves you and introduces books that match. No endless scrolling or sponsored placements — just honest, relevant book suggestions you'll actually want to read.\n\nKeywords: personalised book recommendations, AI book suggestion engine, apps like StoryGraph, book finder app"
   },
   {
     id: "explore",
     title: "Explore curated reading lists from authors, creators, and passionate readers",
-    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/51311949-97e9-484c-aced-b2716e05dde2.png",
     description: "Instead of overwhelming bestseller charts, Get Lost offers curated reading lists designed by people who love books. Explore themed collections like 'Books that changed my life', 'Feminist sci-fi', or 'Quiet stories for loud days'. You can follow your favourite curators, browse their shelves, or build and share your own booklists with a community that values thoughtfulness over trend-chasing. It's curation with soul — a discovery experience more meaningful than any algorithm.\n\nKeywords: curated reading lists, book list app, reading list creator, BookTok book recommendations"
   },
   {
     id: "habits",
     title: "Build healthy reading habits with challenges, goals, and gentle encouragement",
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/dfb4e198-eb6b-4894-ad96-ba96eddc5d54.png",
     description: "Get Lost helps you read more, not through pressure, but through purpose. Join reading challenges, set custom goals, and track your progress over time. Unlike other reading tracker apps that focus on numbers alone, we offer a holistic view of your reading life. From monthly prompts to yearly goals, you'll find joy in completing stories — and motivation to pick up the next one. Whether you're starting fresh or rebuilding a reading habit after a long break, this is your gentle push forward.\n\nKeywords: reading challenge app, build reading habit, track reading goals, reading streak tracker"
   },
   {
     id: "subscribe",
     title: "Subscribe to creators for exclusive book content and recommendations",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/a899c28b-e800-4852-b1f6-9b5adf196576.png",
     description: "Support your favourite authors, BookTok influencers, or literary curators by subscribing directly through Get Lost. Unlock exclusive content like behind-the-scenes reading notes, early-access lists, and deep-dive essays into favourite titles. Think of it as Patreon for readers — a new way to connect with the people shaping your literary world, free from the noise of mainstream social media. Your subscription supports their work and brings you closer to the stories and voices you love.\n\nKeywords: exclusive content from authors, subscribe to creators, book content subscriptions, author membership platform"
   },
   {
     id: "review",
     title: "Rate and review books your way — thoughtfully and honestly",
-    image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/4b16f998-929c-42ce-b731-e44e6987573a.png",
     description: "At Get Lost, every reader has a voice. Share your perspective in a way that feels personal and true, without the pressure of five-star systems or social scoring. Leave a quote that stayed with you, a short reflection, or a full review — your style is welcome. Each review becomes part of your reading history, helping others discover books and letting you look back on your journey. It's not about influence or visibility, it's about expression.\n\nKeywords: book review app, review books without stars, thoughtful book reviews, reading journal online"
   },
   {
     id: "progress",
     title: "Show off your reading life with beautiful, shareable wrap-ups",
-    image: "https://images.unsplash.com/photo-1450107579224-2d9b2bf1adc8?w=800&h=800&fit=crop",
+    image: "/lovable-uploads/f3c24ec5-8db2-4786-9adf-0e4b7893a419.png",
     description: "Get Lost turns your reading history into something worth celebrating. With monthly and annual reading wrap-ups, you can see how your habits are evolving and share your milestones with others. Whether you're reading more women authors, exploring translated fiction, or finishing your first book in ages, we help you visualise and reflect on your growth. Our tools are designed to be elegant, inspiring, and easy to share — making your love of books visible to the world.\n\nKeywords: reading wrap-up, track books read, show reading stats, Goodreads alternative with wrap-ups"
   }
 ];
