@@ -31,7 +31,19 @@ const pillarsContent = [
     id: "subscribe",
     title: "Subscribe for exclusive content",
     image: "/lovable-uploads/ce39e4e3-80ae-4f5b-ab26-c8949868315d.png",
-    description: "Support your favourite creators and unlock behind-the-scenes insights."
+    description: "Support your favourite authors and go beyond the page."
+  },
+  {
+    id: "review",
+    title: "Rate and review what you read",
+    image: "/lovable-uploads/ca1bd41e-27da-4553-9e7f-eee722331456.png",
+    description: "Capture your thoughts and share them with a community that cares."
+  },
+  {
+    id: "progress",
+    title: "Show off your reading life",
+    image: "/lovable-uploads/18eb4543-dddc-4b2c-a272-ded3ccc66e65.png",
+    description: "Celebrate your progress with beautiful reading wrap-ups and shareable milestones."
   }
 ];
 
