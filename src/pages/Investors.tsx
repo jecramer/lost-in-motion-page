@@ -26,8 +26,8 @@ const Investors = () => {
         <div className="mb-20">
           <ArchetypesCarousel />
         </div>
-        <GuidingPillars />
         <MarketComparison />
+        <GuidingPillars />
         <RevenueSection />
         <TeamSection />
         <AdvisorsSection />
