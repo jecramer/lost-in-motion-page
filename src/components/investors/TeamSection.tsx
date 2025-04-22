@@ -1,4 +1,5 @@
 import React from "react";
+
 const TeamSection = () => {
   const teamMembers = [{
     name: "Martin Jurasek",
@@ -21,13 +22,12 @@ const TeamSection = () => {
     image: "/lovable-uploads/bcf46678-7d0d-495e-94d7-aa8333c0ce47.png",
     linkedin: "https://www.linkedin.com/in/andrey-morskov/"
   }];
-  return <div className="w-full py-20" style={{
-    backgroundImage: `url('/bg.png')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed'
-  }}>
+
+  return (
+    <div className="w-full py-20" style={{
+      background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
+      backdropFilter: 'blur(10px)'
+    }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-slate-950">The Get Lost Team</h2>
@@ -69,6 +69,8 @@ const TeamSection = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default TeamSection;
