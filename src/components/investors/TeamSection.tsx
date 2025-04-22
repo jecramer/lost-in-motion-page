@@ -36,7 +36,7 @@ const TeamSection = () => {
             {teamMembers.map(member => <div key={member.name} className="flex flex-col items-center space-y-3">
                 <img src={member.image} alt={member.name} className="w-40 h-40 object-cover" />
                 <div className="text-center">
-                  <h4 className="font-semibold text-lg text-slate-950">{member.name}</h4>
+                  <h4 className="font-semibold text-slate-950 text-xl">{member.name}</h4>
                   <p className="text-sm text-slate-50">{member.role}</p>
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 mt-1">
                     LinkedIn
