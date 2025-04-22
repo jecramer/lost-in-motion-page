@@ -15,29 +15,43 @@ export function MobileWarningDialog() {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Only show on mobile devices
-    if (isMobile) {
+    // Only show when in portrait mode on mobile
+    if (isMobile && window.innerHeight > window.innerWidth) {
       setOpen(true);
     }
   }, [isMobile]);
 
+  // Listen for orientation changes
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      if (isMobile && window.innerHeight > window.innerWidth) {
+        setOpen(true);
+      } else {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleOrientationChange);
+    return () => window.removeEventListener('resize', handleOrientationChange);
+  }, [isMobile]);
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md bg-[#94af45]/95 backdrop-blur-sm border-none p-0 overflow-hidden">
+      <DialogContent className="sm:max-w-md bg-black/80 backdrop-blur-sm border-none p-0 overflow-hidden">
         <div className="flex flex-col items-center justify-center p-8 space-y-4 w-full h-full">
           <DialogHeader className="text-center w-full">
-            <DialogTitle className="font-newsreader text-3xl mb-2 text-white">
-              Best Viewed on Desktop
+            <DialogTitle className="font-newsreader text-2xl mb-2 text-white">
+              Rotate Your Device
             </DialogTitle>
             <DialogDescription className="text-white/80 text-sm">
-              Please switch to a computer or rotate your device horizontally for the best experience.
+              Please rotate your device horizontally for the best viewing experience.
             </DialogDescription>
           </DialogHeader>
           <Button 
             onClick={() => setOpen(false)}
-            className="bg-[#e0d6ac] text-[#94af45] hover:bg-[#e0d6ac]/90"
+            className="bg-white text-black hover:bg-white/90"
           >
-            Continue Anyway
+            Continue in Portrait
           </Button>
         </div>
       </DialogContent>
