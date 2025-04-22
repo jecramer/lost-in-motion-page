@@ -25,7 +25,7 @@ const pillarsContent = [
   {
     id: "habits",
     title: "Build healthy reading habits with challenges, goals, and gentle encouragement",
-    image: "/lovable-uploads/dfb4e198-eb6b-4894-ad96-ba96eddc5d54.png",
+    image: "/lovable-uploads/70dd7663-326f-4b0f-a203-2f25cc6570c0.png", // Updated image path
     description: "Get Lost helps you read more, not through pressure, but through purpose. Join reading challenges, set custom goals, and track your progress over time. Unlike other reading tracker apps that focus on numbers alone, we offer a holistic view of your reading life. From monthly prompts to yearly goals, you'll find joy in completing stories — and motivation to pick up the next one. Whether you're starting fresh or rebuilding a reading habit after a long break, this is your gentle push forward.\n\nKeywords: reading challenge app, build reading habit, track reading goals, reading streak tracker"
   },
   {
