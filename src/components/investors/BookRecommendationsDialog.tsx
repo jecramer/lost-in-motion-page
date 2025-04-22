@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
@@ -62,47 +61,49 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
           <div className="p-6 bg-[#94af45] relative">
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             
-            <button 
-              onClick={() => handleScroll('left')} 
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
-              aria-label="Scroll left"
-            >
-              <ArrowLeft className="h-6 w-6 text-white" />
-            </button>
-            
-            <button 
-              onClick={() => handleScroll('right')} 
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
-              aria-label="Scroll right"
-            >
-              <ArrowRight className="h-6 w-6 text-white" />
-            </button>
+            <div className="relative">
+              <button 
+                onClick={() => handleScroll('left')} 
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                aria-label="Scroll left"
+              >
+                <ArrowLeft className="h-6 w-6 text-white" />
+              </button>
+              
+              <button 
+                onClick={() => handleScroll('right')} 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+                aria-label="Scroll right"
+              >
+                <ArrowRight className="h-6 w-6 text-white" />
+              </button>
 
-            <div 
-              ref={scrollContainerRef} 
-              className="overflow-x-auto scrollbar-hide pb-2"
-            >
-              <div className="flex gap-4 min-w-max">
-                {bookRecommendations.map((book, index) => (
-                  <div key={index} className="flex-shrink-0">
-                    <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden shadow-md">
-                      {bookCovers[index].data ? (
-                        <img 
-                          src={bookCovers[index].data} 
-                          alt={`${book.title} cover`} 
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = "https://via.placeholder.com/200x300?text=No+Cover";
-                          }}
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-400 text-sm text-center p-2">
-                          Loading...
-                        </div>
-                      )}
+              <div 
+                ref={scrollContainerRef} 
+                className="overflow-x-auto scrollbar-hide pb-2"
+              >
+                <div className="flex gap-4 min-w-max">
+                  {bookRecommendations.map((book, index) => (
+                    <div key={index} className="flex-shrink-0">
+                      <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden shadow-md">
+                        {bookCovers[index].data ? (
+                          <img 
+                            src={bookCovers[index].data} 
+                            alt={`${book.title} cover`} 
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.src = "https://via.placeholder.com/200x300?text=No+Cover";
+                            }}
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-400 text-sm text-center p-2">
+                            Loading...
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
