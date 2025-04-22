@@ -23,8 +23,8 @@ const Investors = () => {
         <InvestorsHero />
         <BuildingInfo />
         <ProblemStatements />
-        <GuidingPillars />
         <ArchetypesCarousel />
+        <GuidingPillars />
         <MarketComparison />
         <RevenueSection />
         <TeamSection />
