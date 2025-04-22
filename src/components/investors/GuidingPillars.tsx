@@ -111,29 +111,30 @@ const GuidingPillars = () => {
                 <p className="text-base mb-6 opacity-[0.84] font-normal">
                   {activeContent.description}
                 </p>
+                
+                <div className="mt-8 text-center">
+                  <h3 className="font-newsreader text-2xl mb-4">Get Early Access</h3>
+                  <p className="opacity-[0.84] text-base mb-6">
+                    Join our waitlist to be the first to know when we launch
+                  </p>
+                  <div 
+                    className="launchlist-widget"
+                    data-key-id="pBBH1O"
+                    data-height="180px"
+                    style={{
+                      '--widget-background': 'rgba(255, 255, 255, 0.1)',
+                      '--widget-border': 'none',
+                      '--widget-text': 'inherit',
+                      '--button-background': '#e0d6ac',
+                      '--button-text': '#94af45',
+                      '--input-background': 'rgba(255, 255, 255, 0.1)',
+                      '--input-border': 'rgba(255, 255, 255, 0.2)',
+                      '--input-text': 'inherit',
+                    } as React.CSSProperties}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="mt-16 max-w-2xl mx-auto text-center">
-            <h3 className="font-newsreader text-3xl mb-4 text-white">Get Early Access</h3>
-            <p className="text-white/80 text-lg mb-6">
-              Join our waitlist to be the first to know when we launch
-            </p>
-            <div 
-              className="launchlist-widget"
-              data-key-id="pBBH1O"
-              data-height="180px"
-              style={{
-                '--widget-background': 'rgba(255, 255, 255, 0.1)',
-                '--widget-border': 'none',
-                '--widget-text': 'white',
-                '--button-background': '#e0d6ac',
-                '--button-text': '#94af45',
-                '--input-background': 'rgba(255, 255, 255, 0.1)',
-                '--input-border': 'rgba(255, 255, 255, 0.2)',
-                '--input-text': 'white',
-              } as React.CSSProperties}
-            />
           </div>
         </div>
       </div>
