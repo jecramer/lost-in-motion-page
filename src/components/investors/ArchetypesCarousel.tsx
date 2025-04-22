@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import "./ArchetypesCarousel.css";
 import BookRecommendationsDialog from "./BookRecommendationsDialog";
@@ -241,7 +240,6 @@ const ArchetypesCarousel = () => {
             personTitle={selectedArchetype.title}
             bookRecommendations={selectedArchetype.books}
             headerImage={selectedArchetype.headerImage}
-            headerColor={selectedArchetype.headerColor}
           />
         )}
       </div>
