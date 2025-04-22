@@ -1,7 +1,5 @@
 
 import React from "react";
-import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import RoadmapStage from "./RoadmapStage";
 import MilestoneDialog from "./MilestoneDialog";
 import StageDialog from "./StageDialog";
@@ -40,15 +38,7 @@ const Roadmap: React.FC = () => {
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
         />
-        <Button
-          onClick={() => {
-            setMilestoneDialogOpen(true);
-            handleAddMilestone(stages[0].id);
-          }}
-          className="bg-gray-900 hover:bg-black text-white"
-        >
-          <Plus size={16} className="mr-1" /> Add Milestone
-        </Button>
+        {/* Button removed as per request */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -83,3 +73,4 @@ const Roadmap: React.FC = () => {
 };
 
 export default Roadmap;
+
