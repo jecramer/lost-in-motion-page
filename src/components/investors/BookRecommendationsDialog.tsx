@@ -3,7 +3,6 @@ import React, { useRef, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { useBookCovers } from "@/hooks/useBookCovers";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface BookRecommendation {
   title: string;
@@ -35,7 +34,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   const handleScroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
     
-    const scrollAmount = 250; // Adjust scroll distance
+    const scrollAmount = 250;
     const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
     
     scrollContainerRef.current.scrollTo({
@@ -44,11 +43,19 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
     });
   };
 
-  // Ensure scroll container is properly initialized
+  // Force scroll initialization and reset position when dialog opens
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      // Force a reflow to ensure the scroll container is properly initialized
-      scrollContainerRef.current.scrollLeft = 0;
+    if (open && scrollContainerRef.current) {
+      // Use a small timeout to ensure the component is fully rendered
+      setTimeout(() => {
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.scrollLeft = 0;
+          
+          // Force browser to acknowledge the scrollable area
+          scrollContainerRef.current.style.overflowX = 'scroll';
+          scrollContainerRef.current.style.overflowX = 'auto';
+        }
+      }, 100);
     }
   }, [open]);
 
@@ -71,39 +78,50 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
           <div className="p-6 bg-[#94af45]">
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             
-            <div className="relative overflow-hidden">
-              {/* Left scroll button - always visible */}
+            <div className="relative">
+              {/* Scroll buttons with high z-index and contrasting background */}
               <button 
                 onClick={() => handleScroll('left')} 
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 rounded-r-full p-2 transition-colors"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 z-40 bg-black/50 hover:bg-black/70 rounded-r-full p-2 transition-colors"
                 aria-label="Scroll left"
               >
                 <ArrowLeft className="h-6 w-6 text-white" />
               </button>
               
-              {/* Right scroll button - always visible and positioned outside the scroll area */}
               <button 
                 onClick={() => handleScroll('right')} 
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 rounded-l-full p-2 transition-colors"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 z-40 bg-black/50 hover:bg-black/70 rounded-l-full p-2 transition-colors"
                 aria-label="Scroll right"
               >
                 <ArrowRight className="h-6 w-6 text-white" />
               </button>
 
-              {/* Scroll shadow indicators */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 z-20 bg-gradient-to-r from-[#94af45] to-transparent pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 z-20 bg-gradient-to-l from-[#94af45] to-transparent pointer-events-none"></div>
+              {/* Gradient indicators with lower z-index */}
+              <div className="absolute left-0 top-0 bottom-0 w-16 z-30 bg-gradient-to-r from-[#94af45] to-transparent pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-16 z-30 bg-gradient-to-l from-[#94af45] to-transparent pointer-events-none"></div>
 
-              {/* Scrollable container */}
+              {/* Scrollable container with explicit scrolling styles */}
               <div 
                 ref={scrollContainerRef} 
-                className="overflow-x-auto scrollbar-hide pb-4 pt-2 px-12"
-                style={{ WebkitOverflowScrolling: 'touch', overscrollBehaviorX: 'contain' }}
+                className="overflow-x-auto pb-4 pt-2 px-4 mx-10" 
+                style={{ 
+                  WebkitOverflowScrolling: 'touch',
+                  overscrollBehaviorX: 'contain',
+                  scrollbarWidth: 'none', /* Firefox */
+                  msOverflowStyle: 'none', /* IE and Edge */
+                }}
               >
+                {/* Make sure scrollbar is hidden for webkit */}
+                <style dangerouslySetInnerHTML={{ __html: `
+                  .overflow-x-auto::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}} />
+                
                 <div className="flex gap-6 min-w-max">
                   {bookRecommendations.map((book, index) => (
-                    <div key={index} className="flex-shrink-0 transition-all hover:scale-105">
-                      <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden shadow-lg">
+                    <div key={index} className="flex-shrink-0 transition-all hover:scale-105 w-48">
+                      <div className="w-full h-72 bg-gray-100 rounded-md overflow-hidden shadow-lg">
                         {bookCovers[index].data ? (
                           <img 
                             src={bookCovers[index].data} 
