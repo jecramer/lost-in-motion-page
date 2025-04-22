@@ -19,7 +19,7 @@ const pillarsContent = [
   {
     id: "explore",
     title: "Explore curated reading lists from authors, creators, and passionate readers",
-    image: "/lovable-uploads/51311949-97e9-484c-aced-b2716e05dde2.png",
+    image: "/lovable-uploads/7c258a48-a06e-4dc4-a223-26195a27528c.png",
     description: "Instead of overwhelming bestseller charts, Get Lost offers curated reading lists designed by people who love books. Explore themed collections like 'Books that changed my life', 'Feminist sci-fi', or 'Quiet stories for loud days'. You can follow your favourite curators, browse their shelves, or build and share your own booklists with a community that values thoughtfulness over trend-chasing. It's curation with soul — a discovery experience more meaningful than any algorithm.\n\nKeywords: curated reading lists, book list app, reading list creator, BookTok book recommendations"
   },
   {
