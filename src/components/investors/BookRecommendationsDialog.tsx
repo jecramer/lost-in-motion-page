@@ -1,8 +1,7 @@
-
-import React from "react";
+import React, { useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { X } from "lucide-react";
+import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { useBookCovers } from "@/hooks/useBookCovers";
 
 interface BookRecommendation {
@@ -30,6 +29,19 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png"
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    
+    const scrollAmount = 300; // Adjust this value to control scroll distance
+    const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+    
+    scrollContainerRef.current.scrollTo({
+      left: newScrollPosition,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -47,10 +59,27 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          <div className="p-6 bg-[#94af45]">
+          <div className="p-6 bg-[#94af45] relative">
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
-            <ScrollArea className="w-full" orientation="horizontal">
-              <div className="flex gap-4 pb-4 min-w-max">
+            
+            <button 
+              onClick={() => handleScroll('left')} 
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+              aria-label="Scroll left"
+            >
+              <ArrowLeft className="h-6 w-6 text-white" />
+            </button>
+            
+            <button 
+              onClick={() => handleScroll('right')} 
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+              aria-label="Scroll right"
+            >
+              <ArrowRight className="h-6 w-6 text-white" />
+            </button>
+
+            <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-4 min-w-max">
                 {bookRecommendations.map((book, index) => (
                   <div key={index} className="flex-shrink-0">
                     <div className="w-48 h-72 bg-gray-100 rounded-md overflow-hidden">
@@ -72,7 +101,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                   </div>
                 ))}
               </div>
-            </ScrollArea>
+            </div>
           </div>
         </div>
       </DialogContent>
