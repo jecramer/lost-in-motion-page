@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -50,16 +50,28 @@ const pillarsContent = [
 const GuidingPillars = () => {
   const [activePillar, setActivePillar] = useState("community");
 
+  useEffect(() => {
+    const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
+    existingScripts.forEach(script => script.remove());
+
+    const script = document.createElement('script');
+    script.src = 'https://getlaunchlist.com/js/widget.js';
+    script.defer = true;
+    script.onload = () => {
+      if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+        window.LaunchList.initializeWidgets();
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
+
   const activeContent = pillarsContent.find(pillar => pillar.id === activePillar) || pillarsContent[0];
-  
   const thumbnailPillars = pillarsContent.filter(pillar => pillar.id !== activePillar);
 
   return (
     <div className="w-full mb-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Removed heading */}
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col space-y-4">
               <Card className="w-full aspect-square bg-white/30 backdrop-blur-sm rounded-lg overflow-hidden shadow-sm">
@@ -101,6 +113,27 @@ const GuidingPillars = () => {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="mt-16 max-w-2xl mx-auto text-center">
+            <h3 className="font-newsreader text-3xl mb-4 text-white">Get Early Access</h3>
+            <p className="text-white/80 text-lg mb-6">
+              Join our waitlist to be the first to know when we launch
+            </p>
+            <div 
+              className="launchlist-widget"
+              data-key-id="pBBH1O"
+              data-height="180px"
+              style={{
+                '--widget-background': 'rgba(255, 255, 255, 0.1)',
+                '--widget-border': 'none',
+                '--widget-text': 'white',
+                '--button-background': '#e0d6ac',
+                '--button-text': '#94af45',
+                '--input-background': 'rgba(255, 255, 255, 0.1)',
+                '--input-border': 'rgba(255, 255, 255, 0.2)',
+                '--input-text': 'white',
+              } as React.CSSProperties}
+            />
           </div>
         </div>
       </div>
