@@ -37,7 +37,6 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
         </button>
 
         <div className="flex flex-col max-h-[90vh]">
-          {/* Header section - kept unchanged */}
           <div className="relative">
             <img src={headerImage} alt={personName} className="w-[892px] h-[500px] object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
@@ -46,7 +45,6 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             </div>
           </div>
 
-          {/* Books section with vertical scrolling */}
           <div className="p-6 bg-[#94af45] max-h-[600px] flex flex-col">
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             
@@ -70,14 +68,11 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                         </div>
                       )}
                     </div>
-                    <div className="mt-2 text-white text-sm font-medium truncate">{book.title}</div>
-                    <div className="text-white/70 text-xs truncate">{book.author}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Custom scrollbar styles */}
             <style dangerouslySetInnerHTML={{ __html: `
               .custom-scrollbar::-webkit-scrollbar {
                 width: 8px;
