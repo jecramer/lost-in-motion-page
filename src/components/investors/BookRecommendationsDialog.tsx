@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
@@ -25,7 +26,7 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
   personName,
   personTitle,
   bookRecommendations,
-  headerImage = "/lovable-uploads/7c8499d6-865d-43de-9753-755c55907dd5.png"
+  headerImage = "/lovable-uploads/68948e18-2e65-4d14-bbfc-130f24b93acb.png"
 }) => {
   const bookCovers = useBookCovers(bookRecommendations);
 
@@ -38,7 +39,11 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
 
         <div className="flex flex-col max-h-[90vh]">
           <div className="relative">
-            <img src={headerImage} alt={personName} className="w-[892px] h-[500px] object-cover" />
+            <img 
+              src={headerImage} 
+              alt={personName} 
+              className="w-full h-[400px] object-cover object-center"
+            />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
               <p className="text-white/80">{personTitle}</p>
