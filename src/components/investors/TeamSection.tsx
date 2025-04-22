@@ -1,5 +1,4 @@
 import React from "react";
-
 const TeamSection = () => {
   const teamMembers = [{
     name: "Martin Jurasek",
@@ -22,12 +21,10 @@ const TeamSection = () => {
     image: "/lovable-uploads/bcf46678-7d0d-495e-94d7-aa8333c0ce47.png",
     linkedin: "https://www.linkedin.com/in/andrey-morskov/"
   }];
-
-  return (
-    <div className="w-full py-20" style={{
-      background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
-      backdropFilter: 'blur(10px)'
-    }}>
+  return <div className="w-full py-20" style={{
+    background: "linear-gradient(135deg, rgba(229, 222, 255, 0.3) 0%, rgba(253, 225, 211, 0.3) 50%, rgba(242, 252, 226, 0.3) 100%)",
+    backdropFilter: 'blur(10px)'
+  }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-newsreader font-semibold text-4xl mb-10 text-center text-slate-950">The Get Lost Team</h2>
@@ -37,7 +34,7 @@ const TeamSection = () => {
                 <img src={member.image} alt={member.name} className="w-40 h-40 object-cover" />
                 <div className="text-center">
                   <h4 className="font-semibold text-slate-950 text-xl">{member.name}</h4>
-                  <p className="text-sm text-slate-50">{member.role}</p>
+                  <p className="text-slate-950 text-lg">{member.role}</p>
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 hover:text-blue-800 mt-1">
                     LinkedIn
                   </a>
@@ -69,8 +66,6 @@ const TeamSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default TeamSection;
