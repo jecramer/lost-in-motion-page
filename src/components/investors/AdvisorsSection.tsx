@@ -21,7 +21,7 @@ const AdvisorsSection = () => {
   }}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-white">Our Advisors</h2>
+          <h2 className="font-newsreader font-semibold text-4xl mb-10 text-slate-950">Our Advisors</h2>
           
           <div className="flex flex-col items-center md:flex-row md:items-start gap-8 mb-12">
             <Card className="bg-transparent border-0 shadow-none w-full">
@@ -34,7 +34,7 @@ const AdvisorsSection = () => {
             
             <div className="md:w-full mt-8 md:mt-0">
               <div className="text-white">
-                <p className="text-base mb-6 opacity-[0.84] font-normal">From the outset, we’ve been intentional about building a company with depth; not just in product, but in structure. Our advisory team reflects that. Eero Jyske brings nearly three decades of experience in technology leadership, offering rare clarity on how to scale and sustain digital platforms. Sander Knol, a publisher turned founder, lends hard-won wisdom from the world of book, with a network and instinct for what resonates with readers. And Olli Nuutinen, a trusted collaborator since the days of our first startup, grounds us with operational and financial discipline forged across multiple ventures. Together, they help us build not just something new, but something that lasts.</p>
+                <p className="text-base mb-6 opacity-[0.84] font-normal text-slate-950">From the outset, we’ve been intentional about building a company with depth; not just in product, but in structure. Our advisory team reflects that. Eero Jyske brings nearly three decades of experience in technology leadership, offering rare clarity on how to scale and sustain digital platforms. Sander Knol, a publisher turned founder, lends hard-won wisdom from the world of book, with a network and instinct for what resonates with readers. And Olli Nuutinen, a trusted collaborator since the days of our first startup, grounds us with operational and financial discipline forged across multiple ventures. Together, they help us build not just something new, but something that lasts.</p>
               </div>
             </div>
           </div>
