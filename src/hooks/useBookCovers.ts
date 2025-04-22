@@ -22,6 +22,16 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
           return "https://m.media-amazon.com/images/I/71Xygne8+qL._AC_UF1000,1000_QL80_.jpg";
         }
         
+        // Special case for The Courage to Be Disliked which was showing up in Finnish (PUTININ TROLLIT)
+        if (book.title === "The Courage to Be Disliked" && book.author === "Ichiro Kishimi & Fumitake Koga") {
+          return "https://m.media-amazon.com/images/I/71tBalh1+3L._AC_UF1000,1000_QL80_.jpg";
+        }
+        
+        // Special case for Greenlights which was showing up in Finnish (VIHREÄÄ VALOA)
+        if (book.title === "Greenlights" && book.author === "Matthew McConaughey") {
+          return "https://m.media-amazon.com/images/I/81zE42gT3xL._AC_UF1000,1000_QL80_.jpg";
+        }
+        
         // First try Google Books API with language preference set to English
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
