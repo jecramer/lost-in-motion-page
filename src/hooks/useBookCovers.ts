@@ -17,6 +17,11 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
     queryKey: ["bookCover", book.title, book.author],
     queryFn: async () => {
       try {
+        // Special case for Zero to One book which was showing up in Finnish (KIITORATA)
+        if (book.title === "Zero to One" && book.author === "Peter Thiel and Blake Masters") {
+          return "https://m.media-amazon.com/images/I/71Xygne8+qL._AC_UF1000,1000_QL80_.jpg";
+        }
+        
         // First try Google Books API with language preference set to English
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
