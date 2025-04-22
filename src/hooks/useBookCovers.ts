@@ -17,17 +17,17 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
     queryKey: ["bookCover", book.title, book.author],
     queryFn: async () => {
       try {
-        // First try Google Books API
+        // First try Google Books API with language preference set to English
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
             `${book.title} ${book.author}`
-          )}&maxResults=1`
+          )}&maxResults=1&langRestrict=en`
         );
         
         if (response.status === 429) {
           toast.error("Google Books API rate limit reached. Using fallback images.");
           // Return a fallback book cover from OpenLibrary
-          return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
+          return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg?default=false`;
         }
 
         if (!response.ok) {
@@ -35,12 +35,26 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
         }
 
         const data: GoogleBooksResponse = await response.json();
-        return data.items?.[0]?.volumeInfo?.imageLinks?.thumbnail || 
-          `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
+        
+        // Check if we have results and if there's a thumbnail
+        if (data.items?.[0]?.volumeInfo?.imageLinks?.thumbnail) {
+          // Replace http with https and ensure we get a higher quality image
+          let imageUrl = data.items[0].volumeInfo.imageLinks.thumbnail
+            .replace('http://', 'https://')
+            .replace('&edge=curl', '');
+            
+          // Get larger image if possible
+          imageUrl = imageUrl.replace('zoom=1', 'zoom=2');
+          
+          return imageUrl;
+        } else {
+          // If no thumbnail, try OpenLibrary
+          return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg?default=false`;
+        }
       } catch (error) {
         console.error(`Error fetching book cover for ${book.title}:`, error);
         // Fallback to OpenLibrary as a backup
-        return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
+        return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg?default=false`;
       }
     },
     retry: 2,

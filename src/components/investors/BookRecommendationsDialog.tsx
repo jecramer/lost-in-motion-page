@@ -63,9 +63,9 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
             <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
             
             <div className="overflow-y-auto flex-1 pr-4 custom-scrollbar">
-              <div className="grid grid-cols-5 gap-6 auto-rows-max">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 auto-rows-max">
                 {bookRecommendations.map((book, index) => (
-                  <div key={index} className="flex-shrink-0 transition-all hover:scale-105">
+                  <div key={index} className="flex flex-col gap-2 flex-shrink-0 transition-all hover:scale-105">
                     <div className="w-full aspect-[2/3] bg-gray-100 rounded-md overflow-hidden shadow-lg">
                       {bookCovers[index].data ? (
                         <img 
@@ -81,6 +81,10 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
                           Loading...
                         </div>
                       )}
+                    </div>
+                    <div className="text-center">
+                      <p className="text-white text-sm font-medium line-clamp-2">{book.title}</p>
+                      <p className="text-white/70 text-xs line-clamp-1">{book.author}</p>
                     </div>
                   </div>
                 ))}
