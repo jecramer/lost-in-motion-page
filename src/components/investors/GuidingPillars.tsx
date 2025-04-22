@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -6,7 +7,7 @@ const pillarsContent = [
   {
     id: "community",
     title: "Join a community of readers who love books as much as you do",
-    image: "/lovable-uploads/0ee759aa-7cfa-4596-89d6-64bc19f7e9a2.png",
+    image: "/lovable-uploads/079c2a9e-e588-49d0-bd5b-9509f514933f.png",
     description: "Discover a social reading experience unlike any other. Get Lost connects you with fellow readers, authors, and BookTok creators in a space made for authentic conversation. Unlike review platforms built for anonymous ratings or impersonal algorithms, Get Lost encourages meaningful interaction around the books you care about. Whether you're diving into a group discussion, following someone with impeccable taste, or just browsing curated feeds, you're never reading alone. Join the next generation of reading apps that prioritise community over clicks.\n\nKeywords: social reading app, book community, app like Goodreads, reading with friends"
   },
   {
