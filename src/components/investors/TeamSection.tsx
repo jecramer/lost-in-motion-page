@@ -13,8 +13,7 @@ const TeamSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div className="space-y-2">
-              <p className="text-base mb-6 opacity-[0.84] font-normal text-slate-950">We’ve built things people loved to return to 
-
+              <p className="mb-6 opacity-[0.84] text-slate-950 text-base font-normal">
 
 Our team’s roots lie in games, social platforms, and interactive tools – spaces where design meets psychology, and where community isn’t just a metric but a feeling. We’ve shaped experiences that linger in memory, quietly guiding millions through worlds both playful and purposeful. That sensibility now finds a new home in Get Lost.</p>
             </div>
