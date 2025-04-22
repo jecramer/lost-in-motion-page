@@ -12,6 +12,7 @@ import RevenueSection from "@/components/investors/RevenueSection";
 import TeamSection from "@/components/investors/TeamSection";
 import AdvisorsSection from "@/components/investors/AdvisorsSection";
 import RoadmapSection from "@/components/investors/RoadmapSection";
+import OdinSection from "@/components/investors/OdinSection";
 import ScrollToTop from "@/components/investors/ScrollToTop";
 
 const Index = () => {
@@ -31,6 +32,7 @@ const Index = () => {
         <TeamSection />
         <AdvisorsSection />
         <RoadmapSection />
+        <OdinSection />
         <ScrollToTop />
       </BackgroundWrapper>
     </>

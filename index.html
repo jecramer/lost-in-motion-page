@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Get Lost - Literary Escapes</title>
     <meta name="description" content="Escape into literary worlds with Get Lost" />
     <meta name="author" content="Get Lost" />
@@ -33,6 +34,13 @@
     
     <!-- Hide Lovable badge -->
     <style>
+      body {
+        width: 100%;
+        min-width: 800px; /* Reduced from 1024px to accommodate smaller desktop screens */
+        overflow-x: auto;
+        margin: 0 auto;
+      }
+      
       .lovable-badge, 
       [class*="lovable-badge"],
       [id*="lovable-badge"],
