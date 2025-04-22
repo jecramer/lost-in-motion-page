@@ -80,7 +80,8 @@ const SignUpDialog = ({ open, onClose }: SignUpDialogProps) => {
             />
 
             {/* Add custom CSS to target and center LaunchList elements */}
-            <style jsx global>{`
+            <style dangerouslySetInnerHTML={{
+              __html: `
               .launchlist-widget form {
                 display: flex;
                 flex-direction: column;
@@ -105,7 +106,8 @@ const SignUpDialog = ({ open, onClose }: SignUpDialogProps) => {
                 flex-direction: column !important;
                 align-items: center !important;
               }
-            `}</style>
+              `
+            }} />
           </div>
         </div>
       </DialogContent>
