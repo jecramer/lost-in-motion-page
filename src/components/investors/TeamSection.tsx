@@ -60,6 +60,15 @@ const TeamSection = () => {
               </div>
             ))}
           </div>
+
+          {/* New image section */}
+          <div className="mt-16 flex justify-center">
+            <img 
+              src="/lovable-uploads/aaa490f1-d333-4b5c-8586-e26daf348251.png" 
+              alt="Team in Library" 
+              className="w-full max-w-4xl rounded-lg shadow-lg object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
