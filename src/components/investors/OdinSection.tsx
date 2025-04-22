@@ -27,21 +27,10 @@ const OdinSection = () => {
               </p>
             </div>
           </div>
-
-          {/* Google Calendar Appointment Scheduling begin */}
-          <div className="mb-8 mt-12">
-            <iframe 
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ03PtFhPh0nDyZ1w1_i_kcSMejp4SjqgX4ltexJdqbi9V882NqYUIRgY8ioAn8F8TCWxe-SsuyJ?gv=true" 
-              style={{ border: 0 }} 
-              width="100%" 
-              height="600" 
-              frameBorder="0"
-            ></iframe>
-          </div>
-          {/* end Google Calendar Appointment Scheduling */}
         </div>
       </div>
     </div>;
 };
 
 export default OdinSection;
+
