@@ -32,6 +32,16 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
           return "https://m.media-amazon.com/images/I/81zE42gT3xL._AC_UF1000,1000_QL80_.jpg";
         }
         
+        // Special case for Becoming by Michelle Obama
+        if (book.title === "Becoming" && book.author === "Michelle Obama") {
+          return "https://m.media-amazon.com/images/I/81h2gWPTQJL._AC_UF1000,1000_QL80_.jpg";
+        }
+
+        // Special case for Can't Hurt Me by David Goggins
+        if (book.title === "Can't Hurt Me" && book.author === "David Goggins") {
+          return "https://m.media-amazon.com/images/I/81gTRv2HXrL._AC_UF1000,1000_QL80_.jpg";
+        }
+        
         // First try Google Books API with language preference set to English
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
