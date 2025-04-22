@@ -34,11 +34,30 @@ const SignUpDialog = ({ open, onClose }: SignUpDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-md">
-        <DialogHeader>
-          <DialogTitle className="font-newsreader text-2xl mb-4">Get Notified When We Launch</DialogTitle>
+      <DialogContent className="max-w-md bg-[#94af45]/95 backdrop-blur-sm border-none">
+        <DialogHeader className="items-center">
+          <DialogTitle className="font-newsreader text-3xl mb-2 text-white">
+            Get Notified When We Launch
+          </DialogTitle>
+          <p className="text-white/80 text-sm mb-4">
+            Join our waitlist to be the first to know when we go live
+          </p>
         </DialogHeader>
-        <div className="launchlist-widget" data-key-id="pBBH1O" data-height="180px"></div>
+        <div 
+          className="launchlist-widget mx-auto w-full" 
+          data-key-id="pBBH1O" 
+          data-height="180px"
+          style={{
+            '--widget-background': 'transparent',
+            '--widget-border': 'none',
+            '--widget-text': 'white',
+            '--button-background': 'white',
+            '--button-text': '#94af45',
+            '--input-background': 'white/10',
+            '--input-border': 'white/20',
+            '--input-text': 'white',
+          } as React.CSSProperties}
+        />
       </DialogContent>
     </Dialog>
   );
