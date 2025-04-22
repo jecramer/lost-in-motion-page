@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -40,7 +41,7 @@ const GuidingPillars = () => {
     <div className="w-full mb-16">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-4xl mb-8 opacity-[0.92]">Guiding Pillars</h2>
+          {/* Removed heading */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col space-y-4">
