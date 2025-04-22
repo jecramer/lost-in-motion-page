@@ -17,6 +17,7 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
     queryKey: ["bookCover", book.title, book.author],
     queryFn: async () => {
       try {
+        // First try Google Books API
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
             `${book.title} ${book.author}`
@@ -24,8 +25,9 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
         );
         
         if (response.status === 429) {
-          toast.error("Google Books API rate limit reached. Please try again later.");
-          return null;
+          toast.error("Google Books API rate limit reached. Using fallback images.");
+          // Return a fallback book cover from OpenLibrary
+          return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
         }
 
         if (!response.ok) {
@@ -33,10 +35,12 @@ export const useBookCovers = (books: { title: string; author: string }[]) => {
         }
 
         const data: GoogleBooksResponse = await response.json();
-        return data.items?.[0]?.volumeInfo?.imageLinks?.thumbnail || null;
+        return data.items?.[0]?.volumeInfo?.imageLinks?.thumbnail || 
+          `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
       } catch (error) {
         console.error(`Error fetching book cover for ${book.title}:`, error);
-        return null;
+        // Fallback to OpenLibrary as a backup
+        return `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
       }
     },
     retry: 2,

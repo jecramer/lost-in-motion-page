@@ -38,31 +38,40 @@ const BookRecommendationsDialog: React.FC<BookRecommendationsDialogProps> = ({
           <X className="h-4 w-4 text-white" />
         </button>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col max-h-[90vh]">
           <div className="relative">
-            <img src={headerImage} alt={personName} className="w-[892px] full h-[500px] object-cover" />
+            <img src={headerImage} alt={personName} className="w-full h-[300px] object-cover" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
               <h3 className="text-2xl font-bold text-white">{personName}</h3>
               <p className="text-white/80">{personTitle}</p>
             </div>
           </div>
 
-          <div className="p-6" style={{ backgroundColor: "#94af45" }}>
-            <h4 className="text-xl font-semibold mb-4">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
-            <ScrollArea className="w-full" style={{ overflow: 'auto' }}>
-              <div className="flex gap-4 pb-4 w-max">
+          <div className="p-6 bg-[#94af45] flex-1 overflow-hidden">
+            <h4 className="text-xl font-semibold mb-4 text-white">{personName}'s Top {bookRecommendations.length} Favourite Books</h4>
+            <ScrollArea className="h-[400px] rounded-md">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-1">
                 {bookRecommendations.map((book, index) => (
-                  <div key={index} className="flex-shrink-0">
-                    <div className="w-32 h-48 bg-gray-100 rounded overflow-hidden mb-2">
+                  <div key={index} className="flex flex-col gap-2">
+                    <div className="aspect-[2/3] bg-gray-100 rounded-md overflow-hidden">
                       {bookCovers[index].data ? (
-                        <img src={bookCovers[index].data} alt={`${book.title} cover`} className="w-full h-full object-cover" />
+                        <img 
+                          src={bookCovers[index].data} 
+                          alt={`${book.title} cover`} 
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://via.placeholder.com/200x300?text=No+Cover";
+                          }}
+                        />
                       ) : (
-                        <div className="w-full h-full bg-gray-200 animate-pulse" />
+                        <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-400 text-sm text-center p-2">
+                          Loading...
+                        </div>
                       )}
                     </div>
-                    <div className="w-32">
-                      <p className="font-medium text-sm line-clamp-2">{book.title}</p>
-                      <p className="text-xs text-gray-600">{book.author}</p>
+                    <div>
+                      <p className="font-medium text-sm text-white line-clamp-2">{book.title}</p>
+                      <p className="text-xs text-white/80">{book.author}</p>
                     </div>
                   </div>
                 ))}
