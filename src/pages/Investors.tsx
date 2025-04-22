@@ -23,9 +23,9 @@ const Investors = () => {
         <InvestorsHero />
         <BuildingInfo />
         <ProblemStatements />
-        <ArchetypesCarousel />
         <GuidingPillars />
         <MarketComparison />
+        <ArchetypesCarousel />
         <RevenueSection />
         <TeamSection />
         <AdvisorsSection />
