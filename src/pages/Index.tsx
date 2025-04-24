@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
-import BackgroundWrapper from "@/components/investors/BackgroundWrapper";
 
 const phrases = [
   "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
@@ -35,36 +34,45 @@ const Index = () => {
   }, []);
 
   return (
-    <BackgroundWrapper>
-      <div className="min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="text-center">
-          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg mb-4">
-            Get Lost
-          </h1>
-          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] mb-16">
+    <div 
+      className="min-h-screen flex flex-col items-center justify-center px-4"
+      style={{
+        backgroundImage: `url('/lovable-uploads/2f190c73-f2f6-4fb5-8aa8-527ca8331d8f.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="text-center relative">
+        <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
+          Get Lost
+        </h1>
+        <div className="absolute -bottom-8 right-0 md:-bottom-12 lg:-bottom-16">
+          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72]">
             <CyclingTagline phrases={phrases} intervalTime={3000} />
           </p>
-          <div className="mt-8">
-            <h3 className="font-newsreader text-2xl text-white mb-4">Coming Soon</h3>
-            <div 
-              className="launchlist-widget"
-              data-key-id="pBBH1O"
-              data-height="180px"
-              style={{
-                '--widget-background': 'rgba(255, 255, 255, 0.1)',
-                '--widget-border': 'none',
-                '--widget-text': 'white',
-                '--button-background': '#e0d6ac',
-                '--button-text': '#94af45',
-                '--input-background': 'rgba(255, 255, 255, 0.1)',
-                '--input-border': 'rgba(255, 255, 255, 0.2)',
-                '--input-text': 'white',
-              } as React.CSSProperties}
-            />
-          </div>
+        </div>
+        <div className="mt-32 md:mt-36 lg:mt-40">
+          <h3 className="font-newsreader text-2xl text-white mb-4">Coming Soon</h3>
+          <div 
+            className="launchlist-widget"
+            data-key-id="pBBH1O"
+            data-height="180px"
+            style={{
+              '--widget-background': 'rgba(255, 255, 255, 0.1)',
+              '--widget-border': 'none',
+              '--widget-text': 'white',
+              '--button-background': '#e0d6ac',
+              '--button-text': '#94af45',
+              '--input-background': 'rgba(255, 255, 255, 0.1)',
+              '--input-border': 'rgba(255, 255, 255, 0.2)',
+              '--input-text': 'white',
+            } as React.CSSProperties}
+          />
         </div>
       </div>
-    </BackgroundWrapper>
+    </div>
   );
 };
 
