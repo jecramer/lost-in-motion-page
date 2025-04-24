@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 
@@ -43,7 +44,7 @@ const Index = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="text-center relative w-full max-w-[1200px]">
+      <div className="text-center relative">
         <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
           Get Lost
         </h1>
@@ -52,9 +53,10 @@ const Index = () => {
             <CyclingTagline phrases={phrases} intervalTime={3000} />
           </p>
         </div>
-        <div className="mt-16 flex justify-center">
+        <div className="mt-16">
+          <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
           <div 
-            className="launchlist-widget w-full max-w-[1000px]"
+            className="launchlist-widget w-[400%] max-w-[600px] mx-auto"
             data-key-id="pBBH1O"
             data-height="180px"
             style={{
@@ -66,7 +68,6 @@ const Index = () => {
               '--input-background': 'rgba(255, 255, 255, 0.1)',
               '--input-border': 'rgba(255, 255, 255, 0.2)',
               '--input-text': 'white',
-              '--input-width': '100%' // Use full width of the container
             } as React.CSSProperties}
           />
         </div>
