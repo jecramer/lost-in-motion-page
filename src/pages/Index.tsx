@@ -1,6 +1,6 @@
-
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
+import Navbar from "@/components/Navbar";
 
 const phrases = [
   "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
@@ -34,52 +34,55 @@ const Index = () => {
   }, []);
 
   return (
-    <div 
-      className="min-h-screen flex flex-col items-center justify-center px-4"
-      style={{
-        backgroundImage: `url('/bg.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
-    >
-      <div className="text-center relative">
-        <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
-          Get Lost
-        </h1>
-        <div className="mt-4">
-          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] text-right">
-            <CyclingTagline phrases={phrases} intervalTime={3000} />
-          </p>
-        </div>
-        <div className="mt-16">
-          <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
-          <div 
-            className="launchlist-widget w-full ml-0"
-            data-key-id="pBBH1O"
-            data-height="180px"
-            style={{
-              '--widget-background': 'transparent',
-              '--widget-border': 'none',
-              '--widget-text': 'white',
-              '--button-background': '#e0d6ac',
-              '--button-text': '#94af45',
-              '--input-background': 'rgba(255, 255, 255, 0.95)',
-              '--input-border': 'rgba(255, 255, 255, 0.2)',
-              '--input-text': '#333',
-              '--input-align': 'left',
-              '--input-width': 'clamp(300px, 90%, 600px)',
-              '--input-padding': '12px 16px',
-              '--input-border-radius': '8px',
-              '--button-margin-left': '12px',
-              '--button-padding': '12px 24px',
-              '--button-border-radius': '8px',
-            } as React.CSSProperties}
-          />
+    <>
+      <Navbar />
+      <div 
+        className="min-h-screen flex flex-col items-center justify-center px-4"
+        style={{
+          backgroundImage: `url('/bg.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="text-center relative">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
+            Get Lost
+          </h1>
+          <div className="mt-4">
+            <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] text-right">
+              <CyclingTagline phrases={phrases} intervalTime={3000} />
+            </p>
+          </div>
+          <div className="mt-16">
+            <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
+            <div 
+              className="launchlist-widget w-full ml-0"
+              data-key-id="pBBH1O"
+              data-height="180px"
+              style={{
+                '--widget-background': 'transparent',
+                '--widget-border': 'none',
+                '--widget-text': 'white',
+                '--button-background': '#e0d6ac',
+                '--button-text': '#94af45',
+                '--input-background': 'rgba(255, 255, 255, 0.95)',
+                '--input-border': 'rgba(255, 255, 255, 0.2)',
+                '--input-text': '#333',
+                '--input-align': 'left',
+                '--input-width': 'clamp(300px, 90%, 600px)',
+                '--input-padding': '12px 16px',
+                '--input-border-radius': '8px',
+                '--button-margin-left': '12px',
+                '--button-padding': '12px 24px',
+                '--button-border-radius': '8px',
+              } as React.CSSProperties}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
