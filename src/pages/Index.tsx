@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -92,16 +91,14 @@ const Index = () => {
               } as React.CSSProperties}
             />
           </div>
-          {isMobile && (
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80"
-              onClick={scrollToMobileSection}
-            >
-              <ArrowDown className="w-8 h-8 animate-bounce" />
-            </Button>
-          )}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80"
+            onClick={scrollToMobileSection}
+          >
+            <ArrowDown className="w-8 h-8 animate-bounce" />
+          </Button>
         </div>
       </div>
 
