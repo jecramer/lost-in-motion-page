@@ -1,41 +1,70 @@
 
-import React from "react";
-import Navbar from "@/components/Navbar";
+import React, { useEffect } from "react";
+import CyclingTagline from "@/components/CyclingTagline";
 import BackgroundWrapper from "@/components/investors/BackgroundWrapper";
-import InvestorsHero from "@/components/investors/InvestorsHero";
-import BuildingInfo from "@/components/investors/BuildingInfo";
-import ProblemStatements from "@/components/investors/ProblemStatements";
-import GuidingPillars from "@/components/investors/GuidingPillars";
-import ArchetypesCarousel from "@/components/investors/ArchetypesCarousel";
-import MarketComparison from "@/components/investors/MarketComparison";
-import RevenueSection from "@/components/investors/RevenueSection";
-import TeamSection from "@/components/investors/TeamSection";
-import AdvisorsSection from "@/components/investors/AdvisorsSection";
-import RoadmapSection from "@/components/investors/RoadmapSection";
-import OdinSection from "@/components/investors/OdinSection";
-import ScrollToTop from "@/components/investors/ScrollToTop";
+
+const phrases = [
+  "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
+  "...in Fantasy", "...in a Thriller", "...in Romance", "...in Sci-Fi", "...in Historical Fiction", 
+  "...in a Mystery", "...in the Mood", "...in the Dark", "...in the Detail", "...in the Silence", 
+  "...in the Noise", "...in Thought", "...Before Page One", "...Where the Map Ends", 
+  "...Between the Lines", "...in Someone Else's Life", "...in the Ending", "...in Your Shelf", 
+  "...with Friends", "...with Strangers", "...Together", "...Then Found", "...and Discover More", 
+  "...Stay Curious.", "...and Find Your Next Favourite", "...Start Reading.", "...in What Comes Next", 
+  "...In Wonderland", "...In Westeros", "...In Pemberley", "...In The Multiverse", "...In Gothic Horror", 
+  "...In The Cosmos", "...In Mythology", "...In Sonnets", "...In Magical Realism", "...In Dystopia", 
+  "...In The Library", "...In The Footnotes", "...In A Whodunit", "...In The Hero's Journey", 
+  "...In The Classics", "...In A Fairytale", "...In Haikus", "...In The Archives", 
+  "...In A Cozy Mystery", "...In The Unwritten Pages"
+];
 
 const Index = () => {
+  useEffect(() => {
+    const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
+    existingScripts.forEach(script => script.remove());
+
+    const script = document.createElement('script');
+    script.src = 'https://getlaunchlist.com/js/widget.js';
+    script.defer = true;
+    script.onload = () => {
+      if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+        window.LaunchList.initializeWidgets();
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
+
   return (
-    <>
-      <Navbar />
-      <BackgroundWrapper>
-        <InvestorsHero />
-        <BuildingInfo />
-        <div className="mb-20">
-          <ArchetypesCarousel />
+    <BackgroundWrapper>
+      <div className="min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="text-center">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg mb-4">
+            Get Lost
+          </h1>
+          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] mb-16">
+            <CyclingTagline phrases={phrases} intervalTime={3000} />
+          </p>
+          <div className="mt-8">
+            <h3 className="font-newsreader text-2xl text-white mb-4">Coming Soon</h3>
+            <div 
+              className="launchlist-widget"
+              data-key-id="pBBH1O"
+              data-height="180px"
+              style={{
+                '--widget-background': 'rgba(255, 255, 255, 0.1)',
+                '--widget-border': 'none',
+                '--widget-text': 'white',
+                '--button-background': '#e0d6ac',
+                '--button-text': '#94af45',
+                '--input-background': 'rgba(255, 255, 255, 0.1)',
+                '--input-border': 'rgba(255, 255, 255, 0.2)',
+                '--input-text': 'white',
+              } as React.CSSProperties}
+            />
+          </div>
         </div>
-        <GuidingPillars />
-        <ProblemStatements />
-        <MarketComparison />
-        <RevenueSection />
-        <TeamSection />
-        <AdvisorsSection />
-        <RoadmapSection />
-        <OdinSection />
-        <ScrollToTop />
-      </BackgroundWrapper>
-    </>
+      </div>
+    </BackgroundWrapper>
   );
 };
 

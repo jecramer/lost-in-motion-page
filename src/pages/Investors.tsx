@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import BackgroundWrapper from "@/components/investors/BackgroundWrapper";

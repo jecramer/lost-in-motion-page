@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MobileWarningDialog } from "@/components/MobileWarningDialog";
 import Index from "./pages/Index";
+import Investors from "./pages/Investors";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,9 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* Redirect /investors to home page since the content is now there */}
-          <Route path="/investors" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/investors" element={<Investors />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
