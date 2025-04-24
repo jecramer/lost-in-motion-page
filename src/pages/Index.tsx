@@ -48,15 +48,15 @@ const Index = () => {
         <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
           Get Lost
         </h1>
-        <div className="absolute -bottom-8 right-0 md:-bottom-12 lg:-bottom-16">
-          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72]">
+        <div className="mt-4">
+          <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] text-right">
             <CyclingTagline phrases={phrases} intervalTime={3000} />
           </p>
         </div>
-        <div className="mt-32 md:mt-36 lg:mt-40">
-          <h3 className="font-newsreader text-2xl text-white mb-4">Coming Soon</h3>
+        <div className="mt-16">
+          <h3 className="font-newsreader text-2xl text-white mb-8">Coming Soon</h3>
           <div 
-            className="launchlist-widget"
+            className="launchlist-widget w-[200%] max-w-[600px] mx-auto"
             data-key-id="pBBH1O"
             data-height="180px"
             style={{
