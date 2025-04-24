@@ -1,7 +1,10 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
+import { ArrowDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
+import GuidingPillars from "@/components/investors/GuidingPillars";
 
 const phrases = [
   "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
@@ -19,6 +22,9 @@ const phrases = [
 ];
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  const mobileSectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
     existingScripts.forEach(script => script.remove());
@@ -33,6 +39,10 @@ const Index = () => {
     };
     document.head.appendChild(script);
   }, []);
+
+  const scrollToMobileSection = () => {
+    mobileSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -81,8 +91,23 @@ const Index = () => {
               } as React.CSSProperties}
             />
           </div>
+          {isMobile && (
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="absolute bottom-[-120px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80"
+              onClick={scrollToMobileSection}
+            >
+              <ArrowDown className="w-8 h-8 animate-bounce" />
+            </Button>
+          )}
         </div>
       </div>
+      {isMobile && (
+        <div ref={mobileSectionRef}>
+          <GuidingPillars />
+        </div>
+      )}
     </>
   );
 };
