@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -104,7 +105,17 @@ const Index = () => {
         </div>
       </div>
       {isMobile && (
-        <div ref={mobileSectionRef}>
+        <div 
+          ref={mobileSectionRef}
+          className="min-h-screen flex flex-col items-center justify-center px-4"
+          style={{
+            backgroundImage: `url('/bg.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+          }}
+        >
           <GuidingPillars />
         </div>
       )}
