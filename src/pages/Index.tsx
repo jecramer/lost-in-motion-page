@@ -54,19 +54,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen" style={backgroundStyle}>
+    <div className="min-h-screen animate-fade-in" style={backgroundStyle}>
       <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <div className="text-center relative">
-          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
+          <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg hover:scale-[1.02] transition-transform duration-300">
             Get Lost
           </h1>
-          <div className="mt-4">
-            <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] text-right">
+          <div className="mt-4 transform hover:scale-105 transition-all duration-300">
+            <p className="font-newsreader text-xl md:text-5xl text-white opacity-[0.72] text-right hover:opacity-100 transition-opacity">
               <CyclingTagline phrases={phrases} intervalTime={3000} />
             </p>
           </div>
-          <div className="mt-16 ml-4">
+          <div className="mt-16 ml-4 transform hover:scale-105 transition-all duration-300">
             <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
             <div 
               className="launchlist-widget w-full ml-0"
@@ -94,7 +94,7 @@ const Index = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80"
+            className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80 hover:scale-110 transition-all duration-300"
             onClick={scrollToMobileSection}
           >
             <ArrowDown className="w-8 h-8 animate-bounce" />

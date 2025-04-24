@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -19,15 +18,17 @@ const OdinSection = () => {
   return (
     <div id="odin-section" className="w-full py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-newsreader font-semibold text-5xl mb-10 text-center text-black">Join the Deal On</h2>
+        <div className="max-w-6xl mx-auto transform hover:scale-[1.01] transition-all duration-300">
+          <h2 className="font-newsreader font-semibold text-5xl mb-10 text-center text-black hover:opacity-80 transition-opacity">
+            Join the Deal On
+          </h2>
           
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-12 transform hover:scale-105 transition-all duration-300">
             <img alt="ODIN Logo" className="h-[28.8]" src="/lovable-uploads/32dc47be-4d3e-4521-9c0f-5ca5dbccfca7.png" />
           </div>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-12 space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-2 transform transition-all duration-300 hover:translate-y-[-2px]">
               <Label htmlFor="email" className="text-gray-700">Email</Label>
               <Input
                 id="email"
@@ -40,7 +41,7 @@ const OdinSection = () => {
               />
             </div>
             
-            <div className="space-y-2">
+            <div className="space-y-2 transform transition-all duration-300 hover:translate-y-[-2px]">
               <Label htmlFor="linkedin" className="text-gray-700">LinkedIn Profile URL</Label>
               <Input
                 id="linkedin"
@@ -53,7 +54,7 @@ const OdinSection = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full bg-[#e0d6ac] text-[#94af45] hover:bg-[#e0d6ac]/90">
+            <Button type="submit" className="w-full bg-[#e0d6ac] text-[#94af45] hover:bg-[#e0d6ac]/90 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
               Contact Us
             </Button>
           </form>
