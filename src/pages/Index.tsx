@@ -54,9 +54,9 @@ const Index = () => {
           </p>
         </div>
         <div className="mt-16">
-          <h3 className="font-newsreader text-2xl text-white mb-8">Coming Soon</h3>
+          <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
           <div 
-            className="launchlist-widget w-[200%] max-w-[600px] mx-auto"
+            className="launchlist-widget w-[400%] max-w-[600px] mx-auto"
             data-key-id="pBBH1O"
             data-height="180px"
             style={{
