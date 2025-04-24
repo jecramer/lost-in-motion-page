@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -116,7 +115,7 @@ const Index = () => {
             backgroundAttachment: 'fixed'
           }}
         >
-          <GuidingPillars hideEmailSignup={true} />
+          <GuidingPillars />
         </div>
       )}
     </>
