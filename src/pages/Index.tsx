@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -6,6 +5,7 @@ import { ArrowDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import GuidingPillars from "@/components/investors/GuidingPillars";
+import OdinSection from "@/components/investors/OdinSection";
 
 const phrases = [
   "...in a Story", "...in a Dream", "...in a World", "...in Time", "...in Translation", 
@@ -104,6 +104,14 @@ const Index = () => {
           )}
         </div>
       </div>
+
+      {!isMobile && (
+        <>
+          <GuidingPillars />
+          <OdinSection />
+        </>
+      )}
+
       {isMobile && (
         <div 
           ref={mobileSectionRef}
@@ -116,7 +124,8 @@ const Index = () => {
             backgroundAttachment: 'fixed'
           }}
         >
-          <GuidingPillars hideEmailSignup={true} />
+          <GuidingPillars />
+          <OdinSection />
         </div>
       )}
     </>
