@@ -116,7 +116,7 @@ const Index = () => {
             backgroundAttachment: 'fixed'
           }}
         >
-          <GuidingPillars hideEmailSignup={true} />
+          <GuidingPillars />
         </div>
       )}
     </>
