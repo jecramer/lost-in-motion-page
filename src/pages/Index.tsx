@@ -45,19 +45,18 @@ const Index = () => {
     mobileSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const backgroundStyle = {
+    backgroundImage: `url('/bg.png')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed'
+  };
+
   return (
-    <>
+    <div className="min-h-screen" style={backgroundStyle}>
       <Navbar />
-      <div 
-        className="min-h-screen flex flex-col items-center justify-center px-4"
-        style={{
-          backgroundImage: `url('/bg.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
-      >
+      <div className="min-h-screen flex flex-col items-center justify-center px-4">
         <div className="text-center relative">
           <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg">
             Get Lost
@@ -105,30 +104,11 @@ const Index = () => {
         </div>
       </div>
 
-      {!isMobile && (
-        <>
-          <GuidingPillars />
-          <OdinSection />
-        </>
-      )}
-
-      {isMobile && (
-        <div 
-          ref={mobileSectionRef}
-          className="min-h-screen flex flex-col items-center justify-center px-4"
-          style={{
-            backgroundImage: `url('/bg.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-          }}
-        >
-          <GuidingPillars />
-          <OdinSection />
-        </div>
-      )}
-    </>
+      <div className="w-full">
+        <GuidingPillars />
+        <OdinSection />
+      </div>
+    </div>
   );
 };
 
