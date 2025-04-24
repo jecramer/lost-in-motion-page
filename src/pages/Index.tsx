@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
 import { ArrowDown } from "lucide-react";
@@ -26,6 +26,21 @@ const phrases = [
 const Index = () => {
   const isMobile = useIsMobile();
   const mobileSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
+    existingScripts.forEach(script => script.remove());
+
+    const script = document.createElement('script');
+    script.src = 'https://getlaunchlist.com/js/widget.js';
+    script.defer = true;
+    script.onload = () => {
+      if (window.LaunchList && typeof window.LaunchList.initializeWidgets === 'function') {
+        window.LaunchList.initializeWidgets();
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
 
   const scrollToMobileSection = () => {
     mobileSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
