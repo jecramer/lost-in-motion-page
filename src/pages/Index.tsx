@@ -68,7 +68,6 @@ const Index = () => {
               '--input-background': 'rgba(255, 255, 255, 0.1)',
               '--input-border': 'rgba(255, 255, 255, 0.2)',
               '--input-text': 'white',
-              '--input-width': '400px', // Adding explicit width for the input field
             } as React.CSSProperties}
           />
         </div>
