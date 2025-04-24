@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import CyclingTagline from "@/components/CyclingTagline";
 import Navbar from "@/components/Navbar";
@@ -55,7 +56,7 @@ const Index = () => {
               <CyclingTagline phrases={phrases} intervalTime={3000} />
             </p>
           </div>
-          <div className="mt-16">
+          <div className="mt-16 ml-4">
             <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
             <div 
               className="launchlist-widget w-full ml-0"
