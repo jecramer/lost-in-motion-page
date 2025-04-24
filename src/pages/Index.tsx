@@ -56,19 +56,25 @@ const Index = () => {
         <div className="mt-16">
           <h3 className="font-newsreader text-2xl text-white mb-8 text-left">Coming Soon</h3>
           <div 
-            className="launchlist-widget w-full max-w-[600px] ml-0"
+            className="launchlist-widget w-full ml-0"
             data-key-id="pBBH1O"
             data-height="180px"
             style={{
-              '--widget-background': 'rgba(255, 255, 255, 0.1)',
+              '--widget-background': 'transparent',
               '--widget-border': 'none',
               '--widget-text': 'white',
               '--button-background': '#e0d6ac',
               '--button-text': '#94af45',
-              '--input-background': 'rgba(255, 255, 255, 0.1)',
+              '--input-background': 'rgba(255, 255, 255, 0.95)',
               '--input-border': 'rgba(255, 255, 255, 0.2)',
-              '--input-text': 'white',
+              '--input-text': '#333',
               '--input-align': 'left',
+              '--input-width': 'clamp(300px, 90%, 600px)',
+              '--input-padding': '12px 16px',
+              '--input-border-radius': '8px',
+              '--button-margin-left': '12px',
+              '--button-padding': '12px 24px',
+              '--button-border-radius': '8px',
             } as React.CSSProperties}
           />
         </div>
