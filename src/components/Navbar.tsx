@@ -7,16 +7,6 @@ import { Linkedin } from "lucide-react";
 const Navbar = () => {
   const location = useLocation();
 
-  const scrollToOdin = () => {
-    const odinSection = document.getElementById('odin-section');
-    if (odinSection) {
-      odinSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Only show investors link if on the home route
-  const showInvestorsLink = location.pathname === '/';
-
   return (
     <nav className="fixed top-0 left-0 w-full bg-black/30 backdrop-blur-sm z-50">
       <div className="container mx-auto flex items-center justify-between py-4 px-8">
@@ -29,15 +19,6 @@ const Navbar = () => {
 
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
-          {showInvestorsLink && (
-            <button 
-              onClick={scrollToOdin}
-              className="text-white font-newsreader hover:text-slate-200 transition-colors"
-            >
-              Investors
-            </button>
-          )}
-          
           <a 
             href="https://getlosthq.substack.com/" 
             target="_blank" 
