@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
+interface GuidingPillarsProps {
+  hideEmailSignup?: boolean;
+}
+
 const pillarsContent = [
   {
     id: "community",
@@ -48,10 +52,12 @@ const pillarsContent = [
   }
 ];
 
-const GuidingPillars = () => {
+const GuidingPillars = ({ hideEmailSignup = false }: GuidingPillarsProps) => {
   const [activePillar, setActivePillar] = useState("community");
 
   useEffect(() => {
+    if (hideEmailSignup) return;
+    
     const existingScripts = document.querySelectorAll('script[src="https://getlaunchlist.com/js/widget.js"]');
     existingScripts.forEach(script => script.remove());
 
@@ -64,7 +70,7 @@ const GuidingPillars = () => {
       }
     };
     document.head.appendChild(script);
-  }, []);
+  }, [hideEmailSignup]);
 
   const activeContent = pillarsContent.find(pillar => pillar.id === activePillar) || pillarsContent[0];
   const thumbnailPillars = pillarsContent.filter(pillar => pillar.id !== activePillar);
@@ -113,27 +119,29 @@ const GuidingPillars = () => {
                   {activeContent.description}
                 </p>
                 
-                <div className="mt-8 text-center">
-                  <h3 className="font-newsreader text-2xl mb-4">Get Early Access</h3>
-                  <p className="opacity-[0.84] text-base mb-6">
-                    Join our waitlist to be the first to know when we launch
-                  </p>
-                  <div 
-                    className="launchlist-widget"
-                    data-key-id="pBBH1O"
-                    data-height="180px"
-                    style={{
-                      '--widget-background': 'rgba(255, 255, 255, 0.1)',
-                      '--widget-border': 'none',
-                      '--widget-text': 'inherit',
-                      '--button-background': '#e0d6ac',
-                      '--button-text': '#94af45',
-                      '--input-background': 'rgba(255, 255, 255, 0.1)',
-                      '--input-border': 'rgba(255, 255, 255, 0.2)',
-                      '--input-text': 'inherit',
-                    } as React.CSSProperties}
-                  />
-                </div>
+                {!hideEmailSignup && (
+                  <div className="mt-8 text-center">
+                    <h3 className="font-newsreader text-2xl mb-4">Get Early Access</h3>
+                    <p className="opacity-[0.84] text-base mb-6">
+                      Join our waitlist to be the first to know when we launch
+                    </p>
+                    <div 
+                      className="launchlist-widget"
+                      data-key-id="pBBH1O"
+                      data-height="180px"
+                      style={{
+                        '--widget-background': 'rgba(255, 255, 255, 0.1)',
+                        '--widget-border': 'none',
+                        '--widget-text': 'inherit',
+                        '--button-background': '#e0d6ac',
+                        '--button-text': '#94af45',
+                        '--input-background': 'rgba(255, 255, 255, 0.1)',
+                        '--input-border': 'rgba(255, 255, 255, 0.2)',
+                        '--input-text': 'inherit',
+                      } as React.CSSProperties}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
