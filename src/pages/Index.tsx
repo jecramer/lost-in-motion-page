@@ -106,7 +106,9 @@ const Index = () => {
             className="absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-white hover:text-white/80 hover:scale-110 transition-all duration-300"
             onClick={scrollToMobileSection}
           >
-            <ArrowDown className="w-8 h-8 animate-bounce" />
+            <ArrowDown 
+              className="w-10 h-10 animate-bounce text-[#D3E4FD] stroke-[3]" 
+            />
           </Button>
         </div>
       </div>
