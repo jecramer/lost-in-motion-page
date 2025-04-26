@@ -76,7 +76,7 @@ const Index = () => {
           </div>
 
           <div className="mt-16 ml-4 transform hover:scale-105 transition-all duration-300">
-            <h3 className="font-newsreader text-2xl text-white mb-4 text-left">Coming Soon</h3>
+            <h3 className="font-newsreader text-2xl text-white mb-3 text-left">Coming Soon</h3>
             <div 
               className="launchlist-widget w-full ml-0"
               data-key-id="pBBH1O"
