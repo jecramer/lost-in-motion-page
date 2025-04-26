@@ -57,7 +57,7 @@ const Index = () => {
     <div className="min-h-screen animate-fade-in" style={backgroundStyle}>
       <Navbar />
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
-        <div className="text-center relative">
+        <div className="text-center relative mt-8 md:mt-0">
           <h1 className="font-newsreader font-semibold text-[5rem] md:text-[7rem] lg:text-[12rem] text-white leading-tight drop-shadow-lg hover:scale-[1.02] transition-transform duration-300">
             Get Lost
           </h1>
@@ -67,8 +67,8 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto mt-16 px-4">
-            <p className="font-newsreader text-xl md:text-2xl text-white/80 text-center italic opacity-90 hover:opacity-100 transition-opacity leading-relaxed">
+          <div className="max-w-4xl mx-auto mt-8 md:mt-16 px-4">
+            <p className="font-newsreader text-base md:text-2xl text-white/80 text-center italic opacity-90 hover:opacity-100 transition-opacity leading-relaxed">
               Our mission: 
               To become the natural home for readers, authors, and publishers online. 
               Get Lost is improving people's reading habits by focusing relentlessly on fixing broken book discovery and turning reading into a fun and engaging social hobby.
