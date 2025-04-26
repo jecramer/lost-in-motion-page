@@ -67,7 +67,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto mt-16 px-4">
+          <div className="max-w-4xl mx-auto mt-16 px-4">
             <p className="font-newsreader text-xl md:text-2xl text-white/80 text-center italic opacity-90 hover:opacity-100 transition-opacity leading-relaxed">
               Our mission: 
               To become the natural home for readers, authors, and publishers online. 
