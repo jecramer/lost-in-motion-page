@@ -20,6 +20,13 @@ const Navbar = () => {
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
           <a 
+            href="/timeline" 
+            className="text-white font-newsreader hover:text-slate-200 transition-colors"
+          >
+            Timeline
+          </a>
+          
+          <a 
             href="https://getlosthq.substack.com/" 
             target="_blank" 
             rel="noopener noreferrer"
