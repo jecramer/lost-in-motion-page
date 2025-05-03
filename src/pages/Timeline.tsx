@@ -25,7 +25,9 @@ const Timeline: React.FC = () => {
           </p>
         </div>
 
-        <HorizontalTimeline />
+        <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-4 md:p-10">
+          <HorizontalTimeline />
+        </div>
       </div>
     </div>
   );
