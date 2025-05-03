@@ -9,22 +9,36 @@ interface TimelineMilestonesProps {
 
 const TimelineMilestones: React.FC<TimelineMilestonesProps> = ({ milestones }) => {
   return (
-    <Card className="bg-black/50 border-white/10 backdrop-blur-sm text-white mt-12">
+    <Card className="bg-white/90 border-gray-100 shadow-lg rounded-lg mt-12">
       <CardContent className="p-6 md:p-8">
-        <h2 className="font-newsreader text-2xl md:text-3xl mb-4 pb-2 border-b border-white/10 flex items-center">
-          <Check className="mr-2 text-green-400" /> Key Milestones by End of Month
+        <h2 className="text-2xl md:text-3xl mb-4 font-semibold text-gray-800 pb-2 border-b border-gray-200 flex items-center">
+          <Check className="mr-2 text-green-500" /> Key Milestones by End of Month
         </h2>
-        <ul className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {milestones.map((milestone, index) => (
-            <li key={index} className="flex items-start">
-              <Check className="min-w-5 h-5 text-green-400 mt-1 mr-2" />
-              <span className="text-white/90 font-newsreader text-lg">{milestone}</span>
-            </li>
+            <div 
+              key={index} 
+              className={`flex items-start p-3 rounded-md transition-all duration-200 hover:bg-gray-50 ${getMilestoneColor(index)}`}
+            >
+              <Check className="min-w-5 h-5 mt-1 mr-2" />
+              <span className="font-medium">{milestone}</span>
+            </div>
           ))}
-        </ul>
+        </div>
       </CardContent>
     </Card>
   );
 };
+
+function getMilestoneColor(index: number): string {
+  const colors = [
+    'text-cyan-700 border-l-4 border-cyan-400 pl-2', 
+    'text-indigo-700 border-l-4 border-indigo-400 pl-2',
+    'text-green-700 border-l-4 border-green-400 pl-2', 
+    'text-blue-700 border-l-4 border-blue-400 pl-2',
+    'text-amber-700 border-l-4 border-amber-400 pl-2'
+  ];
+  return colors[index % colors.length];
+}
 
 export default TimelineMilestones;

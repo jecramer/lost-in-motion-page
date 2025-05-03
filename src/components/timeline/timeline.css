@@ -40,6 +40,12 @@
 .timeline-dot {
   animation: scaleIn 0.4s ease-out forwards;
   opacity: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.1);
 }
 
 /* Timeline line grow animation */
@@ -50,4 +56,11 @@
 
 .timeline-line-complete {
   width: 100%;
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 200px;
+  }
 }

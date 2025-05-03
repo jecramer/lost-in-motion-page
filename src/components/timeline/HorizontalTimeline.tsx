@@ -1,11 +1,12 @@
-
 import React, { useState, useEffect } from "react";
 import { useTimelineData } from "@/hooks/useTimelineData";
+import TimelineMilestones from "./TimelineMilestones";
 import "./timeline.css";
 
 const HorizontalTimeline: React.FC = () => {
-  const { weeks } = useTimelineData();
+  const { weeks, milestones } = useTimelineData();
   const [lineGrowth, setLineGrowth] = useState(false);
+  const [activeWeek, setActiveWeek] = useState<number | null>(null);
 
   useEffect(() => {
     // Animate line after component mounts
@@ -16,8 +17,12 @@ const HorizontalTimeline: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const toggleActive = (weekNum: number) => {
+    setActiveWeek(activeWeek === weekNum ? null : weekNum);
+  };
+
   return (
-    <div className="mt-16 relative px-4">
+    <div className="mt-8 relative px-4">
       {/* Main horizontal timeline line */}
       <div className="relative">
         {/* Timeline line */}
@@ -25,21 +30,27 @@ const HorizontalTimeline: React.FC = () => {
         <div className={`absolute top-1/2 left-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transform -translate-y-1/2 z-20 timeline-line-grow ${lineGrowth ? 'timeline-line-complete' : ''}`}></div>
 
         {/* Timeline content */}
-        <div className="flex justify-between items-center relative">
+        <div className="flex justify-between items-center relative py-32">
           {weeks.map((week, index) => (
             <div key={week.number} className="relative">
               {/* Timeline node */}
               <div className="flex justify-center">
-                <div className={`timeline-dot w-12 h-12 rounded-full z-30 flex items-center justify-center border-2 ${getNodeColor(index)}`}>
+                <div 
+                  className={`timeline-dot w-12 h-12 rounded-full z-30 flex items-center justify-center border-2 cursor-pointer transform transition-transform hover:scale-110 ${getNodeColor(index)} ${activeWeek === week.number ? 'ring-2 ring-offset-2 ring-purple-500' : ''}`}
+                  onClick={() => toggleActive(week.number)}
+                >
                   <span className={`font-bold ${getTextColor(index)}`}>{week.number.toString().padStart(2, '0')}</span>
                 </div>
               </div>
               
               {/* Timeline content - alternating position */}
-              <div className={`absolute ${index % 2 === 0 ? '-top-64' : 'top-16'} left-1/2 transform -translate-x-1/2 w-64`}>
+              <div 
+                className={`absolute ${index % 2 === 0 ? '-top-28' : 'top-16'} left-1/2 transform -translate-x-1/2 w-64 transition-all duration-300 ${activeWeek === week.number ? 'scale-105 z-50' : ''}`}
+              >
                 <div 
-                  className={`timeline-item rounded-lg shadow-lg p-4 border ${getCardBgColor(index)} max-w-sm mx-auto`}
+                  className={`timeline-item rounded-lg shadow-lg p-4 border ${getCardBgColor(index)} max-w-sm mx-auto cursor-pointer transition-all duration-300 hover:shadow-xl ${activeWeek === week.number ? 'ring-2 ring-purple-300' : ''}`}
                   style={{ animationDelay: `${index * 0.2}s` }}
+                  onClick={() => toggleActive(week.number)}
                 >
                   {/* Year/title pill at top */}
                   <div className={`absolute ${index % 2 === 0 ? '-bottom-3' : '-top-3'} left-1/2 transform -translate-x-1/2 rounded-full px-4 py-1 text-white text-sm font-semibold whitespace-nowrap ${getCardHeaderColor(index)}`}>
@@ -77,22 +88,13 @@ const HorizontalTimeline: React.FC = () => {
         </div>
       </div>
 
-      {/* Timeline legend */}
-      <div className="mt-64 text-center pt-8 border-t border-gray-200">
-        <h3 className="text-2xl font-semibold">Key Milestones by Month End</h3>
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          {getMilestoneItems().map((milestone, index) => (
-            <div key={index} className={`px-4 py-2 rounded-full text-white ${getMilestoneColor(index)}`}>
-              {milestone}
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Timeline milestones */}
+      <TimelineMilestones milestones={milestones} />
     </div>
   );
 };
 
-// Helper functions for dynamic styling
+// Helper functions for dynamic styling (keep these the same)
 function getNodeColor(index: number): string {
   const colors = [
     'bg-cyan-100 border-cyan-500', 
@@ -137,27 +139,6 @@ function getCardHeaderColor(index: number): string {
     'bg-blue-400',
     'bg-amber-400',
     'bg-rose-400'
-  ];
-  return colors[index % colors.length];
-}
-
-function getMilestoneItems(): string[] {
-  return [
-    'User Profile',
-    'Book Clubs',
-    'Lists',
-    'Discussions',
-    'Feed Page'
-  ];
-}
-
-function getMilestoneColor(index: number): string {
-  const colors = [
-    'bg-cyan-500', 
-    'bg-indigo-500',
-    'bg-green-500', 
-    'bg-blue-500',
-    'bg-amber-500'
   ];
   return colors[index % colors.length];
 }

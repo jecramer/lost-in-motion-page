@@ -15,9 +15,9 @@ const Timeline: React.FC = () => {
   return (
     <div className="min-h-screen animate-fade-in" style={backgroundStyle}>
       <Navbar />
-      <div className="container mx-auto px-4 pt-16 pb-32 md:pt-24">
-        <div className="text-center mb-12">
-          <h1 className="font-newsreader text-4xl md:text-6xl text-white font-semibold mb-4">
+      <div className="container mx-auto px-4 pt-20 pb-16">
+        <div className="text-center mb-8">
+          <h1 className="font-newsreader text-4xl md:text-5xl text-white font-semibold mb-4">
             MVP Delivery Timeline
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-newsreader">
@@ -25,7 +25,7 @@ const Timeline: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-4 md:p-10">
+        <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-4 md:p-8 overflow-x-auto hide-scrollbar">
           <HorizontalTimeline />
         </div>
       </div>
