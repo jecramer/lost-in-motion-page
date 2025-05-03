@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "./ui/button";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
 
 const Navbar = () => {
@@ -12,19 +12,21 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-8">
         {/* Logo / Brand */}
         <div className="flex items-center">
-          <a href="/" className="text-white font-newsreader text-2xl font-semibold hover:text-slate-200 transition-colors">
+          <Link to="/" className="text-white font-newsreader text-2xl font-semibold hover:text-slate-200 transition-colors">
             Get Lost
-          </a>
+          </Link>
         </div>
 
         {/* Navigation Links - Right Aligned */}
         <div className="flex items-center gap-6">
-          <a 
-            href="/timeline" 
-            className="text-white font-newsreader hover:text-slate-200 transition-colors"
+          <Link 
+            to="/timeline" 
+            className={`text-white font-newsreader hover:text-slate-200 transition-colors ${
+              location.pathname === '/timeline' ? 'underline' : ''
+            }`}
           >
             Timeline
-          </a>
+          </Link>
           
           <a 
             href="https://getlosthq.substack.com/" 
