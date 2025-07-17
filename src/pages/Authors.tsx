@@ -1,26 +1,28 @@
 
-import Hero from "@/components/Hero";
-import PainPoints from "@/components/PainPoints";
-import FreeSample from "@/components/FreeSample";
-import HowItWorks from "@/components/HowItWorks";
-import WhatYouGet from "@/components/WhatYouGet";
-import WhoItsFor from "@/components/WhoItsFor";
-import Pricing from "@/components/Pricing";
-import FinalNudge from "@/components/FinalNudge";
+import ModernHero from "@/components/authors/ModernHero";
+import ValueProposition from "@/components/authors/ValueProposition";
+import SocialProof from "@/components/authors/SocialProof";
+import ProblemSolution from "@/components/authors/ProblemSolution";
+import ProductDemo from "@/components/authors/ProductDemo";
+import Features from "@/components/authors/Features";
+import Pricing from "@/components/authors/Pricing";
+import FAQ from "@/components/authors/FAQ";
+import CTA from "@/components/authors/CTA";
 
-const Index = () => {
+const Authors = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <PainPoints />
-      <FreeSample />
-      <HowItWorks />
-      <WhatYouGet />
-      <WhoItsFor />
+    <div className="min-h-screen bg-background">
+      <ModernHero />
+      <ValueProposition />
+      <SocialProof />
+      <ProblemSolution />
+      <ProductDemo />
+      <Features />
       <Pricing />
-      <FinalNudge />
+      <FAQ />
+      <CTA />
     </div>
   );
 };
 
-export default Index;
+export default Authors;
