@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import type { Connect } from "vite";
+import type { ServerResponse } from "http";
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -21,7 +22,7 @@ export default defineConfig(({ mode }) => ({
   },
   // Configure server middleware for proper routing
   configureServer(server: any) {
-    server.middlewares.use((req: Connect.IncomingMessage, res: Connect.ServerResponse, next: Connect.NextFunction) => {
+    server.middlewares.use((req: Connect.IncomingMessage, res: ServerResponse, next: Connect.NextFunction) => {
       // Handle /authors route in development
       if (req.url === "/authors" || req.url?.startsWith("/authors/")) {
         req.url = "/";
