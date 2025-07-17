@@ -14,7 +14,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-secondary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -25,13 +25,13 @@ const Pricing = () => {
             Stop spending months figuring out marketing. Get everything you need in one comprehensive report.
           </p>
           
-          <div className="bg-gradient-to-br from-accent/5 to-primary/5 border-2 border-accent/20 rounded-3xl p-8 md:p-12 max-w-lg mx-auto mb-12 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-accent/5 via-card to-primary/5 border-2 border-accent/20 rounded-3xl p-8 md:p-12 max-w-lg mx-auto mb-12 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/10 to-accent/5 rounded-full blur-2xl"></div>
             
             <div className="relative z-10">
               <div className="mb-6">
-                <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent mb-4">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/10 to-accent/5 rounded-full text-sm font-medium text-accent mb-4">
                   Limited Time - First 500 Authors
                 </div>
                 
@@ -39,7 +39,7 @@ const Pricing = () => {
                   <div className="text-2xl font-bold text-muted-foreground line-through">
                     €119
                   </div>
-                  <div className="text-6xl md:text-7xl font-bold text-primary">
+                  <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     €39
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const Pricing = () => {
               
               <Button 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
+                className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground px-8 py-6 text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group mb-6"
               >
                 Get My Audience Report
                 <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />

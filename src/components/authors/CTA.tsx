@@ -8,7 +8,7 @@ const CTA = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent mb-4">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent/10 to-accent/5 rounded-full text-sm font-medium text-accent mb-4">
               🎯 Join 500+ Successful Authors
             </div>
             
@@ -38,7 +38,7 @@ const CTA = () => {
             <div className="pt-8">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-xl font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 group"
+                className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground px-12 py-6 text-xl font-semibold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 group"
               >
                 Get My Audience Report Now
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
