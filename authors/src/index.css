@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 13% 85%; /* Light Gray */
+    --foreground: 96 45% 10%; /* Phthalo Green - darkened for text */
+
+    --card: 210 13% 85%; /* Light Gray */
+    --card-foreground: 96 45% 10%;
+
+    --popover: 210 13% 85%;
+    --popover-foreground: 96 45% 10%;
+
+    --primary: 96 45% 15%; /* Phthalo Green */
+    --primary-foreground: 210 13% 85%;
+
+    --secondary: 65 44% 34%; /* Mustard Green */
+    --secondary-foreground: 210 13% 85%;
+
+    --muted: 210 13% 82%;
+    --muted-foreground: 96 45% 25%;
+
+    --accent: 188 35% 55%; /* Moonstone Blue */
+    --accent-foreground: 210 13% 85%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 13% 75%;
+    --input: 210 13% 75%;
+    --ring: 96 45% 15%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 13% 83%;
+    --sidebar-foreground: 96 45% 15%;
+    --sidebar-primary: 96 45% 15%;
+    --sidebar-primary-foreground: 210 13% 85%;
+    --sidebar-accent: 210 13% 80%;
+    --sidebar-accent-foreground: 96 45% 15%;
+    --sidebar-border: 210 13% 75%;
+    --sidebar-ring: 188 35% 55%;
+
+    /* Custom colors for the new palette */
+    --phthalo-green: 96 45% 15%;
+    --mustard-green: 65 44% 34%;
+    --light-gray: 210 13% 85%;
+    --deep-space-sparkle: 186 26% 34%;
+    --moonstone-blue: 188 35% 55%;
+  }
+
+  .dark {
+    --background: 96 45% 10%;
+    --foreground: 210 13% 85%;
+
+    --card: 96 45% 10%;
+    --card-foreground: 210 13% 85%;
+
+    --popover: 96 45% 10%;
+    --popover-foreground: 210 13% 85%;
+
+    --primary: 210 13% 85%;
+    --primary-foreground: 96 45% 15%;
+
+    --secondary: 65 44% 34%;
+    --secondary-foreground: 210 13% 85%;
+
+    --muted: 96 45% 15%;
+    --muted-foreground: 210 13% 70%;
+
+    --accent: 188 35% 55%;
+    --accent-foreground: 210 13% 85%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 96 45% 20%;
+    --input: 96 45% 20%;
+    --ring: 210 13% 70%;
+
+    --sidebar-background: 96 45% 8%;
+    --sidebar-foreground: 210 13% 85%;
+    --sidebar-primary: 188 35% 55%;
+    --sidebar-primary-foreground: 96 45% 10%;
+    --sidebar-accent: 96 45% 15%;
+    --sidebar-accent-foreground: 210 13% 85%;
+    --sidebar-border: 96 45% 15%;
+    --sidebar-ring: 188 35% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
