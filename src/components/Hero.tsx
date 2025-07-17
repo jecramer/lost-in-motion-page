@@ -9,8 +9,8 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl h-full flex flex-col justify-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              🎯 Your First Step to 
-              <span className="text-primary"> Full-Time Writing Income</span>
+              🎯 Get Lost:
+              <span className="text-primary"> Your First Step to Full-Time Writing Income</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
@@ -27,25 +27,25 @@ const Hero = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
+            <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 w-full sm:w-auto">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Get My Audience Report
               </Button>
               
-              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200">
+              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200 w-full sm:w-auto">
                 <Download className="mr-2 h-5 w-5" />
                 Download Free Sample
               </Button>
             </div>
           </div>
           
-          <div className="relative h-full flex items-center justify-center">
-            <div className="w-full max-w-md">
+          <div className="relative h-full flex items-center justify-center lg:justify-end">
+            <div className="w-full max-w-md lg:max-w-lg">
               <img 
                 src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                 alt="Stack of books and notebooks on a wooden desk with warm lighting, representing the writing and publishing journey" 
-                className="rounded-2xl shadow-xl w-full h-[600px] object-cover" 
+                className="rounded-2xl shadow-xl w-full h-[500px] lg:h-[600px] object-cover" 
               />
             </div>
           </div>

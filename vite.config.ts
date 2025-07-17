@@ -23,8 +23,8 @@ export default defineConfig(({ mode }) => ({
   // Configure server middleware for proper routing
   configureServer(server: any) {
     server.middlewares.use((req: Connect.IncomingMessage, res: ServerResponse, next: Connect.NextFunction) => {
-      // Handle /authors route in development
-      if (req.url === "/authors" || req.url?.startsWith("/authors/")) {
+      // Handle SPA routing for all routes including /authors
+      if (req.url && !req.url.includes('.') && !req.url.startsWith('/src/') && !req.url.startsWith('/@')) {
         req.url = "/";
       }
       next();
